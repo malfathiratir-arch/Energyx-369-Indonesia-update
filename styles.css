@@ -47,20 +47,21 @@
    1. RESET & BASE LAYOUT SYSTEM
    ========================================================================== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; width: 100%; overflow-x: hidden; }
 body { 
     font-family: var(--font-body); 
     color: var(--color-text); 
     background-color: var(--color-bg); 
     line-height: 1.75; 
     -webkit-font-smoothing: antialiased; 
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    width: 100%;
 }
 img { max-width: 100%; height: auto; display: block; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; width: 100%; }
 
 /* Struktur Sections & Garis Tipis Riset Pembatas Bab */
-.section-padding { padding: 5rem 0; position: relative; }
+.section-padding { padding: 5rem 0; position: relative; width: 100%; }
 .section-padding::after {
     content: '';
     position: absolute;
@@ -119,11 +120,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 .btn-full { width: 100%; }
 
 /* ==========================================================================
-   2. HEADER LAYOUT FOR DESKTOP (DIEM DI ATAS, GA NGIKUT SCROLL)
+   2. HEADER LAYOUT FOR DESKTOP (DIEM DI ATAS, GA NGIKUT SCROLL SAAT DI LAPTOP)
    ========================================================================== */
 .header { 
     position: absolute !important; 
-    top: 8px !important; /* Pas di bawah progress bar oranye */
+    top: 8px !important; 
     left: 0 !important; 
     right: 0 !important; 
     z-index: 1000 !important; 
@@ -229,6 +230,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
     overflow: hidden !important;
     padding-top: 10rem !important; 
     padding-bottom: 8rem !important;
+    width: 100%;
 }
 .hero-video-bg {
     position: absolute !important;
@@ -340,12 +342,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 .callout-num { font-size: 3.5rem; font-weight: 700; color: var(--color-brand-orange); display: block; line-height: 1; margin-bottom: 0.5rem; }
 .callout-label { font-size: 0.875rem; color: var(--color-text); font-weight: 600; }
 
-.pwc-chart-bars { display: flex; flex-direction: column; gap: 1.75rem; }
+.pwc-chart-bars { display: flex; flex-direction: column; gap: 1.75rem; width: 100%; }
 .chart-bars-title { font-size: 1.25rem; font-weight: 600; font-family: var(--font-body); margin-bottom: 0.5rem; }
-.pwc-bar-row { display: flex; flex-direction: column; gap: 0.5rem; }
-.pwc-bar-info { display: flex; justify-content: space-between; font-size: 0.9375rem; font-weight: 500; }
-.bar-label { color: var(--color-text); }
-.bar-percentage { font-weight: 700; color: var(--color-brand-orange); }
+.pwc-bar-row { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
+.pwc-bar-info { display: flex; justify-content: space-between; font-size: 0.9375rem; font-weight: 500; width: 100%; }
+.bar-label { color: var(--color-text); padding-right: 10px; }
+.bar-percentage { font-weight: 700; color: var(--color-brand-orange); flex-shrink: 0; }
 .pwc-bar-track { height: 12px; background: var(--color-surface-tint); width: 100%; position: relative; }
 .pwc-bar-fill { height: 100%; width: 0%; transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1); }
 .fill-orange { background: var(--color-brand-orange); }
@@ -354,14 +356,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 .fill-dark { background: var(--color-dark); }
 .chart-source-text { font-size: 0.75rem; color: var(--color-text-muted); font-style: italic; margin-top: 1rem; }
 
-.demo-video-card { max-width: 900px; margin: 0 auto; border: 1px solid var(--color-border); overflow: hidden; }
-.video-container { position: relative; padding-bottom: 56.25%; height: 0; background-color: #000000; }
+.demo-video-card { max-width: 900px; margin: 0 auto; border: 1px solid var(--color-border); overflow: hidden; width: 100%; }
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; background-color: #000000; width: 100%; }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* ==========================================================================
    6. UNIFORM CARDS & AI EMPLOYEES GRID
    ========================================================================== */
-.uniform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.uniform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; width: 100%; }
 .uniform-card { 
     background: var(--color-bg-card); 
     border: 1px solid var(--color-border); 
@@ -387,7 +389,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 .case-solution { font-size: 0.9375rem; color: var(--color-text); line-height: 1.6; }
 .case-solution strong { color: var(--color-brand-orange); }
 
-.ai-agents-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.ai-agents-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; width: 100%; }
 .agent-card { 
     background: var(--color-bg-card); 
     border: 1px solid var(--color-border); 
@@ -410,13 +412,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 /* ==========================================================================
    7. PRICING & MATRIX LAYOUT TABLES
    ========================================================================== */
-.pricing-tabs { display: flex; justify-content: flex-start; gap: 0px; margin-bottom: 2.5rem; border-bottom: 2px solid var(--color-border); }
+.pricing-tabs { display: flex; justify-content: flex-start; gap: 0px; margin-bottom: 2.5rem; border-bottom: 2px solid var(--color-border); width: 100%; }
 .tab-btn { padding: 1rem 1.5rem; font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; color: var(--color-text-muted); background: transparent; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.2s; }
 .tab-btn:hover { color: var(--color-primary); }
 .tab-btn.active { color: var(--color-brand-orange); border-bottom-color: var(--color-brand-orange); }
 
-.table-responsive { width: 100%; overflow-x: auto; margin-bottom: 2rem; }
-.enterprise-table { width: 100%; border-collapse: collapse; background: var(--color-bg-card); border: 1px solid var(--color-border); font-size: 0.9375rem; }
+.table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 2rem; border: 1px solid var(--color-border); }
+.enterprise-table { width: 100%; border-collapse: collapse; background: var(--color-bg-card); font-size: 0.9375rem; min-width: 700px; }
 .enterprise-table th, .enterprise-table td { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--color-border); border-right: 1px solid var(--color-border); }
 .enterprise-table th { background: var(--color-surface); color: var(--color-primary); font-family: var(--font-body); font-weight: 700; text-align: center; }
 .enterprise-table td { text-align: center; color: var(--color-text); }
@@ -432,11 +434,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 .plan-billed { font-size: 0.75rem; color: var(--color-text-muted); }
 .compact-table th, .compact-table td { padding: 1rem 1.5rem; }
 
-.add-ons-wrapper { max-width: 800px; margin: 0 auto; }
+.add-ons-wrapper { max-width: 800px; margin: 0 auto; width: 100%; }
 .add-ons-wrapper-title { font-size: 1.75rem; margin-bottom: 0.5rem; }
 .add-ons-wrapper-note { font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 1.5rem; }
 
-.enterprise-card-highlighted { background: #1C1C1C; border: 1px solid #333333; border-top: 6px solid var(--color-brand-amber); padding: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
+.enterprise-card-highlighted { background: #1C1C1C; border: 1px solid #333333; border-top: 6px solid var(--color-brand-amber); padding: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 3rem; width: 100%; }
 .enterprise-info h3 { font-size: 2rem; color: #FFFFFF; margin-bottom: 0.75rem; }
 .enterprise-info p { color: #AAAAAA; font-size: 1rem; margin-bottom: 2rem; }
 .enterprise-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -444,14 +446,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 .enterprise-features svg { color: var(--color-brand-amber); flex-shrink: 0; }
 .enterprise-action-highlighted { background: #2D2D2D; border: 1px solid #444444; padding: 2.5rem; text-align: center; min-width: 320px; }
 .enterprise-price-label { font-size: 0.75rem; color: #BBBBBB; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
-.enterprise-action-highlighted .price-amount { font-size: 2.5rem; font-family: var(--font-body); font-weight: 700; color: #FFFFFF; block-size: auto; margin: 0.5rem 0; }
+.enterprise-action-highlighted .price-amount { font-size: 2.5rem; font-family: var(--font-body); font-weight: 700; color: #FFFFFF; display: block; margin: 0.5rem 0; }
 .enterprise-price-sublabel { font-size: 0.8125rem; color: #999999; display: block; margin-bottom: 1.5rem; line-height: 1.4; }
 
 @keyframes pwcTabFadeIn {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
 }
-.pricing-panel { display: none !important; }
+.pricing-panel { display: none !important; width: 100%; }
 .pricing-panel.active { display: block !important; animation: pwcTabFadeIn 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
 
 .tooltip-trigger { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: #E0E0E0; color: var(--color-text-muted); font-size: 0.6875rem; font-weight: 700; margin-left: 6px; cursor: help; position: relative; }
@@ -462,30 +464,30 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 /* ==========================================================================
    8. FORMULIR REGISTRASI LEAD & FOOTER
    ========================================================================== */
-.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; width: 100%; }
 .contact-info h2 { font-size: 2.75rem; margin-bottom: 1.5rem; }
 .contact-info p { font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7; }
-.contact-form-card { background: var(--color-surface); border: 1px solid var(--color-border); padding: 3rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+.contact-form-card { background: var(--color-surface); border: 1px solid var(--color-border); padding: 3rem; width: 100%; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; width: 100%; }
 .form-group label { font-size: 0.875rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.02em; }
-.form-group input, .form-group select, .form-group textarea { padding: 0.875rem 1rem; border: 1px solid var(--color-border); font-family: var(--font-body); font-size: 1rem; background: #FFFFFF; color: var(--color-primary); }
+.form-group input, .form-group select, .form-group textarea { padding: 0.875rem 1rem; border: 1px solid var(--color-border); font-family: var(--font-body); font-size: 1rem; background: #FFFFFF; color: var(--color-primary); width: 100%; border-radius: 0; -webkit-appearance: none; }
 .form-group input:focus, .form-group select:focus { border-color: var(--color-brand-orange); outline: none; }
 
-.privacy-notice { margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1rem; background-color: #FFFFFF; padding: 1.25rem; border: 1px solid var(--color-border); border-left: 4px solid #4A607A; }
+.privacy-notice { margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1rem; background-color: #FFFFFF; padding: 1.25rem; border: 1px solid var(--color-border); border-left: 4px solid #4A607A; width: 100%; }
 .privacy-notice svg { color: #4A607A; flex-shrink: 0; }
 .privacy-notice-title { display: block; font-size: 0.8125rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
 .privacy-notice-text { font-size: 0.8125rem; color: var(--color-text-muted); line-height: 1.5; }
 
-.footer { padding: 4rem 0 3rem 0; border-top: 1px solid #333333; background-color: #000000; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid #222222; margin-bottom: 2rem; }
+.footer { padding: 4rem 0 3rem 0; border-top: 1px solid #333333; background-color: #000000; width: 100%; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid #222222; margin-bottom: 2rem; width: 100%; }
 .footer h4 { font-family: var(--font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #FFFFFF; font-size: 0.875rem; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
 .footer-links a { color: #AAAAAA; text-decoration: none; font-size: 0.875rem; transition: color 0.2s; font-family: var(--font-body); }
 .footer-links a:hover { color: var(--color-brand-orange); }
 
 /* ==========================================================================
-   9. SCROLL REVEAL TIMELINE KINETIC PACK
+   9. SCROLL REVEAL ANIMATIONS
    ========================================================================== */
 .scroll-reveal {
     opacity: 0;
@@ -516,17 +518,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 }
 
 /* ==========================================================================
-   10. MEDIA QUERIES: RESPONSIVITAS TOTAL (SINKRONISASI 992PX)
+   10. MEDIA QUERIES: PERBAIKAN RESPONSIVITAS TOTAL HP (SINKRONISASI 992PX)
    ========================================================================== */
 
-/* A. LOGIKA UTAMA PC/LAPTOP: Navbar Diam Di Atas, Menu Titik Kiri Mengambang */
+/* A. KONDISI SAAT DI LAPTOP / DESKTOP (LAYAR LEBAR) */
 @media (min-width: 993px) {
-    .pwc-floating-indicator-nav {
-        display: block !important; /* Aktifkan Titik Samping */
-    }
-    .nav-toggle {
-        display: none !important; /* Hamburger Mati */
-    }
+    .pwc-floating-indicator-nav { display: block !important; }
+    .nav-toggle { display: none !important; }
     .nav-links {
         display: flex !important;
         flex-direction: row !important;
@@ -544,47 +542,71 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
     .nav-links a { border-bottom: none !important; }
 }
 
-/* B. LOGIKA UTAMA HP/TABLET: Navbar Kunci Di Atas (Fixed), Menu Titik Mati */
+/* B. KONDISI FINISHING KUNCI MATEMATIK UNTUK HP & TABLET (MAKSIMAL 992PX) */
 @media (max-width: 992px) {
-    /* 1. PAKSA NAVBAR HP SELALU MENEMPEL & IKUT SKROL (FIXED) */
+    /* Mencegah padding kontainer meluber keluar frame HP */
+    .container { padding: 0 1.25rem !important; }
+    .section-padding { padding: 3.5rem 0; }
+    
+    /* 1. Paksa Seluruh Grid Menjadi Satu Kolom Vertikal Tanpa Sisa */
+    .hero-grid, .contact-wrapper, .pwc-chart-layout, .footer-grid { 
+        grid-template-columns: 1fr !important; 
+        gap: 2.5rem !important; 
+    }
+    
+    /* 2. Matikan Total Menu Titik Samping */
+    .pwc-floating-indicator-nav { display: none !important; }
+
+    /* 3. Kunci Navbar Atas HP Tetap Menempel (Fixed Sticky Layout) */
     .header {
         position: fixed !important;
         top: 8px !important;
         left: 0 !important;
         right: 0 !important;
     }
+    .hero.dark-section { padding-top: 8rem !important; padding-bottom: 4rem !important; }
 
-    /* 2. MATIKAN TOTAL TITIK NAVIGASI KIRI */
-    .pwc-floating-indicator-nav { 
-        display: none !important; 
-    }
+    /* 4. Skala Tipografi Header Menyesuaikan Kepadatan Layar HP */
+    .section-header { margin-bottom: 2.5rem 0; padding-left: 1rem; }
+    .section-header h2 { font-size: 1.85rem !important; line-height: 1.3; }
+    .hero-title { font-size: 2.15rem !important; line-height: 1.2; }
+    .contact-info h2 { font-size: 1.85rem !important; }
+    
+    /* 5. Perbaikan Sempurna Elemen Infografis Chart Laporan PwC */
+    .pwc-chart-callout { padding: 1.5rem; }
+    .callout-num { font-size: 2.75rem !important; }
+    .chart-bars-title { font-size: 1.1rem; }
+    .pwc-bar-info { font-size: 0.85rem !important; }
+    
+    /* 6. Penyesuaian Komponen Kartu Use-Case & Katalog AI */
+    .uniform-grid { grid-template-columns: 1fr !important; gap: 1.5rem; }
+    .uniform-card { padding: 1.75rem; }
+    .ai-agents-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem; }
+    .agent-card { padding: 1.5rem 1rem; }
+    .agent-card h3 { font-size: 1.1rem; }
+    .agent-skills li { font-size: 0.8rem; }
 
-    /* 3. Reset Grid Operasional */
-    .hero-grid, .contact-wrapper, .pwc-chart-layout { 
-        grid-template-columns: 1fr !important; 
-        gap: 3rem !important; 
-    }
-    .hero-title { font-size: 2.5rem !important; }
-    .ai-agents-grid { grid-template-columns: repeat(2, 1fr); }
-    .uniform-grid { grid-template-columns: 1fr; }
-    .enterprise-card-highlighted { flex-direction: column; gap: 2rem; }
-    .enterprise-action-highlighted { min-width: 100%; }
+    /* 7. Perbaikan Capex Enterprise Board Card */
+    .enterprise-card-highlighted { padding: 1.75rem; flex-direction: column !important; gap: 1.5rem; }
+    .enterprise-features { grid-template-columns: 1fr !important; gap: 0.75rem; }
+    .enterprise-action-highlighted { min-width: 100%; padding: 1.5rem; }
+    .enterprise-info h3 { font-size: 1.5rem; }
 
-    .section-padding { padding: 3rem 0; }
-    .section-header h2 { font-size: 2rem; }
-    .form-row { grid-template-columns: 1fr; gap: 0; }
+    /* 8. Perbaikan Rantai Form Input Registrasi */
+    .contact-form-card { padding: 1.75rem; }
+    .form-row { grid-template-columns: 1fr !important; gap: 0 !important; }
     
     .pricing-tabs { flex-direction: column; }
-    .tab-btn { width: 100%; text-align: left; border-left: 3px solid transparent; border-bottom: none; }
-    .tab-btn.active { border-left-color: var(--color-brand-orange); }
+    .tab-btn { width: 100%; text-align: left; padding: 0.85rem 1rem; border-left: 3px solid transparent; border-bottom: none; }
+    .tab-btn.active { border-left-color: var(--color-brand-orange); background: var(--color-surface); }
 
-    /* Munculkan Tombol Hamburger HP */
+    /* Pengendali Tombol Hamburger HP */
     .nav-toggle {
         display: block !important;
         background: transparent;
         border: none;
         cursor: pointer;
-        padding: 10px;
+        padding: 8px;
         position: relative;
         z-index: 1010;
     }
@@ -595,14 +617,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
         height: 2px;
         background-color: #000000 !important;
         transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease !important;
-        transform-origin: center;
     }
-    
     .nav-toggle.active .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .nav-toggle.active .hamburger span:nth-child(2) { opacity: 0; transform: scale(0); }
     .nav-toggle.active .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* Rantai Dropdown Menu HP */
+    /* Dropdown Panel Menu HP */
     .nav-links {
         display: flex !important;
         position: absolute;
@@ -611,51 +631,29 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
         width: 100%;
         background-color: #FFFFFF !important;
         border-bottom: 3px solid var(--color-brand-orange) !important;
-        padding: 2rem !important;
+        padding: 1.5rem !important;
         flex-direction: column;
         align-items: flex-start;
-        gap: 1.5rem !important;
+        gap: 1.25rem !important;
         list-style: none;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
         z-index: 1009;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
-        transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-                    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-                    visibility 0.35s !important;
+        transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1), transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.35s !important;
     }
-    .nav-links.active {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0) !important;
-    }
-    .nav-links li { width: 100%; opacity: 1 !important; }
-    .nav-links a { 
-        display: block; 
-        width: 100%; 
-        padding: 0.5rem 0; 
-        font-size: 1.05rem !important; 
-        color: #2D2D2D !important; 
-        font-weight: 500; 
-        border-bottom: 1px solid #F0EDE9; 
-        text-decoration: none; 
-        transition: color 0.25s ease; 
-    }
-    .nav-links a:hover { color: var(--color-brand-orange) !important; }
-    .nav-links a.nav-cta { 
-        background-color: var(--color-brand-orange) !important; 
-        color: #FFFFFF !important; 
-        text-align: center; 
-        padding: 0.85rem !important; 
-        margin-top: 0.5rem; 
-        border-bottom: none !important; 
-        font-weight: 600; 
-    }
+    .nav-links.active { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; width: 100%; padding: 0.5rem 0; font-size: 1rem !important; color: #2D2D2D !important; border-bottom: 1px solid #F0EDE9; text-decoration: none; }
+    .nav-links a.nav-cta { background-color: var(--color-brand-orange) !important; color: #FFFFFF !important; text-align: center; padding: 0.75rem !important; border-bottom: none !important; margin-top: 0.25rem; }
 }
 
-/* C. HP SCREEN MINI */
+/* C. PENYESUAIAN LAYAR PORTRAIT SMARTPHONE KECIL (MAKSIMAL 480PX) */
 @media (max-width: 480px) {
-    .hero-title { font-size: 2rem !important; }
-    .ai-agents-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 1.75rem !important; }
+    .hero-desc { font-size: 0.95rem; }
+    .ai-agents-grid { grid-template-columns: 1fr !important; }
+    .hero-actions .btn { width: 100%; }
+    .hero-actions { gap: 0.75rem; }
 }
