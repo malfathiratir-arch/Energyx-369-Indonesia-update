@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60">
+  <!-- EnergyX Logo - White Version -->
+  <g transform="translate(10, 5)">
+    <!-- Lightning bolt icon -->
+    <path d="M 35 5 L 45 25 L 35 25 L 45 55 L 25 35 L 35 35 L 25 5 Z" fill="#FFFFFF"/>
+    <!-- Text -->
+    <text x="55" y="28" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">EnergyX</text>
+    <text x="55" y="48" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">369</text>
+  </g>
+</svg>

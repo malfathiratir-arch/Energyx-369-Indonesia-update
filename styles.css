@@ -1,0 +1,661 @@
+/* ==========================================================================
+   EnergyX 369 — Enterprise AI OS: PwC Editorial Research Layout System
+   Inspired by PwC Tech Effect & AI Agent Survey Design Framework
+   Fully Consolidated & Cleaned Production Style Architecture
+   ========================================================================== */
+
+:root {
+    /* PwC Iconic Corporate Palette */
+    --color-brand-orange: #D04A02;    /* Warna utama aksi / aksen korporat */
+    --color-brand-amber: #EB8C00;     /* Warna sekunder / highlight hangat */
+    --color-brand-gold: #F3BE00;      /* Tone pelengkap riset */
+    
+    /* Editorial Backgrounds & Surfaces */
+    --color-bg: #FFFFFF;              /* Latar utama putih bersih premium */
+    --color-bg-card: #FFFFFF;         /* Latar kartu bersih */
+    --color-surface: #F8F7F4;         /* Latar tint krem-abu sangat elegan khas cetak */
+    --color-surface-tint: #F2F2F2;    /* Aksen abu tipis struktural */
+    
+    /* Deep Corporate Charcoal */
+    --color-dark: #1C1C1C;            /* Arang pekat korporat */
+    --color-dark-surface: #2D2D2D;    /* Abu-arang untuk kontras visual */
+    --color-dark-border: #404040;     /* Border pada area gelap */
+    
+    /* Typography & Hierarchy */
+    --color-primary: #000000;         /* Judul hitam absolut tebal */
+    --color-text: #2D2D2D;            /* Teks utama sangat terbaca */
+    --color-text-muted: #5D5D5D;      /* Teks sekunder / metadata laporan */
+    
+    --color-accent: var(--color-brand-orange);
+    --color-cta: var(--color-brand-orange);
+    --color-cta-hover: #A33A01; 
+    
+    --color-border: #D2D2D2;          /* Garis pembatas tipis, tegas, modular */
+    
+    /* Premium Contrast Fonts */
+    --font-heading: 'Georgia', 'Times New Roman', serif; /* Elegan, tepercaya, editorial */
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif; /* Bersih, presisi untuk data */
+
+    /* PwC Style: Flat & Geometric */
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --border-flat: 0px;               /* Geometri siku tajam untuk wibawa korporasi */
+}
+
+/* ==========================================================================
+   1. RESET & BASE LAYOUT SYSTEM
+   ========================================================================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { 
+    font-family: var(--font-body); 
+    color: var(--color-text); 
+    background-color: var(--color-bg); 
+    line-height: 1.75; 
+    -webkit-font-smoothing: antialiased; 
+    overflow-x: hidden; 
+}
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; width: 100%; }
+
+/* Struktur Sections & Garis Tipis Riset Pembatas Bab */
+.section-padding { padding: 5rem 0; position: relative; }
+.section-padding::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    right: 2rem;
+    height: 1px;
+    background-color: #E5E2DC;
+}
+#contact::after, footer::after, .hero::after { display: none; }
+
+.section-bg { background-color: #FFFFFF !important; }
+.section-surface { 
+    background-color: #F8F7F4 !important; 
+    border-top: 1px solid #E5E2DC !important;
+    border-bottom: 1px solid #E5E2DC !important;
+}
+.section-bordered { border-top: 1px solid var(--color-border); }
+
+.section-header { text-align: left; max-width: 850px; margin: 0 0 3.5rem 0; border-left: 4px solid var(--color-brand-orange); padding-left: 1.5rem; }
+.section-header h2 { font-size: 2.75rem; font-weight: 400; font-family: var(--font-heading); margin-bottom: 1rem; color: var(--color-primary); letter-spacing: -0.01em; }
+.section-header p { color: var(--color-text-muted); font-size: 1.125rem; line-height: 1.6; }
+.section-eyebrow { 
+    display: block; 
+    font-size: 0.8125rem; 
+    font-weight: 700; 
+    letter-spacing: 0.1em; 
+    text-transform: uppercase; 
+    color: var(--color-brand-orange); 
+    margin-bottom: 0.75rem; 
+}
+
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height: 1.25; color: var(--color-primary); }
+
+/* Tombol Korporat Flat */
+.btn { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 0.875rem 1.75rem; 
+    font-family: var(--font-body); 
+    font-size: 0.875rem; 
+    font-weight: 600; 
+    border-radius: var(--border-flat); 
+    cursor: pointer; 
+    transition: all 0.2s ease; 
+    text-decoration: none; 
+    border: 1px solid transparent; 
+    letter-spacing: 0.02em;
+}
+.btn-lg { padding: 1.125rem 2.25rem; font-size: 1rem; }
+.btn-primary { background-color: var(--color-cta); color: #FFFFFF; }
+.btn-primary:hover { background-color: var(--color-cta-hover); }
+.btn-outline-light { background-color: transparent; color: var(--color-primary); border-color: var(--color-border); }
+.btn-outline-light:hover { border-color: var(--color-primary); background-color: var(--color-surface); }
+.btn-full { width: 100%; }
+
+/* ==========================================================================
+   2. HEADER LAYOUT FOR DESKTOP (DIEM DI ATAS, GA NGIKUT SCROLL)
+   ========================================================================== */
+.header { 
+    position: absolute !important; 
+    top: 8px !important; /* Pas di bawah progress bar oranye */
+    left: 0 !important; 
+    right: 0 !important; 
+    z-index: 1000 !important; 
+    background-color: #FFFFFF !important; 
+    border-bottom: 1px solid var(--color-border) !important; 
+}
+.nav { display: flex; justify-content: space-between; align-items: center; height: 72px; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; font-family: var(--font-body); font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em; }
+.nav-logo .logo-text { color: var(--color-primary) !important; font-weight: 900; }
+.nav-logo .logo-sub { color: var(--color-brand-orange) !important; }
+.nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+.nav-links a { color: var(--color-text); font-weight: 500; text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-family: var(--font-body); }
+.nav-links a:hover { color: var(--color-brand-orange); }
+.nav-links a.nav-cta { color: #FFFFFF !important; background-color: var(--color-brand-orange); padding: 0.5rem 1.25rem; font-size: 0.8125rem; }
+
+/* PwC Dynamic Solid Scroll Progress Strip */
+.scroll-progress-container {
+    position: fixed !important;
+    top: 0 !important; 
+    left: 0 !important;
+    width: 100% !important;
+    height: 8px !important; 
+    background-color: var(--color-surface-tint) !important;
+    z-index: 2200 !important; 
+}
+.scroll-progress-bar {
+    height: 100%;
+    background-color: var(--color-brand-orange) !important; 
+    width: 0%; 
+    transition: width 0.05s ease-out; 
+}
+
+/* ==========================================================================
+   3. PWC FLOATING VERTICAL OVERLAY INDICATOR NAV (LEFT-MIDDLE)
+   ========================================================================== */
+.pwc-floating-indicator-nav {
+    position: fixed;
+    left: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2005;
+    display: block;
+}
+.pwc-indicator-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0;
+    margin: 0;
+}
+.pwc-indicator-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+.pwc-ind-box {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #1C1C1C;
+    background-color: transparent;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+.pwc-ind-text {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1C1C1C;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+.pwc-indicator-item:hover .pwc-ind-text { opacity: 1; transform: translateX(0); }
+.pwc-indicator-item:hover .pwc-ind-box { border-color: var(--color-brand-orange); }
+
+.pwc-indicator-item.active .pwc-ind-box {
+    border-color: var(--color-brand-orange) !important;
+    background-color: transparent !important;
+}
+.pwc-indicator-item.active .pwc-ind-text {
+    color: var(--color-brand-orange) !important;
+    font-weight: 700;
+    opacity: 1;
+    transform: translateX(0);
+}
+.pwc-indicator-item.pillar-filled .pwc-ind-box {
+    background-color: var(--color-brand-orange) !important;
+    border-color: var(--color-brand-orange) !important;
+}
+
+/* ==========================================================================
+   4. HERO INTEGRATION LAYER
+   ========================================================================== */
+.hero.dark-section {
+    position: relative !important;
+    background-color: #0A0A0A !important; 
+    overflow: hidden !important;
+    padding-top: 10rem !important; 
+    padding-bottom: 8rem !important;
+}
+.hero-video-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+.hero-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.88) 35%, rgba(0, 0, 0, 0.45) 70%, rgba(0, 0, 0, 0.6)) !important;
+    z-index: 2 !important;
+}
+.hero-grid {
+    position: relative !important;
+    z-index: 3 !important;
+    display: grid !important;
+    grid-template-columns: 1.3fr 1fr !important; 
+    gap: 4.5rem !important;
+    align-items: start !important;
+}
+.hero-content::before {
+    content: '' !important;
+    display: block !important;
+    width: 60px !important;
+    height: 4px !important;
+    background-color: var(--color-brand-orange) !important;
+    margin-bottom: 2rem !important;
+}
+.hero-title {
+    font-family: var(--font-heading) !important;
+    font-size: 3.75rem !important; 
+    font-weight: 400 !important;
+    line-height: 1.15 !important;
+    color: #FFFFFF !important; 
+    margin-bottom: 2rem !important;
+    letter-spacing: -0.02em !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5) !important;
+}
+.accent-highlight { color: var(--color-brand-orange) !important; }
+.hero-desc {
+    font-family: var(--font-body) !important;
+    font-size: 1.125rem !important;
+    color: #E2E8F0 !important;
+    line-height: 1.75 !important;
+    margin-bottom: 2rem !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4) !important;
+}
+.hero-quote {
+    border-left: 3px solid var(--color-brand-orange) !important;
+    padding-left: 1.5rem !important;
+    color: #CBD5E1 !important;
+    font-family: var(--font-heading) !important;
+    font-size: 1.25rem !important;
+    font-style: italic !important;
+    margin-bottom: 2.5rem !important;
+}
+.hero-actions { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.hero-actions .btn-primary { background-color: var(--color-brand-orange) !important; border-color: var(--color-brand-orange) !important; color: #FFFFFF !important; }
+.hero-actions .btn-primary:hover { background-color: #B03F02 !important; border-color: #B03F02 !important; }
+.dark-section .btn-outline-light { color: #FFFFFF; border-color: rgba(255,255,255,0.4); }
+.dark-section .btn-outline-light:hover { background-color: rgba(255,255,255,0.1); border-color: #FFFFFF; }
+
+.hero-visual-bright {
+    background-color: rgba(255, 255, 255, 0.07) !important; 
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-top: 6px solid var(--color-brand-orange) !important; 
+    padding: 3rem 2.5rem !important;
+    border-radius: 0px !important;
+    color: #FFFFFF !important;
+    margin-top: 0px !important;
+}
+.hero-visual-bright .hero-visual-header { border-bottom: none !important; margin-bottom: 1.5rem !important; padding-bottom: 0 !important; display: block !important; }
+.hero-visual-bright .hero-visual-title { font-family: var(--font-heading) !important; font-size: 1.75rem !important; color: #FFFFFF !important; font-weight: 400 !important; }
+
+.hero-visual-bright .hero-visual-input, 
+.hero-visual-bright .hero-visual-output {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 1.25rem !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+    color: #F1F5F9 !important;
+    display: list-item !important;
+    margin-left: 1.5rem !important;
+    list-style-type: disc !important; 
+}
+
+/* ==========================================================================
+   5. INFOGRAFIS GRAPH BAR CHART SYSTEM
+   ========================================================================== */
+.pwc-chart-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; margin-top: 2rem; align-items: start; }
+.pwc-chart-callout { background: var(--color-surface); padding: 2.5rem; border-top: 4px solid var(--color-brand-orange); }
+.callout-badge { display: inline-block; padding: 0.25rem 0.5rem; background: #000000; color: #FFFFFF; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; }
+.callout-title { font-size: 1.75rem; font-weight: 400; margin-bottom: 1rem; }
+.callout-desc { color: var(--color-text-muted); font-size: 0.9375rem; margin-bottom: 2rem; }
+.callout-stat { border-top: 1px solid var(--color-border); padding-top: 1.5rem; }
+.callout-num { font-size: 3.5rem; font-weight: 700; color: var(--color-brand-orange); display: block; line-height: 1; margin-bottom: 0.5rem; }
+.callout-label { font-size: 0.875rem; color: var(--color-text); font-weight: 600; }
+
+.pwc-chart-bars { display: flex; flex-direction: column; gap: 1.75rem; }
+.chart-bars-title { font-size: 1.25rem; font-weight: 600; font-family: var(--font-body); margin-bottom: 0.5rem; }
+.pwc-bar-row { display: flex; flex-direction: column; gap: 0.5rem; }
+.pwc-bar-info { display: flex; justify-content: space-between; font-size: 0.9375rem; font-weight: 500; }
+.bar-label { color: var(--color-text); }
+.bar-percentage { font-weight: 700; color: var(--color-brand-orange); }
+.pwc-bar-track { height: 12px; background: var(--color-surface-tint); width: 100%; position: relative; }
+.pwc-bar-fill { height: 100%; width: 0%; transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1); }
+.fill-orange { background: var(--color-brand-orange); }
+.fill-amber { background: var(--color-brand-amber); }
+.fill-gold { background: var(--color-brand-gold); }
+.fill-dark { background: var(--color-dark); }
+.chart-source-text { font-size: 0.75rem; color: var(--color-text-muted); font-style: italic; margin-top: 1rem; }
+
+.demo-video-card { max-width: 900px; margin: 0 auto; border: 1px solid var(--color-border); overflow: hidden; }
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; background-color: #000000; }
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* ==========================================================================
+   6. UNIFORM CARDS & AI EMPLOYEES GRID
+   ========================================================================== */
+.uniform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.uniform-card { 
+    background: var(--color-bg-card); 
+    border: 1px solid var(--color-border); 
+    padding: 2.5rem; 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    border-top: 4px solid var(--color-primary); 
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-top-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+.uniform-card:hover { border-top-color: var(--color-brand-orange); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05) !important; }
+.uniform-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-family: var(--font-body); }
+.tag-scm { color: #8B5E00; }
+.tag-fin { color: #1A3A6B; }
+.tag-crm { color: #A32020; }
+.tag-hr { color: #046644; }
+
+.uniform-card h3 { font-size: 1.625rem; margin-bottom: 1rem; }
+.case-highlight { font-size: 3rem; font-weight: 700; color: var(--color-brand-orange); font-family: var(--font-body); line-height: 1; margin-bottom: 0.25rem; }
+.case-highlight-label { font-size: 0.8125rem; color: var(--color-text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+.case-challenge { font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.6; border-bottom: 1px dashed var(--color-border); padding-bottom: 1rem; }
+.case-challenge strong { color: var(--color-primary); }
+.case-solution { font-size: 0.9375rem; color: var(--color-text); line-height: 1.6; }
+.case-solution strong { color: var(--color-brand-orange); }
+
+.ai-agents-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.agent-card { 
+    background: var(--color-bg-card); 
+    border: 1px solid var(--color-border); 
+    padding: 2rem 1.5rem; 
+    border-top: 3px solid var(--color-border);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-top-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+.agent-card:hover { border-top-color: var(--color-brand-orange); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05) !important; }
+.agent-header { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-surface-tint); }
+.agent-avatar { font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #FFFFFF; padding: 0.25rem 0.75rem; }
+.fin-avatar { background: #4A607A; }
+.scm-avatar { background: #C49A45; }
+.rev-avatar { background: #A85545; }
+.hr-avatar { background: #458B6B; }
+.agent-card h3 { font-size: 1.375rem; color: var(--color-primary); }
+.agent-skills { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+.agent-skills li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.4; }
+.agent-skills svg { color: var(--color-brand-orange); margin-top: 3px; flex-shrink: 0; }
+
+/* ==========================================================================
+   7. PRICING & MATRIX LAYOUT TABLES
+   ========================================================================== */
+.pricing-tabs { display: flex; justify-content: flex-start; gap: 0px; margin-bottom: 2.5rem; border-bottom: 2px solid var(--color-border); }
+.tab-btn { padding: 1rem 1.5rem; font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; color: var(--color-text-muted); background: transparent; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.2s; }
+.tab-btn:hover { color: var(--color-primary); }
+.tab-btn.active { color: var(--color-brand-orange); border-bottom-color: var(--color-brand-orange); }
+
+.table-responsive { width: 100%; overflow-x: auto; margin-bottom: 2rem; }
+.enterprise-table { width: 100%; border-collapse: collapse; background: var(--color-bg-card); border: 1px solid var(--color-border); font-size: 0.9375rem; }
+.enterprise-table th, .enterprise-table td { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--color-border); border-right: 1px solid var(--color-border); }
+.enterprise-table th { background: var(--color-surface); color: var(--color-primary); font-family: var(--font-body); font-weight: 700; text-align: center; }
+.enterprise-table td { text-align: center; color: var(--color-text); }
+.enterprise-table th:last-child, .enterprise-table td:last-child { border-right: none; }
+.enterprise-table td.text-left, .enterprise-table th.text-left { text-align: left; font-weight: 500; }
+
+.enterprise-table th.highlight-col, .enterprise-table td.highlight-col { background: rgba(208, 74, 2, 0.02); }
+.enterprise-table thead th.highlight-col { border-top: 4px solid var(--color-brand-orange); }
+.plan-badge { display: inline-block; background: var(--color-brand-orange); color: #FFFFFF; padding: 0.25rem 0.75rem; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.plan-name { font-size: 1.375rem; color: var(--color-primary); }
+.plan-price { font-family: var(--font-body); font-size: 1.75rem; font-weight: 700; color: var(--color-brand-orange); margin: 0.25rem 0; }
+.plan-price .period { font-size: 0.875rem; color: var(--color-text-muted); font-weight: 400; }
+.plan-billed { font-size: 0.75rem; color: var(--color-text-muted); }
+.compact-table th, .compact-table td { padding: 1rem 1.5rem; }
+
+.add-ons-wrapper { max-width: 800px; margin: 0 auto; }
+.add-ons-wrapper-title { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.add-ons-wrapper-note { font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 1.5rem; }
+
+.enterprise-card-highlighted { background: #1C1C1C; border: 1px solid #333333; border-top: 6px solid var(--color-brand-amber); padding: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
+.enterprise-info h3 { font-size: 2rem; color: #FFFFFF; margin-bottom: 0.75rem; }
+.enterprise-info p { color: #AAAAAA; font-size: 1rem; margin-bottom: 2rem; }
+.enterprise-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.enterprise-features li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #DDDDDD; }
+.enterprise-features svg { color: var(--color-brand-amber); flex-shrink: 0; }
+.enterprise-action-highlighted { background: #2D2D2D; border: 1px solid #444444; padding: 2.5rem; text-align: center; min-width: 320px; }
+.enterprise-price-label { font-size: 0.75rem; color: #BBBBBB; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+.enterprise-action-highlighted .price-amount { font-size: 2.5rem; font-family: var(--font-body); font-weight: 700; color: #FFFFFF; block-size: auto; margin: 0.5rem 0; }
+.enterprise-price-sublabel { font-size: 0.8125rem; color: #999999; display: block; margin-bottom: 1.5rem; line-height: 1.4; }
+
+@keyframes pwcTabFadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.pricing-panel { display: none !important; }
+.pricing-panel.active { display: block !important; animation: pwcTabFadeIn 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+
+.tooltip-trigger { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: #E0E0E0; color: var(--color-text-muted); font-size: 0.6875rem; font-weight: 700; margin-left: 6px; cursor: help; position: relative; }
+.tooltip-trigger:hover { background: var(--color-brand-orange); color: #FFFFFF; }
+.tooltip-trigger::after { content: attr(aria-label); position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%); background: #000000; color: #FFFFFF; padding: 0.75rem; font-size: 0.75rem; line-height: 1.4; width: 250px; z-index: 9999; pointer-events: none; opacity: 0; visibility: hidden; transition: all 0.2s; }
+.tooltip-trigger:hover::after { opacity: 1; visibility: visible; }
+
+/* ==========================================================================
+   8. FORMULIR REGISTRASI LEAD & FOOTER
+   ========================================================================== */
+.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.contact-info h2 { font-size: 2.75rem; margin-bottom: 1.5rem; }
+.contact-info p { font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7; }
+.contact-form-card { background: var(--color-surface); border: 1px solid var(--color-border); padding: 3rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+.form-group label { font-size: 0.875rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.02em; }
+.form-group input, .form-group select, .form-group textarea { padding: 0.875rem 1rem; border: 1px solid var(--color-border); font-family: var(--font-body); font-size: 1rem; background: #FFFFFF; color: var(--color-primary); }
+.form-group input:focus, .form-group select:focus { border-color: var(--color-brand-orange); outline: none; }
+
+.privacy-notice { margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1rem; background-color: #FFFFFF; padding: 1.25rem; border: 1px solid var(--color-border); border-left: 4px solid #4A607A; }
+.privacy-notice svg { color: #4A607A; flex-shrink: 0; }
+.privacy-notice-title { display: block; font-size: 0.8125rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+.privacy-notice-text { font-size: 0.8125rem; color: var(--color-text-muted); line-height: 1.5; }
+
+.footer { padding: 4rem 0 3rem 0; border-top: 1px solid #333333; background-color: #000000; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid #222222; margin-bottom: 2rem; }
+.footer h4 { font-family: var(--font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #FFFFFF; font-size: 0.875rem; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+.footer-links a { color: #AAAAAA; text-decoration: none; font-size: 0.875rem; transition: color 0.2s; font-family: var(--font-body); }
+.footer-links a:hover { color: var(--color-brand-orange); }
+
+/* ==========================================================================
+   9. SCROLL REVEAL TIMELINE KINETIC PACK
+   ========================================================================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes pwcFadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.hero-content::before, .hero-title, .hero-desc, .hero-quote, .hero-actions {
+    opacity: 0; 
+    animation: pwcFadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.hero-title { animation-delay: 0.15s; }
+.hero-desc  { animation-delay: 0.3s; }
+.hero-quote { animation-delay: 0.45s; }
+.hero-actions { animation-delay: 0.6s; }
+.hero-visual-bright {
+    opacity: 0;
+    animation: pwcFadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.4s;
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES: RESPONSIVITAS TOTAL (SINKRONISASI 992PX)
+   ========================================================================== */
+
+/* A. LOGIKA UTAMA PC/LAPTOP: Navbar Diam Di Atas, Menu Titik Kiri Mengambang */
+@media (min-width: 993px) {
+    .pwc-floating-indicator-nav {
+        display: block !important; /* Aktifkan Titik Samping */
+    }
+    .nav-toggle {
+        display: none !important; /* Hamburger Mati */
+    }
+    .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        position: relative !important;
+        top: 0 !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        width: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        border-bottom: none !important;
+    }
+    .nav-links a { border-bottom: none !important; }
+}
+
+/* B. LOGIKA UTAMA HP/TABLET: Navbar Kunci Di Atas (Fixed), Menu Titik Mati */
+@media (max-width: 992px) {
+    /* 1. PAKSA NAVBAR HP SELALU MENEMPEL & IKUT SKROL (FIXED) */
+    .header {
+        position: fixed !important;
+        top: 8px !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    /* 2. MATIKAN TOTAL TITIK NAVIGASI KIRI */
+    .pwc-floating-indicator-nav { 
+        display: none !important; 
+    }
+
+    /* 3. Reset Grid Operasional */
+    .hero-grid, .contact-wrapper, .pwc-chart-layout { 
+        grid-template-columns: 1fr !important; 
+        gap: 3rem !important; 
+    }
+    .hero-title { font-size: 2.5rem !important; }
+    .ai-agents-grid { grid-template-columns: repeat(2, 1fr); }
+    .uniform-grid { grid-template-columns: 1fr; }
+    .enterprise-card-highlighted { flex-direction: column; gap: 2rem; }
+    .enterprise-action-highlighted { min-width: 100%; }
+
+    .section-padding { padding: 3rem 0; }
+    .section-header h2 { font-size: 2rem; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    
+    .pricing-tabs { flex-direction: column; }
+    .tab-btn { width: 100%; text-align: left; border-left: 3px solid transparent; border-bottom: none; }
+    .tab-btn.active { border-left-color: var(--color-brand-orange); }
+
+    /* Munculkan Tombol Hamburger HP */
+    .nav-toggle {
+        display: block !important;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: relative;
+        z-index: 1010;
+    }
+    .nav-toggle .hamburger { display: flex; flex-direction: column; gap: 6px; width: 24px; }
+    .nav-toggle .hamburger span {
+        display: block; 
+        width: 24px; 
+        height: 2px;
+        background-color: #000000 !important;
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease !important;
+        transform-origin: center;
+    }
+    
+    .nav-toggle.active .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle.active .hamburger span:nth-child(2) { opacity: 0; transform: scale(0); }
+    .nav-toggle.active .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Rantai Dropdown Menu HP */
+    .nav-links {
+        display: flex !important;
+        position: absolute;
+        top: 100%; 
+        left: 0; 
+        width: 100%;
+        background-color: #FFFFFF !important;
+        border-bottom: 3px solid var(--color-brand-orange) !important;
+        padding: 2rem !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem !important;
+        list-style: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+        z-index: 1009;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                    visibility 0.35s !important;
+    }
+    .nav-links.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+    .nav-links li { width: 100%; opacity: 1 !important; }
+    .nav-links a { 
+        display: block; 
+        width: 100%; 
+        padding: 0.5rem 0; 
+        font-size: 1.05rem !important; 
+        color: #2D2D2D !important; 
+        font-weight: 500; 
+        border-bottom: 1px solid #F0EDE9; 
+        text-decoration: none; 
+        transition: color 0.25s ease; 
+    }
+    .nav-links a:hover { color: var(--color-brand-orange) !important; }
+    .nav-links a.nav-cta { 
+        background-color: var(--color-brand-orange) !important; 
+        color: #FFFFFF !important; 
+        text-align: center; 
+        padding: 0.85rem !important; 
+        margin-top: 0.5rem; 
+        border-bottom: none !important; 
+        font-weight: 600; 
+    }
+}
+
+/* C. HP SCREEN MINI */
+@media (max-width: 480px) {
+    .hero-title { font-size: 2rem !important; }
+    .ai-agents-grid { grid-template-columns: 1fr; }
+}

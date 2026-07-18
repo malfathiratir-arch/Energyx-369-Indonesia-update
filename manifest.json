@@ -1,0 +1,17 @@
+{
+  "name": "EnergyX 369 — Enterprise AI Operating System",
+  "short_name": "EnergyX",
+  "description": "Platform AI terintegrasi dengan mesin ERP kelas enterprise",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#0D1A30",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/EnrgyX-logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

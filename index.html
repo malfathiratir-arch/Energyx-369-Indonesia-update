@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnergyX 369 — Enterprise AI Operating System</title>
+    <meta name="description" content="Gantikan pekerjaan administratif manual dengan AI Employees. EnergyX 369 adalah platform AI yang terintegrasi penuh dengan mesin ERP kelas enterprise.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.energyx369.cloud/">
+    <meta property="og:title" content="EnergyX 369 — Enterprise AI Operating System">
+    <meta property="og:description" content="Platform AI terintegrasi dengan mesin ERP kelas enterprise. Pekerjakan Karyawan AI pertama Anda dalam hitungan hari.">
+    <meta property="og:image" content="https://www.energyx369.cloud/assets/logo-white.svg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.energyx369.cloud/">
+    <meta property="twitter:title" content="EnergyX 369 — Enterprise AI Operating System">
+    <meta property="twitter:description" content="Platform AI terintegrasi dengan mesin ERP kelas enterprise. Pekerjakan Karyawan AI pertama Anda dalam hitungan hari.">
+    <meta property="twitter:image" content="https://www.energyx369.cloud/assets/logo-white.svg">
+
+    <link rel="canonical" href="https://www.energyx369.cloud/">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PT. EnergyX 369 Indonesia",
+      "url": "https://www.energyx369.cloud",
+      "logo": "https://www.energyx369.cloud/assets/logo-white.svg",
+      "description": "Platform AI terintegrasi dengan mesin ERP kelas enterprise",
+      "email": "info@energyx.co.id",
+      "telephone": "+62 852-8558-6496",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID"
+      },
+      "sameAs": [
+        "https://www.energyx369.cloud"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-852-8558-6496",
+        "contactType": "sales",
+        "areaServed": "ID",
+        "availableLanguage": "Indonesian"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "EnergyX 369",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Enterprise AI Operating System terintegrasi dengan mesin ERP kelas enterprise",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "price": "3000000",
+          "priceCurrency": "IDR",
+          "description": "Layanan Cloud Terkelola (SaaS) - Starter"
+        },
+        {
+          "@type": "Offer",
+          "name": "Business",
+          "price": "6000000",
+          "priceCurrency": "IDR",
+          "description": "Layanan Cloud Terkelola (SaaS) - Business"
+        },
+        {
+          "@type": "Offer",
+          "name": "Corporate",
+          "price": "9000000",
+          "priceCurrency": "IDR",
+          "description": "Layanan Cloud Terkelola (SaaS) - Corporate"
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise On-Premise",
+          "price": "369000000",
+          "priceCurrency": "IDR",
+          "description": "Lisensi Permanen (Enterprise) - On-Premise"
+        }
+      }
+    }
+    </script>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="EnergyX 369">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1C1C1C">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/EnrgyX-logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/EnrgyX-logo.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/EnrgyX-logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Georgia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=6.5">
+</head>
+<body>
+    <svg style="display: none;">
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </symbol>
+        <symbol id="icon-play" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+        </symbol>
+    </svg>
+
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollIndicator"></div>
+    </div>
+
+    <aside class="pwc-floating-indicator-nav">
+        <ul class="pwc-indicator-list">
+            <li class="pwc-indicator-item active" data-target="hero" data-pillar="true">
+                <span class="pwc-ind-box"></span>
+                <span class="pwc-ind-text">Introduction</span>
+            </li>
+            <li class="pwc-indicator-item" data-target="survey-insights">
+                <span class="pwc-ind-box"></span>
+                <span class="pwc-ind-text">Dampak Riil Adopsi AI</span>
+            </li>
+            <li class="pwc-indicator-item" data-target="demo" data-pillar="true">
+                <span class="pwc-ind-box"></span>
+                <span class="pwc-ind-text">Demo Operasional</span>
+            </li>
+            <li class="pwc-indicator-item" data-target="cases">
+                <span class="pwc-ind-box"></span>
+                <span class="pwc-ind-text">Use-case Nyata</span>
+            </li>
+            <li class="pwc-indicator-item" data-target="ai-employee" data-pillar="true">
+                <span class="pwc-ind-box"></span>
+                <span class="pwc-ind-text">Keahlian Agen AI</span>
+            </li>
+            <li class="pwc-indicator-item" data-target="investasi">
+                <span class="pwc-ind-box"></span>
+                <span class="pwc-ind-text">Investasi</span>
+            </li>
+            <li class="pwc-indicator-item" data-target="contact">
+                <span class="pwc-ind-box"></span>
+                <span class="pwc-ind-text">Jadwalkan Asesmen</span>
+            </li>
+        </ul>
+    </aside>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="#hero" class="nav-logo" aria-label="Beranda EnergyX">
+                <span class="logo-text">EnergyX <span class="logo-sub">369</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="hamburger" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#demo">Demo Operasional</a></li>
+                <li><a href="#cases">Use-case Nyata</a></li>
+                <li><a href="#ai-employee">Keahlian Agen AI</a></li>
+                <li><a href="#investasi">Investasi</a></li>
+                <li><a href="#contact" class="btn btn-primary nav-cta">Jadwalkan Asesmen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero dark-section" id="hero">
+            <video autoplay loop muted playsinline class="hero-video-bg">
+                <source src="assets/EnergyX___Demo_Operasional.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Pekerjakan Karyawan AI pertama Anda dalam hitungan hari. <span class="accent-highlight">Skalakan secara bertahap.</span>
+                    </h1>
+                    <p class="hero-desc">
+                        EnergyX 369 mengintegrasikan mesin ERP dengan Agen AI yang dapat merampingkan tugas repetitif—mulai dari ekstraksi data <em>invoice</em> hingga penyusunan draf pelaporan—secara aman dan terpantau.
+                    </p>
+                    <div class="hero-quote">
+                        "Setiap jam yang dihabiskan untuk pekerjaan administratif adalah jam yang tidak digunakan untuk menciptakan nilai bagi pelanggan."
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#demo" class="btn btn-lg btn-primary">Lihat Cara Kerja Sistem</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Jadwalkan Asesmen</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual hero-visual-bright">
+                    <div class="hero-visual-header">
+                        <h3 class="hero-visual-title">Summary</h3>
+                    </div>
+                    <div class="hero-visual-input">
+                        Integrasi cerdas antara modul inti ERP kelas enterprise dengan sistem multi-agent untuk merampingkan waktu kerja administratif.
+                    </div>
+                    <div class="hero-visual-output">
+                        Otomatisasi penuh alur kerja repetitif mulai dari ekstraksi data invoice masuk (OCR) hingga validasi catatan mutasi perbankan.
+                    </div>
+                    <div class="hero-visual-input">
+                        Penerapan sistem kendali *Human-in-the-loop* untuk menjamin akurasi mutlak dan keamanan hak akses data finansial.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-bg scroll-reveal" id="survey-insights">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">PwC Global & Enterprise Insight</span>
+                    <h2>Dampak Riil Adopsi Karyawan Digital AI</h2>
+                    <p>Bagaimana perusahaan kelas enterprise mengukur nilai nyata dari implementasi sistem multi-agent di ekosistem operasional mereka.</p>
+                </div>
+
+                <div class="pwc-chart-layout">
+                    <div class="pwc-chart-callout">
+                        <div class="callout-badge">Tren Utama 2026</div>
+                        <h3 class="callout-title">AI Agen Bukan Lagi Masa Depan — Mereka Sudah Bekerja.</h3>
+                        <p class="callout-desc">Berdasarkan data adopsi global, efisiensi terbesar dicapai ketika agen AI diintegrasikan langsung dengan basis data inti ERP untuk mengambil keputusan taktis tanpa jeda birokrasi.</p>
+                        <div class="callout-stat">
+                            <span class="callout-num">73%</span>
+                            <span class="callout-label">Eksekutif setuju AI Agen memberikan keunggulan kompetitif mutlak.</span>
+                        </div>
+                    </div>
+
+                    <div class="pwc-chart-bars">
+                        <h4 class="chart-bars-title">Metrik Nilai Terukur yang Dihasilkan:</h4>
+                        
+                        <div class="pwc-bar-row">
+                            <div class="pwc-bar-info">
+                                <span class="bar-label">Peningkatan Produktivitas Tim Kontrol Keuangan</span>
+                                <span class="bar-percentage">66%</span>
+                            </div>
+                            <div class="pwc-bar-track">
+                                <div class="pwc-bar-fill fill-orange" data-size="66"></div>
+                            </div>
+                        </div>
+
+                        <div class="pwc-bar-row">
+                            <div class="pwc-bar-info">
+                                <span class="bar-label">Penghematan Biaya Administrasi & Vendor Procurement</span>
+                                <span class="bar-percentage">57%</span>
+                            </div>
+                            <div class="pwc-bar-track">
+                                <div class="pwc-bar-fill fill-amber" data-size="57"></div>
+                            </div>
+                        </div>
+
+                        <div class="pwc-bar-row">
+                            <div class="pwc-bar-info">
+                                <span class="bar-label">Akselerasi Pengambilan Keputusan Strategis (Data Analysis)</span>
+                                <span class="bar-percentage">55%</span>
+                            </div>
+                            <div class="pwc-bar-track">
+                                <div class="pwc-bar-fill fill-gold" data-size="55"></div>
+                            </div>
+                        </div>
+
+                        <div class="pwc-bar-row">
+                            <div class="pwc-bar-info">
+                                <span class="bar-label">Optimasi Pengalaman Transaksi Pelanggan (CRM)</span>
+                                <span class="bar-percentage">54%</span>
+                            </div>
+                            <div class="pwc-bar-track">
+                                <div class="pwc-bar-fill fill-dark" data-size="54"></div>
+                            </div>
+                        </div>
+                        
+                        <span class="chart-source-text">Sumber: Olahan Data Kesiapan AI & Survey Operasional Perusahaan B2B 2026</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-bg scroll-reveal" id="demo">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">DEMO OPERASIONAL</span>
+                    <h2>Lihat Platform Bekerja</h2>
+                    <p>Saksikan bagaimana Agen AI mengeksekusi instruksi alur kerja bisnis.</p>
+                </div>
+                <div class="demo-video-card">
+                   <div class="video-container">
+    <iframe 
+        src="https://www.youtube.com/embed/is93cRmo3DI" 
+        title="Demonstrasi AI EnergyX" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+    </iframe>
+</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-surface scroll-reveal" id="cases">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">USE-CASE DUNIA NYATA</span>
+                    <h2>Transformasi Lintas Departemen</h2>
+                    <p>Kami secara aktif mengotomatisasi proses bisnis yang membebani tim di berbagai sektor industri.</p>
+                </div>
+
+                <div class="uniform-grid">
+                    <div class="uniform-card">
+                        <span class="uniform-tag tag-scm">SCM / RITEL F&B</span>
+                        <h3>Efisiensi Arus Kas Ritel Makanan</h3>
+                        <div class="case-highlight">-35%</div>
+                        <div class="case-highlight-label">Pengurangan Food Waste</div>
+                        <div class="case-challenge"><strong>Tantangan:</strong> Pembelian berlebih memicu limbah bahan baku segar. Kekurangan stok menghilangkan pendapatan harian.</div>
+                        <div class="case-solution">✅ AI analisis POS harian → menyusun otomatis draf Purchase Order. Arus kas aman, <strong>limbah bahan baku turun 35%</strong>.</div>
+                    </div>
+
+                    <div class="uniform-card">
+                        <span class="uniform-tag tag-fin">FINANCE / HOLDING COMPANY</span>
+                        <h3>Konsolidasi Finansial Multi-Entitas</h3>
+                        <div class="case-highlight">86%</div>
+                        <div class="case-highlight-label">Lebih Cepat Tutup Buku</div>
+                        <div class="case-challenge"><strong>Tantangan:</strong> Holding menghabiskan hingga <strong>14 hari kerja</strong> per bulan untuk konsolidasi laporan keuangan antar-perusahaan.</div>
+                        <div class="case-solution">✅ Agen AI Finance merekonsiliasi transaksi masuk setiap malam. <strong>Tutup buku 2 hari kerja</strong>. Tanpa lembur tim akuntansi.</div>
+                    </div>
+
+                    <div class="uniform-card">
+                        <span class="uniform-tag tag-crm">CRM / DISTRIBUTOR B2B</span>
+                        <h3>Akselerasi Siklus Penjualan</h3>
+                        <div class="case-highlight">3x</div>
+                        <div class="case-highlight-label">Lebih Cepat Penawaran</div>
+                        <div class="case-challenge"><strong>Tantangan:</strong> Team Sales kehilangan deal karena lambatnya persetujuan diskon berjenjang dan penyusunan draf dokumen penawaran.</div>
+                        <div class="case-solution">✅ Agen CRM otomatis rantai approval + merakit Quotation dalam hitungan menit. <strong>Win rate meningkat signifikan</strong>.</div>
+                    </div>
+
+                    <div class="uniform-card">
+                        <span class="uniform-tag tag-hr">HRMS / MANUFAKTUR</span>
+                        <h3>Tata Kelola Gaji Skala Besar</h3>
+                        <div class="case-highlight">92%</div>
+                        <div class="case-highlight-label">Lebih Cepat Payroll</div>
+                        <div class="case-challenge"><strong>Tantangan:</strong> Ribuan buruh shift mengalami bottleneck administratif: rekap jam lembur, PPh 21 TER, BPJS memakan <strong>5 hari kerja</strong>.</div>
+                        <div class="case-solution">✅ Absensi geolokasi otomatis → proses payroll selesai dan disetujui dalam <strong>4 jam operasional</strong>. Dari 5 hari jadi 4 jam.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-surface section-bordered scroll-reveal" id="ai-employee">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">KEAHLIAN AGEN AI</span>
+                    <h2>Katalog Keahlian Agen AI Siap Pakai</h2>
+                    <p>Sistem kami dapat difokuskan pada departemen tertentu yang paling membutuhkan otomatisasi, di atas fondasi data yang seragam.</p>
+                </div>
+
+                <div class="ai-agents-grid">
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar fin-avatar">Fin</div>
+                            <h3>Financial Control</h3>
+                        </div>
+                        <ul class="agent-skills">
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Ekstraksi data tagihan (OCR) & validasi</li>
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Identifikasi otomatis mutasi bank</li>
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Konsolidasi laporan multi-entitas</li>
+                        </ul>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar scm-avatar">Logi</div>
+                            <h3>Supply Chain</h3>
+                        </div>
+                        <ul class="agent-skills">
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Prediksi tren pergerakan stok harian</li>
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Menyusun draf dokumen Purchase Order</li>
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Analisis perbandingan harga vendor</li>
+                        </ul>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar rev-avatar">Rev</div>
+                            <h3>Sales & CRM</h3>
+                        </div>
+                        <ul class="agent-skills">
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Otomatisasi draf dokumen Quotation</li>
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Pemantauan status pipeline prospek</li>
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Eskalasi persetujuan diskon penjualan</li>
+                        </ul>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar hr-avatar">Tal</div>
+                            <h3>Human Capital</h3>
+                        </div>
+                        <ul class="agent-skills">
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Rekapitulasi absensi & jam lembur</li>
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Asisten FAQ internal untuk karyawan</li>
+                            <li><svg width="16" height="16"><use href="#icon-check"></use></svg> Pemilahan awal (Screening) CV</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-bg section-bordered scroll-reveal" id="investasi">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">INVESTASI</span>
+                    <h2>Skema Harga yang Transparan</h2>
+                    <p>Tanpa biaya lisensi per pengguna dan tanpa biaya terselubung lainnya.</p>
+                </div>
+
+                <div class="pricing-tabs">
+                    <button type="button" class="tab-btn active" data-tab="saas">Layanan Cloud Terkelola (SaaS)</button>
+                    <button type="button" class="tab-btn" data-tab="enterprise">Lisensi Permanen (Enterprise)</button>
+                    <button type="button" class="tab-btn" data-tab="addons">Layanan Tambahan (Add-ons)</button>
+                </div>
+
+                <div id="tab-saas" class="pricing-panel active">
+                    <div class="table-responsive">
+                        <table class="enterprise-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Komponen Layanan</th>
+                                    <th>
+                                        <span class="plan-name">Starter</span><br>
+                                        <span class="plan-price">Rp 3 Jt<span class="period">/bulan</span></span><br>
+                                        <span class="plan-billed">Promo: <span style="text-decoration: line-through; color: #999;">Rp 36 Jt</span> Rp 30 Jt/tahun</span>
+                                    </th>
+                                    <th>
+                                        <span class="plan-name">Business</span><br>
+                                        <span class="plan-price">Rp 6 Jt<span class="period">/bulan</span></span><br>
+                                        <span class="plan-billed">Promo: <span style="text-decoration: line-through; color: #999;">Rp 72 Jt</span> Rp 60 Jt/tahun</span>
+                                    </th>
+                                    <th class="highlight-col">
+                                        <span class="plan-badge">⭐ Paling Ideal</span><br>
+                                        <span class="plan-name">Corporate</span><br>
+                                        <span class="plan-price">Rp 9 Jt<span class="period">/bulan</span></span><br>
+                                        <span class="plan-billed" style="color:var(--color-brand-orange)">Promo: <span style="text-decoration: line-through; color: #999;">Rp 100 Jt</span> Rp 90 Jt/tahun</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Core Platform (ERP/CRM/SCM/HRMS)?</td>
+                                    <td>1 Pilihan Core Platform</td>
+                                    <td>2 Pilihan Core Platform</td>
+                                    <td class="highlight-col">Seluruh Core Platform</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Keahlian AI Agen</td>
+                                    <td>3 Keahlian Agen AI</td>
+                                    <td>6 Keahlian AI</td>
+                                    <td class="highlight-col">9 Keahlian Agen AI</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Kuota Token AI?</td>
+                                    <td>3 Juta Token / bln</td>
+                                    <td>6 Juta Token / bln</td>
+                                    <td class="highlight-col">9 Juta Token / bln</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pelatihan Online</td>
+                                    <td>1 Sesi @3 Jam</td>
+                                    <td>2 Sesi @3 Jam</td>
+                                    <td class="highlight-col">3 Sesi @3 Jam</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Konsultasi Online</td>
+                                    <td>3 Jam</td>
+                                    <td>6 Jam</td>
+                                    <td class="highlight-col">9 Jam</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dukungan Teknis (SLA)</td>
+                                    <td>Standar Dukungan Jam Kerja</td>
+                                    <td>Standar Dukungan Jam Kerja</td>
+                                    <td class="highlight-col">Respons Insiden Kritis &lt; 3 Jam</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="#contact" class="btn btn-outline-light btn-full">Pilih Starter</a></td>
+                                    <td><a href="#contact" class="btn btn-outline-light btn-full">Pilih Business</a></td>
+                                    <td class="highlight-col"><a href="#contact" class="btn btn-primary btn-full">Pilih Corporate</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="tab-enterprise" class="pricing-panel">
+                    <div class="enterprise-card-highlighted">
+                        <div class="enterprise-info">
+                            <span class="plan-badge" style="background:var(--color-brand-amber)">LISENSI PERMANEN (CAPEX)</span>
+                            <h3 style="color:#FFFFFF;">Enterprise Custom Architecture</h3>
+                            <p style="color:#AAAAAA; margin-bottom: 1.5rem;">Hak kepemilikan atas arsitektur sistem pada pusat data internal (On-Premise) perusahaan Anda sendiri dengan isolasi data tingkat tinggi.</p>
+                            <ul class="enterprise-features">
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Tanpa Batas Pengguna (No Per-User License)</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Akses Modifikasi Sumber Kode</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> API Kustom untuk Sistem Legacy</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Pelatihan LLM Mandiri Data Internal</li>
+                            </ul>
+                        </div>
+                        <div class="enterprise-action-highlighted">
+                            <span class="enterprise-price-label">BIAYA PROYEK MULAI DARI</span>
+                            <span class="price-amount">Rp 369 Juta</span>
+                            <span class="enterprise-price-sublabel">Biaya Implementasi Sekali Bayar (OTC)<br>+ Opsional 20% Annual Maintenance</span>
+                            <a href="#contact" class="btn btn-primary btn-full" style="background:var(--color-brand-amber) !important; border-color:var(--color-brand-amber) !important;">Konsultasikan Arsitektur</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-addons" class="pricing-panel">
+                    <div class="add-ons-wrapper">
+                        <h3 class="add-ons-wrapper-title">Layanan Tambahan (Add-ons)</h3>
+                        <p class="add-ons-wrapper-note">Pilih layanan tambahan sesuai kebutuhan spesifik implementasi korporasi Anda.</p>
+                        <div class="table-responsive">
+                            <table class="enterprise-table compact-table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left">Jenis Layanan Tambahan</th>
+                                        <th>Harga Promo Spesial</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left"><strong>Kuota Token AI Tambahan</strong></td>
+                                        <td><span style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp 90.000</span> <strong style="color:var(--color-brand-orange)">Rp 30.000</strong> / 1 Juta Token</td>
+                                        <td><a href="#contact" class="btn btn-outline-light" style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left"><strong>Sesi Pelatihan Online Ekstra</strong></td>
+                                        <td><span style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp 1.800.000</span> <strong style="color:var(--color-brand-orange)">Rp 600.000</strong> / Sesi @3 Jam</td>
+                                        <td><a href="#contact" class="btn btn-outline-light" style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left"><strong>Jam Konsultasi Online Tambahan</strong></td>
+                                        <td><span style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp 2.700.000</span> <strong style="color:var(--color-brand-orange)">Rp 900.000</strong> / Jam</td>
+                                        <td><a href="#contact" class="btn btn-outline-light" style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left"><strong>Konsultasi / Pelatihan Tatap Muka (Offline)</strong></td>
+                                        <td><span style="color: var(--color-text-muted)">Kustomisasi Jadwal & Akomodasi Tim</span></td>
+                                        <td><a href="https://wa.me/6285285586496" target="_blank" class="btn btn-primary" style="padding:0.4rem 1rem; font-size:0.75rem;">Jadwalkan</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding scroll-reveal" id="contact">
+            <div class="container contact-wrapper">
+                <div class="contact-info">
+                    <span class="section-eyebrow">TAHAP SELANJUTNYA</span>
+                    <h2>Lakukan Asesmen Kesiapan AI Bersama Kami</h2>
+                    <p>Apakah alur kerja di perusahaan Anda sudah siap untuk diotomatisasi? Diskusikan tantangan proses bisnis Anda dengan arsitek solusi kami dalam sesi konsultasi awal yang bebas komitmen.</p>
+                </div>
+                
+                <div class="contact-form-card">
+                    <form id="waForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Nama Lengkap</label>
+                                <input type="text" id="fullName" required placeholder="Cth: Budi Santoso">
+                            </div>
+                            <div class="form-group">
+                                <label for="workEmail">Email Perusahaan</label>
+                                <input type="email" id="workEmail" required placeholder="budi@perusahaan.co.id">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobRole">Posisi / Jabatan</label>
+                                <input type="text" id="jobRole" required placeholder="Cth: Direktur Operasional">
+                            </div>
+                            <div class="form-group">
+                                <label for="selectedPlan">Fase Implementasi</label>
+                                <select id="selectedPlan" required>
+                                    <option value="" disabled selected>Pilih Salah Satu</option>
+                                    <option value="SaaS - Starter/Business">Pilot Skala Kecil (SaaS - Starter/Business)</option>
+                                    <option value="SaaS - Corporate">Implementasi Penuh (SaaS - Corporate)</option>
+                                    <option value="On-Premise - Enterprise">Kustom Terisolasi (On-Premise - Enterprise)</option>
+                                    <option value="Konsultasi">Konsultasi (Online/Offline)</option>
+                                    <option value="Pelatihan">Pelatihan (Online/Offline)</option>
+                                    <option value="Asesmen">Asesmen GRATIS (Online)</option>                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bottleneck">Tantangan Operasional Terbesar Anda?</label>
+                            <select id="bottleneck" required>
+                                <option value="" disabled selected>Pilih Salah Satu</option>
+                                <option value="Input Data Manual">Input Data Manual & Banyak Error</option>
+                                <option value="Proses Approval Lambat">Proses Approval Lambat</option>
+                                <option value="Biaya Operasional Tinggi">Biaya Operasional Tinggi</option>
+                                <option value="Data Tidak Terintegrasi">Data Tidak Terintegrasi</option>
+                                <option value="Prediksi Demand Salah">Prediksi Demand Sering Salah</option>
+                                <option value="Laporan Keuangan Lambat">Laporan Keuangan Butuh Waktu Lama</option>
+                                <option value="Lainnya">Lainnya (tuliskan di pesan)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="privacy-notice">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <div>
+                                <span class="privacy-notice-title">Kepatuhan Privasi Data</span>
+                                <p class="privacy-notice-text">
+                                    Kami berkomitmen penuh menjaga kerahasiaan data perusahaan Anda. Informasi yang dikirimkan dienkripsi dan murni digunakan oleh <em>Solution Architect</em> kami untuk keperluan kalkulasi asesmen arsitektur tanpa dibagikan ke pihak ketiga.
+                                </p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full btn-lg">Jadwalkan via WA</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 style="color: #FFFFFF; font-size: 1.25rem; font-family: var(--font-body); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem;">EnergyX <span style="color: var(--color-brand-orange);">369</span></h4>
+                    <p style="color: #AAAAAA; font-size: 0.875rem; line-height: 1.6;">
+                        Membantu transformasi digital perusahaan kelas Kecil, Menengah dan Enterprise melalui fondasi sistem berbasis AI dan orkestrasi <em>workflow</em> cerdas.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4>Informasi Edukasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://energyx.co.id/event/8" target="_blank" style="color: var(--color-brand-orange); font-weight: 600;">Executive AI Bootcamp &nearr;</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=is93cRmo3DI" target="_blank">Webinar Demonstrasi AI</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>PT. EnergyX 369 Indonesia</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@energyx.co.id">info@energyx.co.id</a></li>
+                        <li><a href="https://wa.me/6285285586496" target="_blank">+62 852-8558-6496 (WA)</a></li>
+                        <li><a href="https://www.energyx.co.id" target="_blank">www.energyx.co.id</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-top: 1rem;">
+                <p style="color: #666666; font-size: 0.75rem; margin: 0;">&copy; 2026 PT. EnergyX 369 Indonesia. All rights reserved.</p>
+                <div style="color: #666666; font-size: 0.75rem;">Built on EnergyX Agentic AI Platform</div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+    /* 1. SOLID COMBINED DYNAMIC PROGRESS BAR ACCENT (SOLUSI GAMBAR TOP BAR) */
+    .scroll-progress-container {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 8px !important; /* Ketebalan 8px pas premium sesuai PwC Strip */
+        background-color: #F2F2F2 !important; /* Baseline abu tipis saat kosong */
+        z-index: 2200 !important; /* Z-Index dinaikkan paling tinggi agar tidak tertutup */
+    }
+    .scroll-progress-bar {
+        height: 100%;
+        background-color: #D04A02 !important; /* Warna Utama Oranye Berjalan */
+        width: 0%;
+        transition: width 0.05s ease-out;
+    }
+    
+    /* 2. OVERLAY TITIK NAVIGASI MENGAMBANG DI KIRI TENGAH LAYAR */
+    .pwc-floating-indicator-nav { position: fixed; left: 3rem; top: 50%; transform: translateY(-50%); z-index: 2005; display: block; }
+    .pwc-indicator-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; padding: 0; margin: 0; }
+    .pwc-indicator-item { display: flex; align-items: center; gap: 1rem; cursor: pointer; position: relative; }
+    
+    /* State 1: Outline Kotak Default Pejal */
+    .pwc-ind-box { display: block; width: 12px; height: 12px; border: 2px solid #1C1C1C; background-color: transparent; flex-shrink: 0; transition: all 0.2s ease; }
+    .pwc-ind-text { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; color: #1C1C1C; white-space: nowrap; opacity: 0; transform: translateX(-10px); transition: all 0.2s ease; pointer-events: none; }
+    
+    .pwc-indicator-item:hover .pwc-ind-text { opacity: 1; transform: translateX(0); }
+    .pwc-indicator-item:hover .pwc-ind-box { border-color: #D04A02; }
+    
+    /* State 2: Active (Sedang Dibaca - Kotak Outline Oranye Kosong) */
+    .pwc-indicator-item.active .pwc-ind-box { border-color: #D04A02 !important; background-color: transparent !important; }
+    .pwc-indicator-item.active .pwc-ind-text { color: #D04A02 !important; font-weight: 700; opacity: 1; transform: translateX(0); }
+    
+    /* State 3: Pillar Chapter Induk (Kotak Berubah Terisi Warna Oranye Padat) */
+    .pwc-indicator-item.pillar-filled .pwc-ind-box { background-color: #D04A02 !important; border-color: #D04A02 !important; }
+    
+    @media (max-width: 992px) { .pwc-floating-indicator-nav { display: none !important; } }
+    </style>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        console.log("Sistem Navigasi Mutakhir EnergyX Siap!");
+
+        const indicatorItems = document.querySelectorAll(".pwc-floating-indicator-nav .pwc-indicator-item");
+        const sections = document.querySelectorAll("main > section");
+
+        // A. PENGENDALI KLIK TOMBOL: Layar Meluncur Mulus Ke ID Section
+        indicatorItems.forEach(item => {
+            item.addEventListener("click", function() {
+                const targetId = this.getAttribute("data-target");
+                const targetedElement = document.getElementById(targetId);
+                if (targetedElement) {
+                    const navbarOffset = 90;
+                    const offsetPosition = targetedElement.getBoundingClientRect().top + window.pageYOffset - navbarOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                }
+            });
+        });
+
+        // B. BALIKAN SCROLL: Mengalkulasi Jarak Piksel Murni (100% Akurat & Anti Macet)
+        window.addEventListener('scroll', function() {
+            const windowScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            // 1. Jalankan Pergerakan Lebar Progress Bar Oranye di Top Strip
+            if (totalHeight > 0) {
+                const scrollPercentage = (windowScroll / totalHeight) * 100;
+                const indicator = document.getElementById('scrollIndicator');
+                if(indicator) indicator.style.width = scrollPercentage + '%';
+            }
+
+            // 2. Jalankan Sistem Pencocokan Status Titik Menu Samping (Multi-State)
+            let triggerLine = window.scrollY + 140; 
+            let currentActiveSectionId = "";
+
+            sections.forEach(sec => {
+                if (sec.offsetTop <= triggerLine) {
+                    currentActiveSectionId = sec.getAttribute("id");
+                }
+            });
+
+            if (currentActiveSectionId) {
+                // Bersihkan seluruh status lama
+                indicatorItems.forEach(item => {
+                    item.classList.remove("active");
+                    item.classList.remove("pillar-filled");
+                });
+
+                // Nyalakan status aktif (Hollow Orange) ke target bab saat ini
+                const matchingNavItem = document.querySelector(`.pwc-indicator-item[data-target="${currentActiveSectionId}"]`);
+                if (matchingNavItem) {
+                    matchingNavItem.classList.add("active");
+
+                    // TRICK SISTEM INDUK: Warnai oranye solid penuh ke arah bab Pillar terdekat di atasnya
+                    let nodeTracker = matchingNavItem;
+                    let parentPillarNode = null;
+
+                    while (nodeTracker) {
+                        if (nodeTracker.getAttribute("data-pillar") === "true") {
+                            parentPillarNode = nodeTracker;
+                            break;
+                        }
+                        nodeTracker = nodeTracker.previousElementSibling;
+                    }
+
+                    if (parentPillarNode) {
+                        parentPillarNode.classList.add("pillar-filled");
+                    }
+                }
+            }
+        });
+
+        // C. SCROLL REVEAL ENGINE: Pemicu Efek Transisi Memudar Muncul
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // D. OBSERVER GRAFIK BATANG DATA JALAN SAAT MASUK AREA BACA
+        const chartObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.pwc-bar-fill');
+                    fills.forEach(fill => {
+                        const targetWidth = fill.getAttribute('data-size');
+                        if (targetWidth) fill.style.setProperty('width', targetWidth + '%', 'important');
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const chartContainer = document.querySelector('.pwc-chart-bars');
+        if (chartContainer) chartObserver.observe(chartContainer);
+
+        // E. CONTROLLER HAMBURGER MENU MOBILE BAR
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+
+        // F. PEMINDAH TAB PANEL INVESTASI HARGA CORPORATE
+        const tabButtons = document.querySelectorAll(".tab-btn");
+        const pricingPanels = document.querySelectorAll(".pricing-panel");
+        tabButtons.forEach(button => {
+            button.addEventListener("click", function(e) {
+                e.preventDefault();
+                tabButtons.forEach(btn => btn.classList.remove("active"));
+                pricingPanels.forEach(panel => panel.classList.remove("active"));
+                this.classList.add("active");
+                const targetTab = this.getAttribute("data-tab");
+                const targetPanel = document.getElementById("tab-" + targetTab);
+                if (targetPanel) targetPanel.classList.add("active");
+            });
+        });
+
+        // G. SISTEM PENGIRIMAN DATA ENKRIPSI WHATSAPP
+        const waForm = document.getElementById('waForm');
+        if (waForm) {
+            waForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const fullName = document.getElementById('fullName').value.trim();
+                const workEmail = document.getElementById('workEmail').value.trim();
+                const jobRole = document.getElementById('jobRole').value.trim();
+                const selectedPlan = document.getElementById('selectedPlan').value;
+                const bottleneck = document.getElementById('bottleneck').value;
+
+                const waTemplate = `Halo Tim EnergyX! 👋\nSaya ingin mengirimkan ringkasan kebutuhan sistem untuk dijadwalkan sesi asesmen:\n\n*Profil Pemohon:*\n👤 Nama: ${fullName}\n💼 Jabatan: ${jobRole}\n📧 Corporate Email: ${workEmail}\n🎯 Skema Diminati: ${selectedPlan}\n\n*Kendala Operasional Utama:*\n${bottleneck}\n\nKapan tim Solution Architect bisa melakukan sesi telekonferensi untuk penjajakan lebih lanjut? Terima kasih.`;
+                window.open(`https://wa.me/6285285586496?text=${encodeURIComponent(waTemplate)}`, '_blank');
+            });
+        }
+
+        // H. SERVICE WORKER PWA ENGINE REGISTER
+    // KODE PENGHANCUR CACHE AGRESIF (Biar YouTube & Scroll Langsung Sembuh)
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+            registration.unregister().then(function() {
+                console.log("Service Worker lama berhasil dimusnahkan!");
+            });
+        }
+    });
+}
+    });
+    </script>
+</body>
+</html>

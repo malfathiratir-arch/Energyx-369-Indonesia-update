@@ -1,0 +1,27 @@
+# Cloudflare Wrangler cache
+.wrangler/
+assets/.wrangler/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup
+styles.backup.css
+
+# Environment files with credentials
+.env
+.env.local
+.env.production
+*.env
+
+# Credentials
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Secrets
+secrets/
+credentials/
+*.credentials

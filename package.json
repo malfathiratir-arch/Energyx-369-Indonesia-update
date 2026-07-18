@@ -1,0 +1,12 @@
+{
+  "name": "energyx-website",
+  "version": "1.0.0",
+  "description": "EnergyX website deployed on Cloudflare Pages",
+  "scripts": {
+    "dev": "npx serve .",
+    "deploy": "npx wrangler pages deploy --project-name=energyx --force"
+  },
+  "keywords": ["cloudflare", "pages", "static-site"],
+  "author": "",
+  "license": "MIT"
+}
