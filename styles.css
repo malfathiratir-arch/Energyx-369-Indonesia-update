@@ -864,3 +864,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 @media (max-width: 992px) {
     .hero-demo { margin-top: 0 !important; align-self: auto !important; }
 }
+.logo-image {
+    display: block;
+    width: auto;
+    height: clamp(35px, 4vw, 42px);
+    max-width: 100%;
+    object-fit: contain;
+    
+    /* Tambahan opsional jika gambar berlatar putih solid */
+    mix-blend-mode: multiply; 
+}
