@@ -886,3 +886,89 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
     /* Tambahan opsional jika gambar berlatar putih solid */
     mix-blend-mode: multiply; 
 }
+/* ==========================================================================
+   AKSEN WARNA LOGO ENERGYX 369 (MERAH, ORANYE, BIRU)
+   ========================================================================== */
+
+/* 1. TEKS LOGO "EnergyX 369" */
+.logo-text {
+    font-family: var(--font-body) !important;
+    font-weight: 800 !important;
+    color: #1C1C1C !important;
+}
+
+/* Angka '369' memakai warna Gradasi Merah-Oranye-Biru */
+.logo-sub {
+    background: linear-gradient(135deg, #FF3B30 0%, #FF7A00 50%, #007AFF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 900 !important;
+}
+
+/* 2. MENU NAVIGASI HEADER */
+.nav-links a {
+    color: #2D2D2D !important;
+    font-weight: 600 !important;
+    transition: color 0.25s ease !important;
+}
+
+/* Hover menu berubah jadi Biru Elektrik khas Tech Logo */
+.nav-links a:hover {
+    color: #007AFF !important; 
+}
+
+/* Tombol CTA "Schedule Consultation" dengan gradasi Oranye-Merah */
+.nav-links a.nav-cta {
+    background: linear-gradient(135deg, #FF7A00 0%, #FF3B30 100%) !important;
+    color: #FFFFFF !important;
+    border-radius: 6px !important;
+    padding: 0.65rem 1.25rem !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.25) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.nav-links a.nav-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(255, 59, 48, 0.35) !important;
+}
+
+/* 3. HIGHLIGHT & EYEBROW JUDUL SECARA GLOBAL */
+.accent-highlight {
+    background: linear-gradient(135deg, #FF3B30 0%, #FF7A00 45%, #007AFF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 800 !important;
+}
+
+/* Sub-judul kecil / Kategori di atas Judul Section */
+.section-eyebrow {
+    color: #007AFF !important; /* Warna biru cerah */
+    letter-spacing: 0.1em !important;
+    font-weight: 800 !important;
+}
+
+/* Garis aksen di samping judul section */
+.section-header {
+    border-left: 4px solid #FF7A00 !important; /* Garis oranye tegas */
+}
+
+/* 4. TOMBOL UTAMA (BUTTON PRIMARY) */
+.btn-primary {
+    background: linear-gradient(135deg, #FF7A00 0%, #FF3B30 100%) !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3) !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #E06B00 0%, #D72E24 100%) !important;
+    box-shadow: 0 6px 20px rgba(255, 59, 48, 0.4) !important;
+}
+
+/* 5. INDIKATOR PROGRESS SCROLL ATAS LAYAR */
+.scroll-progress-bar {
+    background: linear-gradient(90deg, #FF3B30, #FF7A00, #007AFF) !important;
+}
