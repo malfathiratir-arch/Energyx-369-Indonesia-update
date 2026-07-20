@@ -122,313 +122,23 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 /* ==========================================================================
    2. PREMIUM ENTERPRISE HEADER
    ========================================================================== */
-:root {
-    --header-bg-start: rgba(5, 8, 22, 0.42);
-    --header-bg-scrolled: rgba(8, 12, 20, 0.72);
-    --header-border: rgba(255, 255, 255, 0.08);
-    --header-text: #FFFFFF;
-    --header-text-muted: #C9D1E5;
-    --header-accent: #D4AF37;
-    --header-accent-strong: #F5D97A;
-    --header-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+.header { 
+    position: absolute !important; 
+    top: 8px !important; 
+    left: 0 !important; 
+    right: 0 !important; 
+    z-index: 1000 !important; 
+    background-color: #FFFFFF !important; 
+    border-bottom: 1px solid var(--color-border) !important; 
 }
-
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1400;
-    padding: 0 1.25rem;
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-    transition: padding 350ms cubic-bezier(0.22, 1, 0.36, 1), transform 320ms cubic-bezier(0.22, 1, 0.36, 1), opacity 320ms ease;
-}
-
-.site-header.is-hidden {
-    transform: translateY(-110%);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.site-header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(5, 8, 22, 0.68) 0%, rgba(5, 8, 22, 0.16) 100%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    transition: all 350ms cubic-bezier(0.22, 1, 0.36, 1);
-    z-index: -1;
-}
-
-.site-header.scrolled::before {
-    background: var(--header-bg-scrolled);
-    border-bottom-color: var(--header-border);
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-    box-shadow: var(--header-shadow);
-}
-
-.site-header__nav {
-    position: relative;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 88px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    transition: height 350ms cubic-bezier(0.22, 1, 0.36, 1), padding 350ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.site-header.scrolled .site-header__nav {
-    height: 72px;
-}
-
-.brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    text-decoration: none;
-    color: var(--header-text);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    transition: transform 220ms ease, filter 220ms ease;
-}
-
-.brand:hover,
-.brand:focus-visible {
-    transform: translateY(-1px);
-    filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.28));
-}
-
-.brand-logo {
-    height: 3.2rem;
-    width: auto;
-    object-fit: contain;
-    transition: transform 220ms ease;
-}
-
-.brand:hover .brand-logo,
-.brand:focus-visible .brand-logo {
-    transform: scale(1.02);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1.35rem;
-    list-style: none;
-    margin-left: auto;
-}
-
-.nav-link {
-    position: relative;
-    color: var(--header-text-muted);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    padding: 0.45rem 0;
-    transition: color 220ms ease, transform 220ms ease;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.2rem;
-    width: 0;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--header-accent) 0%, var(--header-accent-strong) 100%);
-    transition: width 260ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.nav-link:hover,
-.nav-link:focus-visible,
-.nav-link.active {
-    color: var(--header-text);
-    transform: translateY(-1px);
-}
-
-.nav-link:hover::after,
-.nav-link:focus-visible::after,
-.nav-link.active::after {
-    width: 100%;
-}
-
-.nav-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.82rem 1.25rem;
-    border-radius: 999px;
-    border: 1px solid rgba(212, 175, 55, 0.24);
-    background: linear-gradient(135deg, #C89B3C 0%, #F0D47A 100%);
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
-    transition: transform 260ms ease, box-shadow 260ms ease, filter 260ms ease;
-}
-
-.nav-cta:hover,
-.nav-cta:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 36px rgba(212, 175, 55, 0.22);
-    filter: saturate(1.04);
-}
-
-.nav-toggle {
-    display: none !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-    width: 2.9rem;
-    height: 2.9rem;
-    padding: 0;
-    border: 1px solid rgba(255, 215, 150, 0.16);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    cursor: pointer;
-    z-index: 1450;
-    transition: background-color 220ms ease, transform 220ms ease, border-color 220ms ease;
-}
-
-.nav-toggle:hover,
-.nav-toggle.active {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 215, 150, 0.24);
-    transform: scale(1.03);
-}
-
-.nav-toggle span {
-    display: block;
-    width: 1.1rem;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #FFFFFF 0%, #E7C873 100%);
-    transition: transform 220ms ease, opacity 220ms ease;
-}
-
-.nav-toggle.active span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-}
-
-.nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-}
-
-.premium-nav-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(2, 6, 23, 0.65);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 260ms ease;
-    z-index: 1300;
-}
-
-.premium-nav-overlay.is-visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-body.nav-open {
-    overflow: hidden;
-}
-
-@media (max-width: 992px) {
-    .premium-section-indicator {
-        display: none !important;
-    }
-
-    .site-header {
-        padding: 0 0.8rem;
-    }
-
-    .site-header__nav {
-        height: 76px;
-    }
-
-    .site-header.scrolled .site-header__nav {
-        height: 70px;
-    }
-
-    .nav-toggle {
-        display: flex !important;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 5.2rem;
-        right: 0.8rem;
-        width: min(88vw, 320px);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.1rem;
-        padding: 1rem;
-        margin-left: 0;
-        background: rgba(8, 12, 20, 0.9);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 24px;
-        box-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-8px) scale(0.98);
-        pointer-events: none;
-        transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), transform 320ms cubic-bezier(0.22, 1, 0.36, 1), visibility 320ms ease;
-    }
-
-    .nav-links.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0) scale(1);
-        pointer-events: auto;
-    }
-
-    .nav-link {
-        width: 100%;
-        padding: 0.75rem 0;
-        font-size: 1rem;
-    }
-
-    .nav-cta {
-        width: 100%;
-        margin-top: 0.35rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .site-header {
-        padding: 0 0.6rem;
-    }
-
-    .brand-text {
-        font-size: 0.95rem;
-    }
-
-    .nav-links {
-        right: 0.6rem;
-        left: 0.6rem;
-        width: auto;
-    }
-}
+.nav { display: flex; justify-content: space-between; align-items: center; height: 72px; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; font-family: var(--font-body); font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em; }
+.nav-logo .logo-text { color: var(--color-primary) !important; font-weight: 900; }
+.nav-logo .logo-sub { color: var(--color-brand-orange) !important; }
+.nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+.nav-links a { color: var(--color-text); font-weight: 500; text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-family: var(--font-body); }
+.nav-links a:hover { color: var(--color-brand-orange); }
+.nav-links a.nav-cta { color: #FFFFFF !important; background-color: var(--color-brand-orange); padding: 0.5rem 1.25rem; font-size: 0.8125rem; }
 
 /* PwC Dynamic Solid Scroll Progress Strip */
 .scroll-progress-container {
@@ -450,73 +160,65 @@ body.nav-open {
 /* ==========================================================================
    3. PWC FLOATING VERTICAL OVERLAY INDICATOR NAV (LEFT-MIDDLE)
    ========================================================================== */
-.premium-section-indicator {
+.pwc-floating-indicator-nav {
     position: fixed;
-    left: 2.8rem;
+    left: 3rem;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2005;
     display: block;
 }
-
-.section-indicator-list {
+.pwc-indicator-list {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1.25rem;
     padding: 0;
     margin: 0;
-    list-style: none;
 }
-
-.section-indicator-item {
+.pwc-indicator-item {
     display: flex;
     align-items: center;
-    gap: 0.9rem;
+    gap: 1rem;
     cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
     position: relative;
-    transition: none;
 }
-
-.indicator-box {
+.pwc-ind-box {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-    background-color: #8A8F9E;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #1C1C1C;
+    background-color: transparent;
     flex-shrink: 0;
-    transition: all 300ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: all 0.2s ease;
 }
-
-.indicator-label {
+.pwc-ind-text {
     font-family: var(--font-body);
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    color: #C9D1E5;
+    color: #1C1C1C;
     white-space: nowrap;
     opacity: 0;
-    width: 0;
-    overflow: hidden;
-    display: block;
-    transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1), width 300ms cubic-bezier(0.22, 1, 0.36, 1), color 300ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateX(-10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
 }
+.pwc-indicator-item:hover .pwc-ind-text { opacity: 1; transform: translateX(0); }
+.pwc-indicator-item:hover .pwc-ind-box { border-color: var(--color-brand-orange); }
 
-.section-indicator-item:hover .indicator-box {
-    background-color: #9AA0AE;
+.pwc-indicator-item.active .pwc-ind-box {
+    border-color: var(--color-brand-orange) !important;
+    background-color: transparent !important;
 }
-
-.section-indicator-item.expanded .indicator-box {
-    background-color: #D4AF37;
-    box-shadow: 0 0 12px rgba(212, 175, 55, 0.42);
-}
-
-.section-indicator-item.expanded .indicator-label {
+.pwc-indicator-item.active .pwc-ind-text {
+    color: var(--color-brand-orange) !important;
+    font-weight: 700;
     opacity: 1;
-    width: auto;
-    color: #D4AF37;
-    font-weight: 600;
+    transform: translateX(0);
+}
+.pwc-indicator-item.pillar-filled .pwc-ind-box {
+    background-color: var(--color-brand-orange) !important;
+    border-color: var(--color-brand-orange) !important;
 }
 
 /* ==========================================================================
@@ -783,6 +485,8 @@ body.nav-open {
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
 .footer-links a { color: #AAAAAA; text-decoration: none; font-size: 0.875rem; transition: color 0.2s; font-family: var(--font-body); }
 .footer-links a:hover { color: var(--color-brand-orange); }
+
+.footer-logo{ width: auto; height: clamp(50px, 4vw, 42px); max-width: 100%; object-fit: contain; margin-bottom: 30px;}
 
 /* ==========================================================================
    9. SCROLL REVEAL ANIMATIONS

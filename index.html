@@ -17,6 +17,9 @@
     <meta property="twitter:title" content="EnergyX 369 — Enterprise AI Operating System">
     <meta property="twitter:description" content="Platform AI terintegrasi dengan mesin ERP kelas enterprise. Pekerjakan Karyawan AI pertama Anda dalam hitungan hari.">
     <meta property="twitter:image" content="https://www.energyx369.cloud/assets/logo-white.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="canonical" href="https://www.energyx369.cloud/">
 
@@ -103,6 +106,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Georgia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=6.5">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" /> <!-- link aos animation -ridho-->
 </head>
 <body>
     <svg style="display: none;">
@@ -151,14 +157,11 @@
         </nav>
     </aside>
 
-    <div class="premium-nav-overlay" id="navOverlay" aria-hidden="true"></div>
-
-    <header class="site-header" id="siteHeader">
-        <nav class="site-header__nav container" aria-label="Primary navigation">
-            <a href="#hero" class="brand" aria-label="EnergyX home">
-                <img src="assets/logo.webp" alt="EnergyX" class="brand-logo" loading="lazy">
+    <header class="header">
+        <nav class="nav container">
+            <a href="#hero" class="nav-logo" aria-label="Beranda EnergyX">
+                <span class="logo-text">EnergyX <span class="logo-sub">369</span></span>
             </a>
-
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -216,7 +219,41 @@
             </div>
         </section>
 
-        <section class="section-padding section-bg scroll-reveal" id="survey-insights">
+        <!-- ridho update mengambang -->
+         <div data-aos="fade-up" class="roi-metrics-bar">
+            <div class="container roi-flex">
+                <div class="roi-item">
+                    <span class="roi-icon" aria-hidden="true"><i class="fa-solid fa-boxes-stacked"></i></span>
+                    <span class="roi-number">25%</span>
+                    <span class="roi-label">Stok Mati Berkurang*</span>
+                </div>
+                <div class="roi-divider"></div>
+                <div class="roi-item">
+                    <span class="roi-icon" aria-hidden="true"><i class="fa-solid fa-file-invoice"></i></span>
+                    <span class="roi-number">10x</span>
+                    <span class="roi-label">Proses Invoice Lebih Cepat*</span>
+                </div>
+                <div class="roi-divider"></div>
+                <div class="roi-item">
+                    <span class="roi-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
+                    <span class="roi-number">+20%</span>
+                    <span class="roi-label">Prediksi Demand Lebih Akurat*</span>
+                </div>
+                <div class="roi-divider"></div>
+                <div class="roi-item">
+                    <span class="roi-icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+                    <span class="roi-number">5x</span>
+                    <span class="roi-label">Approval Lebih Cepat*</span>
+                </div>
+            </div>
+            <div class="container"
+                style="text-align: center; font-family: var(--font-heading); margin-top: 1rem; opacity: 0.6; font-size: 0.7rem; color: #FFF;">
+                *Berdasarkan data pelanggan kami dan riset McKinsey (2023), Gartner (2024), serta Salesforce Agentforce
+                (2024). Angka aktual bisa berbeda tergantung kondisi bisnis masing-masing.
+            </div>
+        </div>
+
+        <!-- <section class="section-padding section-bg scroll-reveal" id="survey-insights">
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">PwC Global & Enterprise Insight</span>
@@ -282,7 +319,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section class="section-padding section-bg scroll-reveal" id="demo">
             <div class="container">
@@ -639,7 +676,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4 style="color: #FFFFFF; font-size: 1.25rem; font-family: var(--font-body); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem;">EnergyX <span style="color: var(--color-brand-orange);">369</span></h4>
+                     <img src="assets/logo.webp" class="footer-logo"> <!-- logo footer dari asset -ridho --> 
                     <p style="color: #AAAAAA; font-size: 0.875rem; line-height: 1.6;">
                         Membantu transformasi digital perusahaan kelas Kecil, Menengah dan Enterprise melalui fondasi sistem berbasis AI dan orkestrasi <em>workflow</em> cerdas.
                     </p>
@@ -1236,6 +1273,12 @@ if ('serviceWorker' in navigator) {
     });
 }
     });
+    </script>
+
+<!--aos script -ridho-->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
     </script>
 </body>
 </html>
