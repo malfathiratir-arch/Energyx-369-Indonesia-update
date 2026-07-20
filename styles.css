@@ -169,12 +169,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
   position: relative;
   z-index: 2;
 }
+
 .roi-metrics-bar .roi-flex {
   background: #fff;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-lg);
   padding: 1.75rem 0.5rem;
+  border: 1px solid var(--color-border-light);
 }
+
 .roi-metrics-bar > .container[style] {
   color: var(--color-text-muted) !important;
   margin-top: 0.85rem !important;
@@ -192,11 +195,26 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 
 .roi-item {
   padding: 10px;
-  text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-right: 1px solid var(--color-border-light);
+  align-items: center;
+  text-align: center;
+  position: relative; 
+}
+
+.roi-item:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%; 
+  height: 60%; 
+  width: 1px;
+  background-color: #e0e0e0; 
+}
+
+.roi-item:last-of-type {
+  border-right: none;
 }
 
 .roi-icon {
@@ -217,16 +235,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 
 .roi-label {
   font-size: 0.75rem;
+  font-family: var(--font-heading);
   font-weight: 600;
   color: var(--color-text-muted);
   line-height: 1.6;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   max-width: 180px;
-}
-
-.roi-item:last-of-type {
-  border-right: none;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -237,14 +253,22 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 
   .roi-flex {
     grid-template-columns: 1fr;
-    gap: 0;
+  }
+
+  .roi-item::after {
+    display: none;
+  }
+
+  .roi-metrics-bar .roi-flex {
+    border: 1px solid var(--color-border-light);
   }
 
   .roi-item {
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.25rem;
     border-right: none;
     border-bottom: 1px solid var(--color-border-light);
-    padding: 1rem 1.25rem;
-    min-height: auto;
   }
 
   .roi-item:last-child {
@@ -257,6 +281,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 
   .roi-label {
     font-size: 0.8rem;
+    max-width: 100%;
+    text-align: left;
   }
 }
 
