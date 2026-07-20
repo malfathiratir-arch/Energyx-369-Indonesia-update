@@ -12,7 +12,7 @@ const ASSETS_TO_CACHE = [
   'styles.css',
   'assets/favicon.ico',
   'assets/EnrgyX-logo.png',
-  'assets/EnergyX___Demo_Operasional.mp4'
+  'assets/videnergx.mp4'
 ];
 
 // 1. EVENT INSTALL
