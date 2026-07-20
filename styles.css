@@ -1024,9 +1024,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 
 /* Sub-judul kecil / Kategori di atas Judul Section */
 .section-eyebrow {
-    color: #007AFF !important; /* Warna biru cerah */
+    color: var(--color-brand-orange); /* Warna biru cerah */
     letter-spacing: 0.1em !important;
-    font-weight: 800 !important;
+    /* font-weight: 800 !important; */
 }
 
 /* Garis aksen di samping judul section */
