@@ -124,58 +124,57 @@
         <div class="scroll-progress-bar" id="scrollIndicator"></div>
     </div>
 
-    <aside class="pwc-floating-indicator-nav">
-        <ul class="pwc-indicator-list">
-            <li class="pwc-indicator-item active" data-target="hero" data-pillar="true">
-                <span class="pwc-ind-box"></span>
-                <span class="pwc-ind-text">Introduction</span>
-            </li>
-            <li class="pwc-indicator-item" data-target="survey-insights">
-                <span class="pwc-ind-box"></span>
-                <span class="pwc-ind-text">Dampak Riil Adopsi AI</span>
-            </li>
-            <li class="pwc-indicator-item" data-target="demo" data-pillar="true">
-                <span class="pwc-ind-box"></span>
-                <span class="pwc-ind-text">Demo Operasional</span>
-            </li>
-            <li class="pwc-indicator-item" data-target="cases">
-                <span class="pwc-ind-box"></span>
-                <span class="pwc-ind-text">Use-case Nyata</span>
-            </li>
-            <li class="pwc-indicator-item" data-target="ai-employee" data-pillar="true">
-                <span class="pwc-ind-box"></span>
-                <span class="pwc-ind-text">Keahlian Agen AI</span>
-            </li>
-            <li class="pwc-indicator-item" data-target="investasi">
-                <span class="pwc-ind-box"></span>
-                <span class="pwc-ind-text">Investasi</span>
-            </li>
-            <li class="pwc-indicator-item" data-target="contact">
-                <span class="pwc-ind-box"></span>
-                <span class="pwc-ind-text">Jadwalkan Asesmen</span>
-            </li>
-        </ul>
+    <aside class="premium-section-indicator" id="sectionIndicator">
+        <nav class="section-indicator-list" aria-label="Section navigation">
+            <button class="section-indicator-item" data-target="hero" aria-label="Introduction">
+                <span class="indicator-box"></span>
+                <span class="indicator-label">Introduction</span>
+            </button>
+            <button class="section-indicator-item" data-target="survey-insights" aria-label="Dampak Riil Adopsi AI">
+                <span class="indicator-box"></span>
+                <span class="indicator-label">Dampak Riil Adopsi AI</span>
+            </button>
+            <button class="section-indicator-item" data-target="demo" aria-label="Demo Operasional">
+                <span class="indicator-box"></span>
+                <span class="indicator-label">Demo Operasional</span>
+            </button>
+            <button class="section-indicator-item" data-target="cases" aria-label="Use-case Nyata">
+                <span class="indicator-box"></span>
+                <span class="indicator-label">Use-case Nyata</span>
+            </button>
+            <button class="section-indicator-item" data-target="ai-employee" aria-label="Keahlian Agen AI">
+                <span class="indicator-box"></span>
+                <span class="indicator-label">Keahlian Agen AI</span>
+            </button>
+            <button class="section-indicator-item" data-target="investasi" aria-label="Investasi">
+                <span class="indicator-box"></span>
+                <span class="indicator-label">Investasi</span>
+            </button>
+            <button class="section-indicator-item" data-target="contact" aria-label="Jadwalkan Asesmen">
+                <span class="indicator-box"></span>
+                <span class="indicator-label">Jadwalkan Asesmen</span>
+            </button>
+        </nav>
     </aside>
 
     <header class="header">
         <nav class="nav container">
             <a href="#hero" class="nav-logo" aria-label="Beranda EnergyX">
-                 <img src="assets/logo.webp" class="logo-image" alt=""> <!-- Logo ganti image dari asset -ridho -->
+                <span class="logo-text">EnergyX <span class="logo-sub">369</span></span>
             </a>
-            
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-                <span class="hamburger" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </button>
+
             <ul class="nav-links" id="navLinks">
-                <li><a href="#demo">Demo Operasional</a></li>
-                <li><a href="#cases">Use-case Nyata</a></li>
-                <li><a href="#ai-employee">Keahlian Agen AI</a></li>
-                <li><a href="#investasi">Investasi</a></li>
-                <li><a href="#contact" class="btn btn-primary nav-cta">Jadwalkan Asesmen</a></li>
+                <li><a class="nav-link" href="#hero">Home</a></li>
+                <li><a class="nav-link" href="#survey-insights">About</a></li>
+                <li><a class="nav-link" href="#demo">Solutions</a></li>
+                <li><a class="nav-link" href="#ai-employee">AI Employees</a></li>
+                <li><a class="nav-link" href="#cases">Case Studies</a></li>
+                <li><a class="nav-cta" href="#contact">Schedule Consultation</a></li>
             </ul>
         </nav>
     </header>
@@ -745,24 +744,334 @@
     .pwc-indicator-item.pillar-filled .pwc-ind-box { background-color: #D04A02 !important; border-color: #D04A02 !important; }
     
     @media (max-width: 992px) { .pwc-floating-indicator-nav { display: none !important; } }
+
+    .premium-header {
+        position: sticky;
+        top: 0;
+        z-index: 2200;
+        width: 100%;
+        padding: 1.15rem 0;
+        transition: padding 350ms ease-in-out;
+    }
+
+    .premium-header.scrolled {
+        padding: 0.8rem 0;
+    }
+
+    .premium-nav-shell {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1400px;
+        min-height: 88px;
+        padding: 0 1.8rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255,215,150,0.08);
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+        box-shadow: none;
+        backdrop-filter: blur(0px) saturate(100%);
+        -webkit-backdrop-filter: blur(0px) saturate(100%);
+        transition: min-height 350ms ease-in-out, padding 350ms ease-in-out, background 350ms ease-in-out, border-color 350ms ease-in-out, box-shadow 350ms ease-in-out, backdrop-filter 350ms ease-in-out;
+    }
+
+    .premium-header.scrolled .premium-nav-shell {
+        min-height: 72px;
+        padding: 0 1.4rem;
+        background: rgba(10, 12, 20, 0.72);
+        border-color: rgba(255,215,150,0.12);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+        backdrop-filter: blur(22px) saturate(180%);
+        -webkit-backdrop-filter: blur(22px) saturate(180%);
+    }
+
+    .premium-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.85rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        position: relative;
+        z-index: 2;
+        transition: transform 280ms ease;
+    }
+
+    .premium-logo:hover,
+    .premium-logo:focus-visible {
+        transform: translateY(-1px);
+    }
+
+    .premium-logo-mark {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #D4AF37 0%, #E7C873 100%);
+        box-shadow: 0 0 0 1px rgba(255,215,150,0.16), 0 14px 30px rgba(212,175,55,0.24);
+        position: relative;
+        overflow: hidden;
+        transition: transform 280ms ease, box-shadow 280ms ease;
+    }
+
+    .premium-logo-mark::before {
+        content: '';
+        position: absolute;
+        inset: 3px;
+        border: 2px solid rgba(255,255,255,0.86);
+        border-radius: inherit;
+    }
+
+    .premium-logo:hover .premium-logo-mark,
+    .premium-logo:focus-visible .premium-logo-mark {
+        transform: scale(1.04) rotate(-3deg);
+        box-shadow: 0 0 0 1px rgba(255,215,150,0.2), 0 18px 34px rgba(212,175,55,0.3);
+    }
+
+    .premium-logo-text {
+        font-size: 1.1rem;
+        color: #ffffff;
+    }
+
+    .premium-logo-text span {
+        color: #D4AF37;
+        transition: color 220ms ease;
+    }
+
+    .premium-logo:hover .premium-logo-text span,
+    .premium-logo:focus-visible .premium-logo-text span {
+        color: #F4D77B;
+    }
+
+    .premium-nav {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
+        z-index: 1;
+    }
+
+    .premium-nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.7rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .premium-nav-link {
+        position: relative;
+        color: #D7D9E3;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.99rem;
+        letter-spacing: 0.04em;
+        padding: 0.4rem 0;
+        transition: color 220ms ease, transform 220ms ease;
+    }
+
+    .premium-nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        width: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #D4AF37 0%, #E7C873 100%);
+        transition: width 220ms ease;
+    }
+
+    .premium-nav-link:hover,
+    .premium-nav-link:focus-visible,
+    .premium-nav-link.active {
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+
+    .premium-nav-link:hover::after,
+    .premium-nav-link:focus-visible::after,
+    .premium-nav-link.active::after {
+        width: 100%;
+    }
+
+    .premium-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.92rem 1.35rem;
+        min-width: 12rem;
+        border-radius: 999px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+        border: 1px solid rgba(255,215,150,0.18);
+        background: linear-gradient(135deg, #0F172A 0%, #111827 100%);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+        transition: transform 260ms ease-in-out, box-shadow 260ms ease-in-out, filter 260ms ease-in-out, border-color 260ms ease-in-out;
+        position: relative;
+        z-index: 2;
+    }
+
+    .premium-cta:hover,
+    .premium-cta:focus-visible {
+        transform: translateY(-2px) scale(1.01);
+        border-color: rgba(255,215,150,0.35);
+        box-shadow: 0 18px 36px rgba(212,175,55,0.18);
+        filter: brightness(1.04);
+    }
+
+    .premium-nav-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        width: 2.95rem;
+        height: 2.95rem;
+        border: 1px solid rgba(255,215,150,0.14);
+        border-radius: 50%;
+        background: rgba(255,255,255,0.06);
+        cursor: pointer;
+        padding: 0;
+        z-index: 3;
+        transition: background-color 220ms ease, transform 220ms ease, border-color 220ms ease;
+    }
+
+    .premium-nav-toggle:hover,
+    .premium-nav-toggle.active {
+        background: rgba(255,255,255,0.1);
+        border-color: rgba(255,215,150,0.24);
+        transform: scale(1.03);
+    }
+
+    .premium-nav-toggle span {
+        display: block;
+        width: 1.15rem;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #ffffff 0%, #E7C873 100%);
+        transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    .premium-nav-toggle.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .premium-nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .premium-nav-toggle.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .premium-nav-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 6, 23, 0.7);
+        backdrop-filter: blur(8px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 260ms ease;
+        z-index: 2150;
+    }
+
+    .premium-nav-overlay.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    @media (max-width: 1024px) {
+        .premium-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: auto;
+            transform: translateX(100%);
+            width: min(88vw, 320px);
+            height: 100vh;
+            padding: 6rem 1.25rem 2rem;
+            background: rgba(8, 10, 18, 0.95);
+            border-left: 1px solid rgba(255,215,150,0.1);
+            box-shadow: -18px 0 50px rgba(0,0,0,0.35);
+            backdrop-filter: blur(22px) saturate(180%);
+            transition: transform 320ms cubic-bezier(.22,1,.36,1);
+        }
+
+        .premium-nav.open,
+        .premium-nav.active {
+            transform: translateX(0);
+        }
+
+        .premium-nav-links {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 1rem;
+        }
+
+        .premium-nav-link {
+            font-size: 1rem;
+            padding: 0.25rem 0;
+        }
+
+        .premium-nav-toggle {
+            display: inline-flex;
+        }
+
+        .premium-cta {
+            display: none;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .premium-nav-shell {
+            padding: 0.8rem 1rem;
+            border-radius: 999px;
+        }
+
+        .premium-logo-text {
+            font-size: 0.95rem;
+        }
+    }
     </style>
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        console.log("Sistem Navigasi Mutakhir EnergyX Siap!");
+        console.log("Premium Section Indicator System Ready!");
 
-        const indicatorItems = document.querySelectorAll(".pwc-floating-indicator-nav .pwc-indicator-item");
+        const indicatorItems = document.querySelectorAll(".section-indicator-item");
         const sections = document.querySelectorAll("main > section");
+        let currentExpandedItem = null;
 
-        // A. PENGENDALI KLIK TOMBOL: Layar Meluncur Mulus Ke ID Section
+        // A. CLICK-TO-EXPAND BEHAVIOR: Expand/collapse labels on click
         indicatorItems.forEach(item => {
-            item.addEventListener("click", function() {
-                const targetId = this.getAttribute("data-target");
-                const targetedElement = document.getElementById(targetId);
-                if (targetedElement) {
-                    const navbarOffset = 90;
-                    const offsetPosition = targetedElement.getBoundingClientRect().top + window.pageYOffset - navbarOffset;
-                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            item.addEventListener("click", function(e) {
+                e.preventDefault();
+                if (this === currentExpandedItem) {
+                    this.classList.remove("expanded");
+                    currentExpandedItem = null;
+                } else {
+                    if (currentExpandedItem) {
+                        currentExpandedItem.classList.remove("expanded");
+                    }
+                    this.classList.add("expanded");
+                    currentExpandedItem = this;
+                    const targetId = this.getAttribute("data-target");
+                    const targetedElement = document.getElementById(targetId);
+                    if (targetedElement) {
+                        const navbarOffset = 90;
+                        const offsetPosition = targetedElement.getBoundingClientRect().top + window.pageYOffset - navbarOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                    }
                 }
             });
         });
@@ -779,8 +1088,8 @@
                 if(indicator) indicator.style.width = scrollPercentage + '%';
             }
 
-            // 2. Jalankan Sistem Pencocokan Status Titik Menu Samping (Multi-State)
-            let triggerLine = window.scrollY + 140; 
+            // 2. Determine current active section and update indicator
+            let triggerLine = window.scrollY + 160; 
             let currentActiveSectionId = "";
 
             sections.forEach(sec => {
@@ -790,33 +1099,18 @@
             });
 
             if (currentActiveSectionId) {
-                // Bersihkan seluruh status lama
                 indicatorItems.forEach(item => {
-                    item.classList.remove("active");
-                    item.classList.remove("pillar-filled");
-                });
-
-                // Nyalakan status aktif (Hollow Orange) ke target bab saat ini
-                const matchingNavItem = document.querySelector(`.pwc-indicator-item[data-target="${currentActiveSectionId}"]`);
-                if (matchingNavItem) {
-                    matchingNavItem.classList.add("active");
-
-                    // TRICK SISTEM INDUK: Warnai oranye solid penuh ke arah bab Pillar terdekat di atasnya
-                    let nodeTracker = matchingNavItem;
-                    let parentPillarNode = null;
-
-                    while (nodeTracker) {
-                        if (nodeTracker.getAttribute("data-pillar") === "true") {
-                            parentPillarNode = nodeTracker;
-                            break;
+                    const itemTarget = item.getAttribute("data-target");
+                    if (itemTarget === currentActiveSectionId) {
+                        if (item !== currentExpandedItem) {
+                            if (currentExpandedItem) {
+                                currentExpandedItem.classList.remove("expanded");
+                            }
+                            item.classList.add("expanded");
+                            currentExpandedItem = item;
                         }
-                        nodeTracker = nodeTracker.previousElementSibling;
                     }
-
-                    if (parentPillarNode) {
-                        parentPillarNode.classList.add("pillar-filled");
-                    }
-                }
+                });
             }
         });
 
@@ -853,12 +1147,88 @@
         // E. CONTROLLER HAMBURGER MENU MOBILE BAR
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        const navLinkItems = document.querySelectorAll('.nav-link');
+
+        const closeMobileNav = () => {
+            if (navToggle) navToggle.classList.remove('active');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+            if (navLinks) navLinks.classList.remove('active');
+            if (navOverlay) navOverlay.classList.remove('is-visible');
+            document.body.classList.remove('nav-open');
+        };
+
+        const openMobileNav = () => {
+            if (navToggle) {
+                navToggle.classList.add('active');
+                navToggle.setAttribute('aria-expanded', 'true');
+            }
+            if (navLinks) navLinks.classList.add('active');
+            if (navOverlay) navOverlay.classList.add('is-visible');
+            document.body.classList.add('nav-open');
+        };
+
         if (navToggle && navLinks) {
             navToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                navToggle.classList.toggle('active');
+                const isOpen = navToggle.classList.contains('active');
+                if (isOpen) {
+                    closeMobileNav();
+                } else {
+                    openMobileNav();
+                }
+            });
+
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeMobileNav);
+            }
+
+            navLinkItems.forEach(link => {
+                link.addEventListener('click', closeMobileNav);
             });
         }
+
+        const header = document.getElementById('siteHeader');
+        let hideTimer;
+
+        const setHeaderState = () => {
+            if (!header) return;
+            const currentScrollY = window.scrollY;
+
+            header.classList.toggle('scrolled', currentScrollY > 12);
+            header.classList.add('is-hidden');
+            header.classList.remove('is-visible');
+
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                if (currentScrollY <= 12) {
+                    header.classList.remove('is-hidden');
+                    header.classList.add('is-visible');
+                }
+            }, 180);
+        };
+
+        setHeaderState();
+        window.addEventListener('scroll', setHeaderState, { passive: true });
+
+        const sectionIds = ['hero', 'survey-insights', 'demo', 'ai-employee', 'cases', 'contact'];
+        const activeLinks = Array.from(document.querySelectorAll('.nav-link'));
+        const updateActiveLink = () => {
+            let currentId = 'hero';
+            sectionIds.forEach(id => {
+                const section = document.getElementById(id);
+                if (section && window.scrollY + 160 >= section.offsetTop) {
+                    currentId = id;
+                }
+            });
+
+            activeLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                link.classList.toggle('active', href === `#${currentId}`);
+            });
+        };
+
+        updateActiveLink();
+        window.addEventListener('scroll', updateActiveLink, { passive: true });
 
         // F. PEMINDAH TAB PANEL INVESTASI HARGA CORPORATE
         const tabButtons = document.querySelectorAll(".tab-btn");
