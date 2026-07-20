@@ -132,9 +132,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
     border-bottom: 1px solid var(--color-border) !important; 
 }
 .nav { display: flex; justify-content: space-between; align-items: center; height: 72px; }
-.nav-logo { display: flex; align-items: center; text-decoration: none; font-family: var(--font-body); font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em; }
-.nav-logo .logo-text { color: var(--color-primary) !important; font-weight: 900; }
-.nav-logo .logo-sub { color: var(--color-brand-orange) !important; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; font-family: var(--font-body); font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em;height: 100%;}
+.logo-image {display: block;width: auto; height: clamp(35px, 4vw, 42px); max-width: 100%; object-fit: contain;}
 .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
 .nav-links a { color: var(--color-text); font-weight: 500; text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-family: var(--font-body); }
 .nav-links a:hover { color: var(--color-brand-orange); }
@@ -160,65 +159,129 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 /* ==========================================================================
    3. PWC FLOATING VERTICAL OVERLAY INDICATOR NAV (LEFT-MIDDLE)
    ========================================================================== */
-.pwc-floating-indicator-nav {
-    position: fixed;
-    left: 3rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2005;
-    display: block;
+.roi-metrics-bar {
+  background: transparent;
+  padding: 0;
+  border-top: none;
+  border-bottom: none;
+  margin-bottom: 25px;
+  margin-top: -64px;
+  position: relative;
+  z-index: 2;
 }
-.pwc-indicator-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    padding: 0;
-    margin: 0;
+.roi-metrics-bar .roi-flex {
+  background: #fff;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  padding: 1.75rem 0.5rem;
 }
-.pwc-indicator-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    cursor: pointer;
-    position: relative;
+.roi-metrics-bar > .container[style] {
+  color: var(--color-text-muted) !important;
+  margin-top: 0.85rem !important;
 }
-.pwc-ind-box {
-    display: block;
-    width: 12px;
-    height: 12px;
-    border: 2px solid #1C1C1C;
-    background-color: transparent;
-    flex-shrink: 0;
-    transition: all 0.2s ease;
-}
-.pwc-ind-text {
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #1C1C1C;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.2s ease;
-    pointer-events: none;
-}
-.pwc-indicator-item:hover .pwc-ind-text { opacity: 1; transform: translateX(0); }
-.pwc-indicator-item:hover .pwc-ind-box { border-color: var(--color-brand-orange); }
 
-.pwc-indicator-item.active .pwc-ind-box {
-    border-color: var(--color-brand-orange) !important;
-    background-color: transparent !important;
+.roi-flex {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
 }
-.pwc-indicator-item.active .pwc-ind-text {
-    color: var(--color-brand-orange) !important;
-    font-weight: 700;
-    opacity: 1;
-    transform: translateX(0);
+
+.roi-divider {
+  display: none;
 }
-.pwc-indicator-item.pillar-filled .pwc-ind-box {
-    background-color: var(--color-brand-orange) !important;
-    border-color: var(--color-brand-orange) !important;
+
+.roi-item {
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--color-border-light);
+}
+
+.roi-icon {
+  font-size: 20px;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+  color: var(--color-border-dark);
+}
+
+.roi-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+  letter-spacing: -1px;
+  margin-bottom: 0.6rem;
+}
+
+.roi-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  max-width: 180px;
+}
+
+.roi-item:last-of-type {
+  border-right: none;
+}
+
+@media (max-width: 768px) {
+  .roi-metrics-bar {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .roi-flex {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .roi-item {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-light);
+    padding: 1rem 1.25rem;
+    min-height: auto;
+  }
+
+  .roi-item:last-child {
+    border-bottom: none;
+  }
+
+  .roi-number {
+    font-size: 1.8rem;
+  }
+
+  .roi-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   VIDEO DEMO
+   ════════════════════════════════════════════════════════════ */
+.demo-video-card {
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: #111;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* ==========================================================================
@@ -485,6 +548,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
 .footer-links a { color: #AAAAAA; text-decoration: none; font-size: 0.875rem; transition: color 0.2s; font-family: var(--font-body); }
 .footer-links a:hover { color: var(--color-brand-orange); }
+
+.footer-logo{ width: auto; height: clamp(50px, 4vw, 42px); max-width: 100%; object-fit: contain; margin-bottom: 30px;}
 
 /* ==========================================================================
    9. SCROLL REVEAL ANIMATIONS
