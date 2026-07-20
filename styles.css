@@ -3,44 +3,26 @@
    Inspired by PwC Tech Effect & AI Agent Survey Design Framework
    Fully Consolidated & Cleaned Production Style Architecture
    ========================================================================== */
-
 :root {
-    /* PwC Iconic Corporate Palette */
-    --color-brand-orange: #D04A02;    /* Warna utama aksi / aksen korporat */
-    --color-brand-amber: #EB8C00;     /* Warna sekunder / highlight hangat */
-    --color-brand-gold: #F3BE00;      /* Tone pelengkap riset */
+    /* --- Palet Utama Berdasarkan Simbol Logo --- */
+    --color-brand-red: #FF3B30;     /* Merah cerah khas node logo */
+    --color-brand-orange: #FF7A00;  /* Oranye vibrant */
+    --color-brand-blue: #007AFF;    /* Biru elektrik / Tech Cyan */
+    --color-brand-darkblue: #0A2540;/* Biru gelap korporat */
     
-    /* Editorial Backgrounds & Surfaces */
-    --color-bg: #FFFFFF;              /* Latar utama putih bersih premium */
-    --color-bg-card: #FFFFFF;         /* Latar kartu bersih */
-    --color-surface: #F8F7F4;         /* Latar tint krem-abu sangat elegan khas cetak */
-    --color-surface-tint: #F2F2F2;    /* Aksen abu tipis struktural */
+    /* --- Gradient Brand Text --- */
+    --gradient-brand: linear-gradient(135deg, #FF3B30 0%, #FF7A00 50%, #007AFF 100%);
     
-    /* Deep Corporate Charcoal */
-    --color-dark: #1C1C1C;            /* Arang pekat korporat */
-    --color-dark-surface: #2D2D2D;    /* Abu-arang untuk kontras visual */
-    --color-dark-border: #404040;     /* Border pada area gelap */
-    
-    /* Typography & Hierarchy */
-    --color-primary: #000000;         /* Judul hitam absolut tebal */
-    --color-text: #2D2D2D;            /* Teks utama sangat terbaca */
-    --color-text-muted: #5D5D5D;      /* Teks sekunder / metadata laporan */
-    
-    --color-accent: var(--color-brand-orange);
-    --color-cta: var(--color-brand-orange);
-    --color-cta-hover: #A33A01; 
-    
-    --color-border: #D2D2D2;          /* Garis pembatas tipis, tegas, modular */
-    
-    /* Premium Contrast Fonts */
-    --font-heading: 'Georgia', 'Times New Roman', serif; /* Elegan, tepercaya, editorial */
-    --font-body: 'Inter', system-ui, -apple-system, sans-serif; /* Bersih, presisi untuk data */
-
-    /* PwC Style: Flat & Geometric */
-    --shadow-sm: none;
-    --shadow-md: none;
-    --shadow-lg: none;
-    --border-flat: 0px;               /* Geometri siku tajam untuk wibawa korporasi */
+    /* Variable Bawaan Layout */
+    --color-bg: #FFFFFF;
+    --color-surface: #F8F7F4;
+    --color-dark: #1C1C1C;
+    --color-primary: #000000;
+    --color-text: #2D2D2D;
+    --color-text-muted: #5D5D5D;
+    --color-border: #E5E2DC;
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Inter', system-ui, sans-serif;
 }
 
 /* ==========================================================================
