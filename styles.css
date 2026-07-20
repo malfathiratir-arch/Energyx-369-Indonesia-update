@@ -23,7 +23,154 @@
     --color-border: #E5E2DC;
     --font-heading: 'Georgia', serif;
     --font-body: 'Inter', system-ui, sans-serif;
+
+     --pwc-orange: #D04A02;
+            --pwc-black: #000000;
+            --pwc-text: #2D2D2D;
+            --pwc-border: #EDEDED;
+            --pwc-bg-section: #F9F9F9;
+            
+            --tag-fin: #465F7B;
+            --tag-logi: rgb(196, 154, 69);
+            --tag-rev: #8C3333;
+            --tag-tal: rgb(69, 139, 107);
+
+            --font-ui: 'Manrope', system-ui, sans-serif;
+            --font-editorial: 'Georgia', 'Times New Roman', serif;
 }
+
+.services-section {
+            background-color: var(--pwc-bg-section);
+            padding: 4.5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px; /* Diperlebar sedikit agar muat 4 baris dengan lega */
+            margin: 0 auto;
+        }
+
+        /* =============================================
+           Grid Layout (1 Baris Sempurna - 4 Kolom)
+           ============================================= */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Bikin 4 kolom sejajar ke samping */
+            gap: 1.25rem; /* Jarak antar card disesuaikan agar pas */
+            width: 100%;
+        }
+
+        /* =============================================
+           Card Style (Flexbox untuk Tinggi Sejajar)
+           ============================================= */
+        .pwc-card {
+            background: #FFFFFF;
+            border: 1px solid var(--pwc-border);
+            padding: 2rem 1.5rem; /* Padding dibuat lebih compact untuk layout 4 kolom */
+            box-sizing: border-box;
+            border-radius: 12px;
+            
+            display: flex;
+            flex-direction: column;
+            height: 100%; 
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pwc-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Header Area */
+        .pwc-card-header {
+            margin-bottom: 1rem;
+        }
+
+        .pwc-tag {
+            display: inline-block;
+            color: #FFFFFF;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            padding: 0.35rem 0.7rem;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .pwc-tag.fin  { background-color: var(--tag-fin); }
+        .pwc-tag.logi { background-color: var(--tag-logi); }
+        .pwc-tag.rev  { background-color: var(--tag-rev); }
+        .pwc-tag.tal  { background-color: var(--tag-tal); }
+
+        .pwc-card h2 {
+            font-family: var(--font-editorial);
+            font-size: 1.5rem; /* Disesuaikan ukurannya agar tidak wrapping berantakan */
+            font-weight: 400;
+            color: var(--pwc-black);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .pwc-divider {
+            height: 1px;
+            background-color: var(--pwc-border);
+            border: none;
+            margin: 0 0 1.5rem 0;
+        }
+
+        /* Body Area */
+        .pwc-card-body {
+            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pwc-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .pwc-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.88rem; /* Ukuran font teks sedikit dikecilkan agar proporsional di 4 kolom */
+            color: var(--pwc-text);
+            line-height: 1.45;
+        }
+
+        .pwc-icon-check {
+            color: var(--pwc-orange);
+            font-size: 0.95rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+
+        /* =============================================
+           Responsive Breakpoints (Biar ga hancur di HP)
+           ============================================= */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr); /* Tablet jadi 2 baris x 2 kolom */
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr; /* Mobile otomatis tumpuk 1 kolom */
+                gap: 1.5rem;
+            }
+            .services-section {
+                padding: 3rem 1rem;
+            }
+        }
 
 /* ==========================================================================
    1. RESET & BASE LAYOUT SYSTEM
@@ -588,6 +735,115 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
     .cases-grid { grid-template-columns: 1fr; gap: 1.25rem; }
     .case-card { padding: 1.5rem; }
 }
+
+/* ==========================================================================
+   6.5  AGEN AI SKILLS SECTION (PWC THEME FIX)
+   - Target: rapihin posisi card ke tengah/selaras dengan style PwC
+   - Use: existing .pwc-* classes that are currently injected in index.html
+   ========================================================================== */
+.services-section {
+    background-color: var(--pwc-bg-section);
+    padding: 4.5rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+.services-grid .pwc-card {
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.pwc-card {
+    background: #FFFFFF;
+    border: 1px solid var(--pwc-border);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pwc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF3B30, #FF7A00, #007AFF);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.pwc-card:hover::before {
+    transform: scaleX(1);
+}
+
+.pwc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(17, 34, 64, 0.10);
+}
+
+.pwc-card-header {
+    margin-bottom: 1rem;
+}
+
+.pwc-tag {
+    border-radius: 0px;
+}
+
+.pwc-divider {
+    height: 1px;
+    background-color: var(--pwc-border);
+    border: none;
+    margin: 0 0 1.5rem 0;
+}
+
+.pwc-feature-item {
+    color: var(--pwc-text);
+}
+
+/* Posisi title jadi konsisten */
+.pwc-card h2 {
+    text-align: left;
+    margin: 0;
+}
+
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .services-section {
+        padding: 3rem 1rem;
+    }
+    .pwc-card {
+        padding: 1.75rem 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pwc-card {
+        transition: none;
+    }
+} 
+
 
 /* ==========================================================================
    7. PRICING & MATRIX LAYOUT TABLES
