@@ -200,21 +200,119 @@
                     </div>
                 </div>
                 
-                <div class="hero-visual hero-visual-bright">
-                    <div class="hero-visual-header">
-                        <h3 class="hero-visual-title">Summary</h3>
-                    </div>
-                    <div class="hero-visual-input">
-                        Integrasi cerdas antara modul inti ERP kelas enterprise dengan sistem multi-agent untuk merampingkan waktu kerja administratif.
-                    </div>
-                    <div class="hero-visual-output">
-                        Otomatisasi penuh alur kerja repetitif mulai dari ekstraksi data invoice masuk (OCR) hingga validasi catatan mutasi perbankan.
-                    </div>
-                    <div class="hero-visual-input">
-                        Penerapan sistem kendali *Human-in-the-loop* untuk menjamin akurasi mutlak dan keamanan hak akses data finansial.
+                <div class="hero-visual hero-demo" data-tilt>
+                    <div class="demo-window">
+                        <div class="demo-titlebar">
+                            <span class="demo-dots"><i></i><i></i><i></i></span>
+                            <span class="demo-agent">
+                                <span class="pulse-dot"></span>
+                                <strong>RANI</strong> — Finance AI Agent
+                            </span>
+                            <span class="demo-status">Memproses</span>
+                        </div>
+                        <div class="demo-body">
+                            <div class="demo-input">
+                                <span class="demo-label">Instruksi</span>
+                                <p id="typingText" class="typing-text"></p>
+                                <span class="typing-cursor" aria-hidden="true"></span>
+                            </div>
+                            <div class="demo-progress-track">
+                                <div class="demo-progress-bar" id="demoProgress"></div>
+                            </div>
+                            <div class="demo-output" id="demoOutput">
+                                <span class="demo-label">Hasil Analisis</span>
+
+                                <div id="demoOutputContent">
+                                    <p>Menunggu instruksi...</p>
+                                </div>
+
+                                <div id="demoThinking" class="demo-thinking">
+                                    <div class="thinking-circle">
+                                        <i></i><i></i><i></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+                // Hero typing demo — RANI Finance AI Agent
+                (function () {
+                    const typingEl = document.getElementById('typingText');
+                    const outputEl = document.getElementById('demoOutput');
+                    const outputContentEl = document.getElementById('demoOutputContent');
+                    const progressBar = document.getElementById('demoProgress');
+                    const thinkingEl = document.getElementById('demoThinking');
+
+                    if (!typingEl) return;
+
+                    const messages = [
+                        'Tolong bantu rekonsiliasi data mutasi bank hari ini dengan invoice masuk minggu lalu.',
+                        'Buatkan draf Purchase Order berdasarkan analisis POS 7 hari terakhir.',
+                        'Rangkum status pipeline prospek yang membutuhkan follow-up hari ini.'
+                    ];
+                    const outputs = [
+                        '<strong>Analisis selesai.</strong><br><br>142 transaksi berhasil dicocokkan dengan data sistem.<br>3 anomali perbedaan nominal teridentifikasi. Draf catatan koreksi siap ditinjau.',
+                        '<strong>PO Draft siap.</strong><br><br>Stok 12 SKU di bawah reorder point.<br>Draf PO 8 vendor disusun dengan estimasi penghematan 11%.',
+                        '<strong>Pipeline diperbarui.</strong><br><br>23 prospek aktif membutuhkan tindak lanjut.<br>5 quotation otomatis terkirim ke tim sales terkait.'
+                    ];
+
+                    let msgIndex = 0;
+                    let charIndex = 0;
+                    let isDeleting = false;
+
+                    const typeLoop = () => {
+                        const current = messages[msgIndex];
+                        if (!isDeleting) {
+                            charIndex++;
+                            typingEl.textContent = current.slice(0, charIndex);
+                            if (charIndex === current.length) {
+
+                                if (outputEl) {
+                                    outputEl.classList.remove('visible');
+
+                                    setTimeout(() => {
+                                        // TAHAP 1: Munculkan box Analisis, kosongkan teks lama, lalu tampilkan animasi loading bulat
+                                        if (outputContentEl) outputContentEl.innerHTML = '';
+                                        if (thinkingEl) thinkingEl.classList.add('show');
+                                        outputEl.classList.add('visible');
+
+                                        // TAHAP 2: Setelah delay animasi loading, suntik data aslinya & bersihkan loadingnya
+                                        setTimeout(() => {
+                                            if (thinkingEl) thinkingEl.classList.remove('show');
+                                            if (outputContentEl) outputContentEl.innerHTML = outputs[msgIndex];
+
+                                            if (progressBar) {
+                                                progressBar.style.width = '0%';
+                                                requestAnimationFrame(() => { progressBar.style.width = '100%'; });
+                                            }
+                                        }, 1200); // Kecepatan loading memproses sebelum hasil tercetak (1.2 detik)
+
+                                    }, 400);
+                                }
+                                setTimeout(() => { isDeleting = true; typeLoop(); }, 4500); // Ditambah jeda membaca karena ada efek proses loading tambahan
+                                return;
+                            }
+                        } else {
+                            charIndex--;
+                            typingEl.textContent = current.slice(0, charIndex);
+                            if (charIndex === 0) {
+                                isDeleting = false;
+                                msgIndex = (msgIndex + 1) % messages.length;
+                                if (outputEl) outputEl.classList.remove('visible');
+                                setTimeout(typeLoop, 600);
+                                return;
+                            }
+                        }
+                        setTimeout(typeLoop, isDeleting ? 18 : 38);
+                    };
+
+                    setTimeout(typeLoop, 800);
+                })();
+            </script>
         </section>
 
         <!-- ridho update mengambang -->

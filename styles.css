@@ -722,3 +722,119 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
     .hero-actions .btn { width: 100%; }
     .hero-actions { gap: 0.75rem; }
 }
+
+/* ==========================================================================
+   11. HERO DEMO WIDGET — RANI FINANCE AI AGENT (KARTU PENGGANTI "SUMMARY")
+   Warna & styling disamakan dengan kartu Summary asli (glass gelap + garis
+   atas oranye korporat), layout/struktur demo tetap seperti semula.
+   ========================================================================== */
+.hero-demo {
+    /* Variabel lokal khusus kartu demo, ditarik dari palet brand yang sama
+       dengan kartu Summary asli (--color-brand-orange dkk), jadi TIDAK
+       bentrok dengan --font-heading / --font-body / --border milik tema utama */
+    --demo-accent: var(--color-brand-orange);
+    --demo-accent-soft: var(--color-brand-amber);
+    --demo-bg-card: rgba(255, 255, 255, 0.07);
+    --demo-surface: rgba(255, 255, 255, 0.06);
+    --demo-text: #FFFFFF;
+    --demo-text-muted: rgba(255, 255, 255, 0.62);
+    --demo-border: rgba(255, 255, 255, 0.15);
+    --demo-font: 'Manrope', 'Inter', system-ui, sans-serif;
+    --demo-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.4);
+    --demo-radius: 0px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;;
+    align-self: start;
+    margin-top: 5rem;
+    opacity: 0;
+    animation: pwcFadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.4s;
+}
+
+.demo-window {
+    background: var(--demo-bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--demo-border);
+    border-top: 6px solid var(--demo-accent);
+    border-radius: var(--demo-radius);
+    overflow: hidden;
+    box-shadow: var(--demo-shadow-lg);
+}
+
+.demo-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid var(--demo-border);
+}
+
+.demo-dots { display: flex; gap: 6px; }
+.demo-dots i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+.demo-dots i:nth-child(1) { background: #C1272D; }
+.demo-dots i:nth-child(2) { background: #F2A900; }
+.demo-dots i:nth-child(3) { background: #4A607A; }
+
+.demo-agent { flex: 1; font-size: 0.8125rem; color: var(--demo-text); display: flex; align-items: center; gap: 0.5rem; font-family: 'Inter', system-ui, -apple-system, sans-serif;; }
+
+.pulse-dot { width: 8px; height: 8px; background: var(--demo-accent); border-radius: 50%; animation: demoPulse 1.8s ease-in-out infinite; }
+@keyframes demoPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+
+.demo-status {
+    font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--demo-accent); background: rgba(208, 74, 2, 0.16); padding: 0.25rem 0.6rem; border-radius: 4px;
+}
+
+.demo-body { padding: 1.25rem; }
+
+.demo-label {
+    display: block; font-size: 0.625rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--demo-text-muted); margin-bottom: 0.5rem; font-family: 'Inter', system-ui, -apple-system, sans-serif;;
+}
+
+.demo-input {
+    background: rgba(208, 74, 2, 0.08); border: 1px solid rgba(208, 74, 2, 0.3);
+    border-radius: 8px; padding: 1rem; min-height: 72px; position: relative;
+}
+.typing-text { font-size: 0.875rem; color: var(--demo-text); line-height: 1.5; margin: 0; display: inline; font-family: var(--demo-font); }
+.typing-cursor { display: inline-block; width: 2px; height: 1em; background: var(--demo-accent); animation: demoBlink 0.8s step-end infinite; vertical-align: text-bottom; margin-left: 2px; }
+@keyframes demoBlink { 50% { opacity: 0; } }
+
+.demo-progress-track { height: 3px; background: rgba(255, 255, 255, 0.15); border-radius: 99px; margin: 1rem 0; overflow: hidden; }
+.demo-progress-bar { height: 100%; width: 0; background: linear-gradient(90deg, var(--demo-accent), var(--demo-accent-soft)); border-radius: 99px; transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.demo-output {
+    background: rgba(255, 255, 255, 0.05); border: 1px solid var(--demo-border); border-radius: 8px;
+    padding: 1rem; opacity: 0; transform: translateY(8px); transition: all 0.5s ease;
+    color: var(--demo-text); font-size: 0.8125rem; line-height: 1.6; position: relative; font-family: var(--demo-font);
+}
+.demo-output.visible { opacity: 1; transform: translateY(0); }
+.demo-output p { font-size: 0.8125rem; color: var(--demo-text); line-height: 1.6; margin: 0; }
+
+
+.demo-thinking {
+    display: none;
+    align-items: center;
+    
+    gap: 3px;
+    margin-top: 0.25rem;
+    min-height: 96px;
+}
+.demo-thinking.show { display: flex; }
+.thinking-circle {
+    width: 22px; height: 22px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid var(--demo-border);
+    display: flex; justify-content: center; align-items: center; gap: 2px;
+}
+.thinking-circle i { width: 3px; height: 3px; border-radius: 50%; background: var(--demo-text-muted); display: block; animation: demoBounceDots 1.4s infinite ease-in-out both; }
+.thinking-circle i:nth-child(1) { animation-delay: -0.32s; }
+.thinking-circle i:nth-child(2) { animation-delay: -0.16s; }
+@keyframes demoBounceDots { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+    .pulse-dot, .typing-cursor, .thinking-circle i { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+
+@media (max-width: 992px) {
+    .hero-demo { margin-top: 0 !important; align-self: auto !important; }
+}
