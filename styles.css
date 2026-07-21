@@ -2255,3 +2255,45 @@ h1, h2, h3, h4 {
   .hero-actions .btn { width: 100%; }
   .hero-actions { gap: 0.75rem; }
 }
+
+/* Efek transisi halus saat navbar muncul/hilang */
+.nav-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  z-index: 9999;
+}
+
+/* Class ini akan ditambahkan oleh JavaScript saat scroll ke bawah */
+.nav-container.nav-hidden {
+  transform: translate(-50%, -120%); /* Terangkat keluar dari layar */
+  opacity: 0;
+  pointer-events: none;
+}
+/* Animasi pergerakan navbar */
+nav, header, .nav-container {
+  transition: transform 0.4s ease, opacity 0.3s ease !important;
+}
+
+/* Class khusus saat scroll ke bawah */
+.nav-hidden {
+  transform: translateY(-120%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+/* Pastikan header melayang dan memiliki animasi halus */
+#siteHeader, header, .nav-container {
+  position: fixed !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
+}
+
+/* Kunci animasi saat scroll ke bawah: terangkat ke atas layar */
+#siteHeader.nav-hidden, 
+header.nav-hidden, 
+.nav-container.nav-hidden {
+  transform: translateY(-150%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
