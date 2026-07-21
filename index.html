@@ -90,7 +90,7 @@
           "priceCurrency": "IDR",
           "description": "Lisensi Permanen (Enterprise) - On-Premise"
         }
-      }
+      ]
     }
     </script>
 
@@ -112,8 +112,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=6.5">
 
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" /> <!-- link aos animation -ridho-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 
 <body>
@@ -136,10 +135,6 @@
             <button class="section-indicator-item" data-target="hero" aria-label="Introduction">
                 <span class="indicator-box"></span>
                 <span class="indicator-label">Introduction</span>
-            </button>
-            <button class="section-indicator-item" data-target="survey-insights" aria-label="Dampak Riil Adopsi AI">
-                <span class="indicator-box"></span>
-                <span class="indicator-label">Dampak Riil Adopsi AI</span>
             </button>
             <button class="section-indicator-item" data-target="demo" aria-label="Demo Operasional">
                 <span class="indicator-box"></span>
@@ -164,30 +159,29 @@
         </nav>
     </aside>
 
-   <header class="header">
-    <nav class="nav container">
-        <a href="#hero" class="nav-logo" aria-label="Beranda EnergyX">
-            <img src="assets/EnergyXpict.png" alt="EnergyX 369 Logo" class="logo-image">
-        </a>
+    <header class="header" id="siteHeader">
+        <nav class="nav container">
+            <a href="#hero" class="nav-logo" aria-label="Beranda EnergyX">
+                <img src="assets/EnergyXpict.png" alt="EnergyX 369 Logo" class="logo-image">
+            </a>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-            <span class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
-        </button>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a class="nav-link" href="#demo">Demo operasional</a></li>
-            <li><a class="nav-link" href="#caces">use-case dunia nyata</a></li>
-            <li><a class="nav-link" href="#ai-employee">Keahlian agen Ai</a></li>
-            <li><a class="nav-link" href="#investasi">investasi</a></li>
-           
-            <li><a class="nav-cta" href="#contact">Schedule Consultation</a></li>
-        </ul>
-    </nav>
-</header>
+            <ul class="nav-links" id="navLinks">
+                <li><a class="nav-link" href="#demo">Demo Operasional</a></li>
+                <li><a class="nav-link" href="#cases">Use-Case Dunia Nyata</a></li>
+                <li><a class="nav-link" href="#ai-employee">Keahlian Agen AI</a></li>
+                <li><a class="nav-link" href="#investasi">Investasi</a></li>
+                <li><a class="nav-cta" href="#contact">Schedule Consultation</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <section class="hero dark-section" id="hero">
@@ -291,12 +285,10 @@
                                     outputEl.classList.remove('visible');
 
                                     setTimeout(() => {
-                                        // TAHAP 1: Munculkan box Analisis, kosongkan teks lama, lalu tampilkan animasi loading bulat
                                         if (outputContentEl) outputContentEl.innerHTML = '';
                                         if (thinkingEl) thinkingEl.classList.add('show');
                                         outputEl.classList.add('visible');
 
-                                        // TAHAP 2: Setelah delay animasi loading, suntik data aslinya & bersihkan loadingnya
                                         setTimeout(() => {
                                             if (thinkingEl) thinkingEl.classList.remove('show');
                                             if (outputContentEl) outputContentEl.innerHTML = outputs[msgIndex];
@@ -305,11 +297,11 @@
                                                 progressBar.style.width = '0%';
                                                 requestAnimationFrame(() => { progressBar.style.width = '100%'; });
                                             }
-                                        }, 1200); // Kecepatan loading memproses sebelum hasil tercetak (1.2 detik)
+                                        }, 1200);
 
                                     }, 400);
                                 }
-                                setTimeout(() => { isDeleting = true; typeLoop(); }, 4500); // Ditambah jeda membaca karena ada efek proses loading tambahan
+                                setTimeout(() => { isDeleting = true; typeLoop(); }, 4500);
                                 return;
                             }
                         } else {
@@ -331,7 +323,6 @@
             </script>
         </section>
 
-        <!-- ridho update mengambang -->
         <div data-aos="fade-up" class="roi-metrics-bar">
             <div class="container roi-flex">
                 <div class="roi-item">
@@ -365,95 +356,31 @@
             </div>
         </div>
 
-        <!-- <section class="section-padding section-bg scroll-reveal" id="survey-insights">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-eyebrow">PwC Global & Enterprise Insight</span>
-                    <h2>Dampak Riil Adopsi Karyawan Digital AI</h2>
-                    <p>Bagaimana perusahaan kelas enterprise mengukur nilai nyata dari implementasi sistem multi-agent di ekosistem operasional mereka.</p>
-                </div>
-
-                <div class="pwc-chart-layout">
-                    <div class="pwc-chart-callout">
-                        <div class="callout-badge">Tren Utama 2026</div>
-                        <h3 class="callout-title">AI Agen Bukan Lagi Masa Depan — Mereka Sudah Bekerja.</h3>
-                        <p class="callout-desc">Berdasarkan data adopsi global, efisiensi terbesar dicapai ketika agen AI diintegrasikan langsung dengan basis data inti ERP untuk mengambil keputusan taktis tanpa jeda birokrasi.</p>
-                        <div class="callout-stat">
-                            <span class="callout-num">73%</span>
-                            <span class="callout-label">Eksekutif setuju AI Agen memberikan keunggulan kompetitif mutlak.</span>
-                        </div>
-                    </div>
-
-                    <div class="pwc-chart-bars">
-                        <h4 class="chart-bars-title">Metrik Nilai Terukur yang Dihasilkan:</h4>
-                        
-                        <div class="pwc-bar-row">
-                            <div class="pwc-bar-info">
-                                <span class="bar-label">Peningkatan Produktivitas Tim Kontrol Keuangan</span>
-                                <span class="bar-percentage">66%</span>
-                            </div>
-                            <div class="pwc-bar-track">
-                                <div class="pwc-bar-fill fill-orange" data-size="66"></div>
-                            </div>
-                        </div>
-
-                        <div class="pwc-bar-row">
-                            <div class="pwc-bar-info">
-                                <span class="bar-label">Penghematan Biaya Administrasi & Vendor Procurement</span>
-                                <span class="bar-percentage">57%</span>
-                            </div>
-                            <div class="pwc-bar-track">
-                                <div class="pwc-bar-fill fill-amber" data-size="57"></div>
-                            </div>
-                        </div>
-
-                        <div class="pwc-bar-row">
-                            <div class="pwc-bar-info">
-                                <span class="bar-label">Akselerasi Pengambilan Keputusan Strategis (Data Analysis)</span>
-                                <span class="bar-percentage">55%</span>
-                            </div>
-                            <div class="pwc-bar-track">
-                                <div class="pwc-bar-fill fill-gold" data-size="55"></div>
-                            </div>
-                        </div>
-
-                        <div class="pwc-bar-row">
-                            <div class="pwc-bar-info">
-                                <span class="bar-label">Optimasi Pengalaman Transaksi Pelanggan (CRM)</span>
-                                <span class="bar-percentage">54%</span>
-                            </div>
-                            <div class="pwc-bar-track">
-                                <div class="pwc-bar-fill fill-dark" data-size="54"></div>
-                            </div>
-                        </div>
-                        
-                        <span class="chart-source-text">Sumber: Olahan Data Kesiapan AI & Survey Operasional Perusahaan B2B 2026</span>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
         <section class="section-padding section-bg scroll-reveal" id="demo">
-    <div class="container demo-flex-wrapper">
-        <div class="section-header">
-            <span class="section-eyebrow">DEMO OPERASIONAL</span>
-            <h2>Lihat Platform Bekerja</h2>
-            <p>Saksikan bagaimana Agen AI mengeksekusi instruksi alur kerja bisnis.</p>
-            <div class="webinar-info">
-                <strong>Webinar Karyawan Digital AI 2026</strong>
-                <span class="divider">·</span>
-                <span>YITB KoTaC – Komunitas Taman Coding</span>
+            <div class="container demo-flex-wrapper">
+                <div class="section-header">
+                    <span class="section-eyebrow">DEMO OPERASIONAL</span>
+                    <h2>Lihat Platform Bekerja</h2>
+                    <p>Saksikan bagaimana Agen AI mengeksekusi instruksi alur kerja bisnis.</p>
+                    <div class="webinar-info">
+                        <strong>Webinar Karyawan Digital AI 2026</strong>
+                        <span class="divider">·</span>
+                        <span>YITB KoTaC – Komunitas Taman Coding</span>
+                    </div>
+                </div>
+                <div class="demo-video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/is93cRmo3DI"
+                            title="Demo Operasional EnergyX 369"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="demo-video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/is93cRmo3DI" ...></iframe>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-       <section class="section-padding section-surface scroll-reveal" id="cases">
+        <section class="section-padding section-surface scroll-reveal" id="cases">
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">USE-CASE DUNIA NYATA</span>
@@ -546,8 +473,6 @@
                 </div>
 
                 <div class="services-grid">
-                    
-                    <!-- 1. FINANCIAL CONTROL -->
                     <div class="pwc-card">
                         <div class="pwc-card-header">
                             <div class="pwc-tag fin">Fin</div>
@@ -572,7 +497,6 @@
                         </div>
                     </div>
 
-                    <!-- 2. SUPPLY CHAIN -->
                     <div class="pwc-card">
                         <div class="pwc-card-header">
                             <div class="pwc-tag logi">Logi</div>
@@ -597,7 +521,6 @@
                         </div>
                     </div>
 
-                    <!-- 3. SALES & CRM -->
                     <div class="pwc-card">
                         <div class="pwc-card-header">
                             <div class="pwc-tag rev">Rev</div>
@@ -622,7 +545,6 @@
                         </div>
                     </div>
 
-                    <!-- 4. HUMAN CAPITAL -->
                     <div class="pwc-card">
                         <div class="pwc-card-header">
                             <div class="pwc-tag tal">Tal</div>
@@ -646,7 +568,6 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -735,10 +656,8 @@
                                 <tr>
                                     <td></td>
                                     <td><a href="#contact" class="btn btn-outline-light btn-full">Pilih Starter</a></td>
-                                    <td><a href="#contact" class="btn btn-outline-light btn-full">Pilih Business</a>
-                                    </td>
-                                    <td class="highlight-col"><a href="#contact" class="btn btn-primary btn-full">Pilih
-                                            Corporate</a></td>
+                                    <td><a href="#contact" class="btn btn-outline-light btn-full">Pilih Business</a></td>
+                                    <td class="highlight-col"><a href="#contact" class="btn btn-primary btn-full">Pilih Corporate</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -755,32 +674,18 @@
                                 pusat data internal (On-Premise) perusahaan Anda sendiri dengan isolasi data tingkat
                                 tinggi.</p>
                             <ul class="enterprise-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Tanpa Batas Pengguna (No Per-User License)</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Akses Modifikasi Sumber Kode</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> API Kustom untuk Sistem Legacy</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Pelatihan LLM Mandiri Data Internal</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Tanpa Batas Pengguna (No Per-User License)</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Akses Modifikasi Sumber Kode</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> API Kustom untuk Sistem Legacy</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Pelatihan LLM Mandiri Data Internal</li>
                             </ul>
                         </div>
                         <div class="enterprise-action-highlighted">
                             <span class="enterprise-price-label">BIAYA PROYEK MULAI DARI</span>
                             <span class="price-amount">Rp 369 Juta</span>
-                            <span class="enterprise-price-sublabel">Biaya Implementasi Sekali Bayar (OTC)<br>+ Opsional
-                                20% Annual Maintenance</span>
+                            <span class="enterprise-price-sublabel">Biaya Implementasi Sekali Bayar (OTC)<br>+ Opsional 20% Annual Maintenance</span>
                             <a href="#contact" class="btn btn-primary btn-full"
-                                style="background:var(--color-brand-amber) !important; border-color:var(--color-brand-amber) !important;">Konsultasikan
-                                Arsitektur</a>
+                                style="background:var(--color-brand-amber) !important; border-color:var(--color-brand-amber) !important;">Konsultasikan Arsitektur</a>
                         </div>
                     </div>
                 </div>
@@ -788,8 +693,7 @@
                 <div id="tab-addons" class="pricing-panel">
                     <div class="add-ons-wrapper">
                         <h3 class="add-ons-wrapper-title">Layanan Tambahan (Add-ons)</h3>
-                        <p class="add-ons-wrapper-note">Pilih layanan tambahan sesuai kebutuhan spesifik implementasi
-                            korporasi Anda.</p>
+                        <p class="add-ons-wrapper-note">Pilih layanan tambahan sesuai kebutuhan spesifik implementasi korporasi Anda.</p>
                         <div class="table-responsive">
                             <table class="enterprise-table compact-table">
                                 <thead>
@@ -802,39 +706,23 @@
                                 <tbody>
                                     <tr>
                                         <td class="text-left"><strong>Kuota Token AI Tambahan</strong></td>
-                                        <td><span
-                                                style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp
-                                                90.000</span> <strong style="color:var(--color-brand-orange)">Rp
-                                                30.000</strong> / 1 Juta Token</td>
-                                        <td><a href="#contact" class="btn btn-outline-light"
-                                                style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a></td>
+                                        <td><span style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp 90.000</span> <strong style="color:var(--color-brand-orange)">Rp 30.000</strong> / 1 Juta Token</td>
+                                        <td><a href="#contact" class="btn btn-outline-light" style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a></td>
                                     </tr>
                                     <tr>
                                         <td class="text-left"><strong>Sesi Pelatihan Online Ekstra</strong></td>
-                                        <td><span
-                                                style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp
-                                                1.800.000</span> <strong style="color:var(--color-brand-orange)">Rp
-                                                600.000</strong> / Sesi @3 Jam</td>
-                                        <td><a href="#contact" class="btn btn-outline-light"
-                                                style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a></td>
+                                        <td><span style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp 1.800.000</span> <strong style="color:var(--color-brand-orange)">Rp 600.000</strong> / Sesi @3 Jam</td>
+                                        <td><a href="#contact" class="btn btn-outline-light" style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a></td>
                                     </tr>
                                     <tr>
                                         <td class="text-left"><strong>Jam Konsultasi Online Tambahan</strong></td>
-                                        <td><span
-                                                style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp
-                                                2.700.000</span> <strong style="color:var(--color-brand-orange)">Rp
-                                                900.000</strong> / Jam</td>
-                                        <td><a href="#contact" class="btn btn-outline-light"
-                                                style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a></td>
+                                        <td><span style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp 2.700.000</span> <strong style="color:var(--color-brand-orange)">Rp 900.000</strong> / Jam</td>
+                                        <td><a href="#contact" class="btn btn-outline-light" style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a></td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left"><strong>Konsultasi / Pelatihan Tatap Muka
-                                                (Offline)</strong></td>
-                                        <td><span style="color: var(--color-text-muted)">Kustomisasi Jadwal & Akomodasi
-                                                Tim</span></td>
-                                        <td><a href="https://wa.me/6285285586496" target="_blank"
-                                                class="btn btn-primary"
-                                                style="padding:0.4rem 1rem; font-size:0.75rem;">Jadwalkan</a></td>
+                                        <td class="text-left"><strong>Konsultasi / Pelatihan Tatap Muka (Offline)</strong></td>
+                                        <td><span style="color: var(--color-text-muted)">Kustomisasi Jadwal &amp; Akomodasi Tim</span></td>
+                                        <td><a href="https://wa.me/6285285586496" target="_blank" class="btn btn-primary" style="padding:0.4rem 1rem; font-size:0.75rem;">Jadwalkan</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -874,11 +762,9 @@
                                 <label for="selectedPlan">Fase Implementasi</label>
                                 <select id="selectedPlan" required>
                                     <option value="" disabled selected>Pilih Salah Satu</option>
-                                    <option value="SaaS - Starter/Business">Pilot Skala Kecil (SaaS - Starter/Business)
-                                    </option>
+                                    <option value="SaaS - Starter/Business">Pilot Skala Kecil (SaaS - Starter/Business)</option>
                                     <option value="SaaS - Corporate">Implementasi Penuh (SaaS - Corporate)</option>
-                                    <option value="On-Premise - Enterprise">Kustom Terisolasi (On-Premise - Enterprise)
-                                    </option>
+                                    <option value="On-Premise - Enterprise">Kustom Terisolasi (On-Premise - Enterprise)</option>
                                     <option value="Konsultasi">Konsultasi (Online/Offline)</option>
                                     <option value="Pelatihan">Pelatihan (Online/Offline)</option>
                                     <option value="Asesmen">Asesmen GRATIS (Online)</option>
@@ -889,7 +775,7 @@
                             <label for="bottleneck">Tantangan Operasional Terbesar Anda?</label>
                             <select id="bottleneck" required>
                                 <option value="" disabled selected>Pilih Salah Satu</option>
-                                <option value="Input Data Manual">Input Data Manual & Banyak Error</option>
+                                <option value="Input Data Manual">Input Data Manual &amp; Banyak Error</option>
                                 <option value="Proses Approval Lambat">Proses Approval Lambat</option>
                                 <option value="Biaya Operasional Tinggi">Biaya Operasional Tinggi</option>
                                 <option value="Data Tidak Terintegrasi">Data Tidak Terintegrasi</option>
@@ -925,7 +811,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <img src="assets/logo.webp" class="footer-logo"> <!-- logo footer dari asset -ridho -->
+                    <img src="assets/logo.webp" alt="EnergyX 369 Logo Footer" class="footer-logo">
                     <p style="color: #AAAAAA; font-size: 0.875rem; line-height: 1.6;">
                         Membantu transformasi digital perusahaan kelas Kecil, Menengah dan Enterprise melalui fondasi
                         sistem berbasis AI dan orkestrasi <em>workflow</em> cerdas.
@@ -936,10 +822,8 @@
                     <h4>Informasi Edukasi</h4>
                     <ul class="footer-links">
                         <li><a href="https://energyx.co.id/event/8" target="_blank"
-                                style="color: var(--color-brand-orange); font-weight: 600;">Executive AI Bootcamp
-                                &nearr;</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=is93cRmo3DI" target="_blank">Webinar Demonstrasi
-                                AI</a></li>
+                                style="color: var(--color-brand-orange); font-weight: 600;">Executive AI Bootcamp &nearr;</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=is93cRmo3DI" target="_blank">Webinar Demonstrasi AI</a></li>
                     </ul>
                 </div>
 
@@ -952,39 +836,31 @@
                     </ul>
                 </div>
             </div>
-            <div
-                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-top: 1rem;">
-                <p style="color: #666666; font-size: 0.75rem; margin: 0;">&copy; 2026 PT. EnergyX 369 Indonesia. All
-                    rights reserved.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-top: 1rem;">
+                <p style="color: #666666; font-size: 0.75rem; margin: 0;">&copy; 2026 PT. EnergyX 369 Indonesia. All rights reserved.</p>
                 <div style="color: #666666; font-size: 0.75rem;">Built on EnergyX Agentic AI Platform</div>
             </div>
         </div>
     </footer>
 
     <style>
-        /* 1. SOLID COMBINED DYNAMIC PROGRESS BAR ACCENT (SOLUSI GAMBAR TOP BAR) */
         .scroll-progress-container {
             position: fixed !important;
             top: 0 !important;
             left: 0 !important;
             width: 100% !important;
             height: 8px !important;
-            /* Ketebalan 8px pas premium sesuai PwC Strip */
             background-color: #F2F2F2 !important;
-            /* Baseline abu tipis saat kosong */
             z-index: 2200 !important;
-            /* Z-Index dinaikkan paling tinggi agar tidak tertutup */
         }
 
         .scroll-progress-bar {
             height: 100%;
             background-color: #D04A02 !important;
-            /* Warna Utama Oranye Berjalan */
             width: 0%;
             transition: width 0.05s ease-out;
         }
 
-        /* 2. OVERLAY TITIK NAVIGASI MENGAMBANG DI KIRI TENGAH LAYAR */
         .pwc-floating-indicator-nav {
             position: fixed;
             left: 3rem;
@@ -1011,7 +887,6 @@
             position: relative;
         }
 
-        /* State 1: Outline Kotak Default Pejal */
         .pwc-ind-box {
             display: block;
             width: 12px;
@@ -1043,7 +918,6 @@
             border-color: #D04A02;
         }
 
-        /* State 2: Active (Sedang Dibaca - Kotak Outline Oranye Kosong) */
         .pwc-indicator-item.active .pwc-ind-box {
             border-color: #D04A02 !important;
             background-color: transparent !important;
@@ -1056,7 +930,6 @@
             transform: translateX(0);
         }
 
-        /* State 3: Pillar Chapter Induk (Kotak Berubah Terisi Warna Oranye Padat) */
         .pwc-indicator-item.pillar-filled .pwc-ind-box {
             background-color: #D04A02 !important;
             border-color: #D04A02 !important;
@@ -1375,7 +1248,7 @@
             const sections = document.querySelectorAll("main > section");
             let currentExpandedItem = null;
 
-            // A. CLICK-TO-EXPAND BEHAVIOR: Expand/collapse labels on click
+            // A. CLICK-TO-EXPAND BEHAVIOR
             indicatorItems.forEach(item => {
                 item.addEventListener("click", function (e) {
                     e.preventDefault();
@@ -1399,19 +1272,17 @@
                 });
             });
 
-            // B. BALIKAN SCROLL: Mengalkulasi Jarak Piksel Murni (100% Akurat & Anti Macet)
+            // B. SCROLL INDICATOR
             window.addEventListener('scroll', function () {
                 const windowScroll = document.documentElement.scrollTop || document.body.scrollTop;
                 const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-                // 1. Jalankan Pergerakan Lebar Progress Bar Oranye di Top Strip
                 if (totalHeight > 0) {
                     const scrollPercentage = (windowScroll / totalHeight) * 100;
                     const indicator = document.getElementById('scrollIndicator');
                     if (indicator) indicator.style.width = scrollPercentage + '%';
                 }
 
-                // 2. Determine current active section and update indicator
                 let triggerLine = window.scrollY + 160;
                 let currentActiveSectionId = "";
 
@@ -1437,7 +1308,7 @@
                 }
             });
 
-            // C. SCROLL REVEAL ENGINE: Pemicu Efek Transisi Memudar Muncul
+            // C. SCROLL REVEAL ENGINE
             const revealElements = document.querySelectorAll('.scroll-reveal');
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1450,7 +1321,7 @@
 
             revealElements.forEach(el => revealObserver.observe(el));
 
-            // D. OBSERVER GRAFIK BATANG DATA JALAN SAAT MASUK AREA BACA
+            // D. OBSERVER GRAFIK BATANG
             const chartObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1467,7 +1338,7 @@
             const chartContainer = document.querySelector('.pwc-chart-bars');
             if (chartContainer) chartObserver.observe(chartContainer);
 
-            // E. CONTROLLER HAMBURGER MENU MOBILE BAR
+            // E. CONTROLLER HAMBURGER MENU MOBILE
             const navToggle = document.getElementById('navToggle');
             const navLinks = document.getElementById('navLinks');
             const navOverlay = document.getElementById('navOverlay');
@@ -1533,7 +1404,7 @@
             setHeaderState();
             window.addEventListener('scroll', setHeaderState, { passive: true });
 
-            const sectionIds = ['hero', 'survey-insights', 'demo', 'ai-employee', 'cases', 'contact'];
+            const sectionIds = ['hero', 'demo', 'cases', 'ai-employee', 'investasi', 'contact'];
             const activeLinks = Array.from(document.querySelectorAll('.nav-link'));
             const updateActiveLink = () => {
                 let currentId = 'hero';
@@ -1553,7 +1424,7 @@
             updateActiveLink();
             window.addEventListener('scroll', updateActiveLink, { passive: true });
 
-            // F. PEMINDAH TAB PANEL INVESTASI HARGA CORPORATE
+            // F. PEMINDAH TAB PANEL INVESTASI
             const tabButtons = document.querySelectorAll(".tab-btn");
             const pricingPanels = document.querySelectorAll(".pricing-panel");
             tabButtons.forEach(button => {
@@ -1568,7 +1439,7 @@
                 });
             });
 
-            // G. SISTEM PENGIRIMAN DATA ENKRIPSI WHATSAPP
+            // G. FORM INTEGRASI WHATSAPP
             const waForm = document.getElementById('waForm');
             if (waForm) {
                 waForm.addEventListener('submit', function (e) {
@@ -1584,8 +1455,7 @@
                 });
             }
 
-            // H. SERVICE WORKER PWA ENGINE REGISTER
-            // KODE PENGHANCUR CACHE AGRESIF (Biar YouTube & Scroll Langsung Sembuh)
+            // H. UNREGISTER SERVICE WORKER LAMA
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function (registrations) {
                     for (let registration of registrations) {
@@ -1598,7 +1468,6 @@
         });
     </script>
 
-    <!--aos script -ridho-->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();
