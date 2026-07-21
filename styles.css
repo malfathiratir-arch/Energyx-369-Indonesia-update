@@ -687,7 +687,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
  
 .case-card .case-highlight {
     font-family: 'Inter', system-ui, sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #F2A900;
     display: block;
