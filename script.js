@@ -428,3 +428,19 @@ document.addEventListener('click', function (e) {
     console.error('Error: Elemen HTML dengan id="' + targetId + '" tidak ditemukan!');
   }
 });
+/* ==========================================================================
+   LOGIKA DETEKSI SCROLL UNTUK MENGUBAH BACKGROUND NAVBAR
+   ========================================================================== */
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('siteHeader') || document.querySelector('header') || document.querySelector('.nav-container');
+
+  if (header) {
+    // Jika layar di-scroll ke bawah lebih dari 60px
+    if (window.scrollY > 60) {
+      header.classList.add('is-scrolled');
+    } else {
+      // Kembali transparan jika ada di paling atas
+      header.classList.remove('is-scrolled');
+    }
+  }
+});
