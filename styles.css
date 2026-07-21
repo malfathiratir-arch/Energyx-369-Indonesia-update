@@ -797,9 +797,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
     margin-bottom: 1rem;
 }
 
-.pwc-tag {
-    border-radius: 0px;
-}
+        .pwc-tag {
+            border-radius: 6px;
+        }
 
 .pwc-divider {
     height: 1px;
@@ -1114,7 +1114,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height
     --demo-border: rgba(255, 255, 255, 0.15);
     --demo-font: 'Manrope', 'Inter', system-ui, sans-serif;
     --demo-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.4);
-    --demo-radius: 0px;
+    --demo-radius: 12px;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;;
     align-self: start;
     margin-top: 5rem;
