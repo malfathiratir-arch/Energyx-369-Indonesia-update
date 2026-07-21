@@ -196,7 +196,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     const navOverlay = document.getElementById('navOverlay');
-    const navLinkItems = document.querySelectorAll('.nav-link');
+    // const navLinkItems = document.querySelectorAll('.nav-link'); ubah
+    const navLinkItems = document.querySelectorAll('#navLinks a');
 
     const closeMobileNav = () => {
         if (navToggle) {
@@ -236,54 +237,54 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ==========================================================================
        7. HEADER SCROLLED STATE & AUTO-HIDE ON SCROLL
        ========================================================================== */
-    const header = document.getElementById('siteHeader') || document.querySelector('header') || document.querySelector('.nav-container');
+    // const header = document.getElementById('siteHeader') || document.querySelector('header') || document.querySelector('.nav-container');
 
-    if (header) {
-        let lastScrollY = window.scrollY;
+    // if (header) {
+    //     let lastScrollY = window.scrollY;
 
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
+    //     window.addEventListener('scroll', () => {
+    //         const currentScrollY = window.scrollY;
 
-            // Efek background saat mulai di-scroll
-            header.classList.toggle('scrolled', currentScrollY > 12);
+    //         // Efek background saat mulai di-scroll
+    //         header.classList.toggle('scrolled', currentScrollY > 12);
 
-            // Sembunyikan saat scroll ke bawah (setelah 60px)
-            if (currentScrollY > lastScrollY && currentScrollY > 60) {
-                header.classList.add('nav-hidden');
-            } 
-            // Munculkan kembali saat scroll ke atas
-            else {
-                header.classList.remove('nav-hidden');
-            }
+    //         // Sembunyikan saat scroll ke bawah (setelah 60px)
+    //         if (currentScrollY > lastScrollY && currentScrollY > 60) {
+    //             header.classList.add('nav-hidden');
+    //         } 
+    //         // Munculkan kembali saat scroll ke atas
+    //         else {
+    //             header.classList.remove('nav-hidden');
+    //         }
 
-            lastScrollY = currentScrollY;
-        }, { passive: true });
-    }
+    //         lastScrollY = currentScrollY;
+    //     }, { passive: true });
+    // }
 
-    setHeaderState();
-    window.addEventListener('scroll', setHeaderState, { passive: true });
+    // setHeaderState();
+    // window.addEventListener('scroll', setHeaderState, { passive: true });
 
-    /* Active Link Spy for Header Menu */
-    const sectionIds = ['hero', 'demo', 'cases', 'ai-employee', 'investasi', 'contact'];
-    const activeLinks = Array.from(document.querySelectorAll('.nav-link'));
+    // /* Active Link Spy for Header Menu */
+    // const sectionIds = ['hero', 'demo', 'cases', 'ai-employee', 'investasi', 'contact'];
+    // const activeLinks = Array.from(document.querySelectorAll('.nav-link'));
     
-    const updateActiveLink = () => {
-        let currentId = 'hero';
-        sectionIds.forEach(id => {
-            const section = document.getElementById(id);
-            if (section && window.scrollY + 160 >= section.offsetTop) {
-                currentId = id;
-            }
-        });
+    // const updateActiveLink = () => {
+    //     let currentId = 'hero';
+    //     sectionIds.forEach(id => {
+    //         const section = document.getElementById(id);
+    //         if (section && window.scrollY + 160 >= section.offsetTop) {
+    //             currentId = id;
+    //         }
+    //     });
 
-        activeLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            link.classList.toggle('active', href === `#${currentId}`);
-        });
-    };
+    //     activeLinks.forEach(link => {
+    //         const href = link.getAttribute('href');
+    //         link.classList.toggle('active', href === `#${currentId}`);
+    //     });
+    // };
 
-    updateActiveLink();
-    window.addEventListener('scroll', updateActiveLink, { passive: true });
+    // updateActiveLink();
+    // window.addEventListener('scroll', updateActiveLink, { passive: true });
 /* ==========================================================================
        8. PRICING TABS SWITCHER
        ========================================================================== */
