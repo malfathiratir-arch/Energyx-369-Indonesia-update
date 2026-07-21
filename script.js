@@ -284,34 +284,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateActiveLink();
     window.addEventListener('scroll', updateActiveLink, { passive: true });
-
-    /* ==========================================================================
+/* ==========================================================================
        8. PRICING TABS SWITCHER
        ========================================================================== */
-    const tabButtons = document.querySelectorAll(".tab-btn");
-    const pricingPanels = document.querySelectorAll(".tab-content");
+    const tabButtons = document.querySelectorAll('.pricing-tabs .tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-content');
 
     tabButtons.forEach(button => {
-        button.addEventListener("click", function (e) {
+        button.addEventListener('click', function (e) {
             e.preventDefault();
 
+            const targetId = this.getAttribute('data-target');
+            if (!targetId) return;
+
+            // 1. Reset status semua tombol
             tabButtons.forEach(btn => {
-                btn.classList.remove("active");
+                btn.classList.remove('active');
                 btn.setAttribute('aria-selected', 'false');
             });
-            pricingPanels.forEach(panel => panel.classList.remove("active"));
 
-            this.classList.add("active");
+            // 2. Sembunyikan semua panel tab
+            tabPanels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+
+            // 3. Aktifkan tombol yang diklik
+            this.classList.add('active');
             this.setAttribute('aria-selected', 'true');
 
-            const targetTab = this.getAttribute("data-target");
-            const targetPanel = document.getElementById(targetTab);
+            // 4. Tampilkan panel yang sesuai ID target
+            const targetPanel = document.getElementById(targetId);
             if (targetPanel) {
-                targetPanel.classList.add("active");
+                targetPanel.classList.add('active');
             }
         });
     });
-
     /* ==========================================================================
        9. FORM INTEGRASI WHATSAPP DIRECT SEND
        ========================================================================== */
@@ -380,4 +387,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lastScrollY = currentScrollY;
   });
+});
+
+/* ==========================================================================
+   GLOBAL EVENT DELEGATION FOR PRICING TABS (DIAGNOSTIC & FIX)
+   ========================================================================== */
+document.addEventListener('click', function (e) {
+  // Cek apakah elemen yang diklik adalah .tab-btn atau berada di dalamnya
+  const btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+
+  e.preventDefault();
+
+  const targetId = btn.getAttribute('data-target');
+  console.log('Tombol tab diklik! Target ID:', targetId);
+
+  if (!targetId) return;
+
+  // 1. Reset semua tombol tab
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+
+  // 2. Sembunyikan semua panel tab
+  document.querySelectorAll('.tab-content').forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  // 3. Aktifkan tombol yang diklik
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+
+  // 4. Tampilkan panel yang sesuai
+  const targetPanel = document.getElementById(targetId);
+  if (targetPanel) {
+    targetPanel.classList.add('active');
+    console.log('Panel berhasil dibuka:', targetId);
+  } else {
+    console.error('Error: Elemen HTML dengan id="' + targetId + '" tidak ditemukan!');
+  }
 });

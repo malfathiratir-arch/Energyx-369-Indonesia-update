@@ -2297,3 +2297,61 @@ header.nav-hidden,
   opacity: 0 !important;
   pointer-events: none !important;
 }
+/* Memastikan tombol tab bisa diklik */
+.tab-btn, [data-target] {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+/* Sembunyikan semua tab content secara bawaan */
+.tab-content {
+  display: none;
+}
+
+/* Tampilkan hanya tab content yang memiliki class active */
+.tab-content.active {
+  display: block !important;
+}
+/* Memastikan container tab berada di paling atas dan tombolnya bisa diklik */
+.pricing-tabs {
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+.pricing-tabs .tab-btn {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+/* Sembunyikan semua tab secara default */
+.tab-content {
+  display: none !important;
+}
+
+/* Tampilkan HANYA tab yang memiliki class active */
+.tab-content.active {
+  display: block !important;
+}
+/* Memaksa area tab dan tombol berada di paling atas layar */
+.pricing-tabs {
+  position: relative !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+.pricing-tabs .tab-btn {
+  position: relative !important;
+  z-index: 10000 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+/* Sembunyikan tab content yang tidak aktif */
+.tab-content {
+  display: none !important;
+}
+
+/* Tampilkan tab content yang memiliki class active */
+.tab-content.active {
+  display: block !important;
+}
