@@ -233,28 +233,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* ==========================================================================
-       7. HEADER SCROLLED STATE
+  /* ==========================================================================
+       7. HEADER SCROLLED STATE & AUTO-HIDE ON SCROLL
        ========================================================================== */
-    const header = document.getElementById('siteHeader');
-    let hideTimer;
+    const header = document.getElementById('siteHeader') || document.querySelector('header') || document.querySelector('.nav-container');
 
-    const setHeaderState = () => {
-        if (!header) return;
-        const currentScrollY = window.scrollY;
+    if (header) {
+        let lastScrollY = window.scrollY;
 
-        header.classList.toggle('scrolled', currentScrollY > 12);
-        header.classList.add('is-hidden');
-        header.classList.remove('is-visible');
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
 
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => {
-            if (currentScrollY <= 12) {
-                header.classList.remove('is-hidden');
-                header.classList.add('is-visible');
+            // Efek background saat mulai di-scroll
+            header.classList.toggle('scrolled', currentScrollY > 12);
+
+            // Sembunyikan saat scroll ke bawah (setelah 60px)
+            if (currentScrollY > lastScrollY && currentScrollY > 60) {
+                header.classList.add('nav-hidden');
+            } 
+            // Munculkan kembali saat scroll ke atas
+            else {
+                header.classList.remove('nav-hidden');
             }
-        }, 180);
-    };
+
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+    }
 
     setHeaderState();
     window.addEventListener('scroll', setHeaderState, { passive: true });
@@ -350,3 +354,30 @@ if (typeof AOS !== 'undefined') {
         once: true
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Otomatis mencari tag <nav>, <header>, atau class navbar
+  const navbar = document.querySelector('nav') || document.querySelector('header') || document.querySelector('.nav-container');
+
+  if (!navbar) {
+    console.error('Navbar tidak ditemukan! Pastikan ada tag <nav> atau <header> di HTML.');
+    return;
+  }
+
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    // Scroll ke bawah (sembunyi)
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      navbar.classList.add('nav-hidden');
+    } 
+    // Scroll ke atas (muncul lagi)
+    else {
+      navbar.classList.remove('nav-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+});
