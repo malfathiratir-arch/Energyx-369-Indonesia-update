@@ -21,9 +21,17 @@
     <meta property="twitter:description"
         content="Platform AI terintegrasi dengan mesin ERP kelas enterprise. Pekerjakan Karyawan AI pertama Anda dalam hitungan hari.">
     <meta property="twitter:image" content="https://www.energyx369.cloud/assets/logo-white.svg">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Georgia&family=Manrope:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <link rel="stylesheet" href="styles.css">
 
     <link rel="canonical" href="https://www.energyx369.cloud/">
 
@@ -105,14 +113,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/EnrgyX-logo.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/EnrgyX-logo.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/EnrgyX-logo.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Georgia&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6.7">
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 
 <body>
@@ -181,6 +181,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <section class="hero dark-section" id="hero">
             <video autoplay loop muted playsinline class="hero-video-bg">
@@ -239,86 +240,11 @@
                                         <i></i><i></i><i></i>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <script>
-                // Hero typing demo — RANI Finance AI Agent
-                (function () {
-                    const typingEl = document.getElementById('typingText');
-                    const outputEl = document.getElementById('demoOutput');
-                    const outputContentEl = document.getElementById('demoOutputContent');
-                    const progressBar = document.getElementById('demoProgress');
-                    const thinkingEl = document.getElementById('demoThinking');
-
-                    if (!typingEl) return;
-
-                    const messages = [
-                        'Tolong bantu rekonsiliasi data mutasi bank hari ini dengan invoice masuk minggu lalu.',
-                        'Buatkan draf Purchase Order berdasarkan analisis POS 7 hari terakhir.',
-                        'Rangkum status pipeline prospek yang membutuhkan follow-up hari ini.'
-                    ];
-                    const outputs = [
-                        '<strong>Analisis selesai.</strong><br><br>142 transaksi berhasil dicocokkan dengan data sistem.<br>3 anomali perbedaan nominal teridentifikasi. Draf catatan koreksi siap ditinjau.',
-                        '<strong>PO Draft siap.</strong><br><br>Stok 12 SKU di bawah reorder point.<br>Draf PO 8 vendor disusun dengan estimasi penghematan 11%.',
-                        '<strong>Pipeline diperbarui.</strong><br><br>23 prospek aktif membutuhkan tindak lanjut.<br>5 quotation otomatis terkirim ke tim sales terkait.'
-                    ];
-
-                    let msgIndex = 0;
-                    let charIndex = 0;
-                    let isDeleting = false;
-
-                    const typeLoop = () => {
-                        const current = messages[msgIndex];
-                        if (!isDeleting) {
-                            charIndex++;
-                            typingEl.textContent = current.slice(0, charIndex);
-                            if (charIndex === current.length) {
-
-                                if (outputEl) {
-                                    outputEl.classList.remove('visible');
-
-                                    setTimeout(() => {
-                                        if (outputContentEl) outputContentEl.innerHTML = '';
-                                        if (thinkingEl) thinkingEl.classList.add('show');
-                                        outputEl.classList.add('visible');
-
-                                        setTimeout(() => {
-                                            if (thinkingEl) thinkingEl.classList.remove('show');
-                                            if (outputContentEl) outputContentEl.innerHTML = outputs[msgIndex];
-
-                                            if (progressBar) {
-                                                progressBar.style.width = '0%';
-                                                requestAnimationFrame(() => { progressBar.style.width = '100%'; });
-                                            }
-                                        }, 1200);
-
-                                    }, 400);
-                                }
-                                setTimeout(() => { isDeleting = true; typeLoop(); }, 4500);
-                                return;
-                            }
-                        } else {
-                            charIndex--;
-                            typingEl.textContent = current.slice(0, charIndex);
-                            if (charIndex === 0) {
-                                isDeleting = false;
-                                msgIndex = (msgIndex + 1) % messages.length;
-                                if (outputEl) outputEl.classList.remove('visible');
-                                setTimeout(typeLoop, 600);
-                                return;
-                            }
-                        }
-                        setTimeout(typeLoop, isDeleting ? 18 : 38);
-                    };
-
-                    setTimeout(typeLoop, 800);
-                })();
-            </script>
         </section>
 
         <div data-aos="fade-up" class="roi-metrics-bar">
@@ -349,8 +275,7 @@
             </div>
             <div class="container"
                 style="text-align: center; font-family: var(--font-heading); margin-top: 1rem; opacity: 0.6; font-size: 0.7rem; color: #FFF;">
-                *Berdasarkan data pelanggan kami dan riset McKinsey (2023), Gartner (2024), serta Salesforce Agentforce
-                (2024). Angka aktual bisa berbeda tergantung kondisi bisnis masing-masing.
+                *Berdasarkan data pelanggan kami dan riset McKinsey (2023), Gartner (2024), serta Salesforce Agentforce (2024). Angka aktual bisa berbeda tergantung kondisi bisnis masing-masing.
             </div>
         </div>
 
@@ -382,8 +307,7 @@
                 <div class="section-header">
                     <span class="section-eyebrow">USE-CASE DUNIA NYATA</span>
                     <h2>Transformasi Lintas Departemen</h2>
-                    <p>Kami secara aktif mengotomatisasi proses bisnis yang membebani tim di berbagai sektor industri.
-                    </p>
+                    <p>Kami secara aktif mengotomatisasi proses bisnis yang membebani tim di berbagai sektor industri.</p>
                 </div>
 
                 <div class="cases-grid">
@@ -394,14 +318,10 @@
                             <span class="case-highlight">-35%</span>
                             <span class="case-highlight-label">Pengurangan Food Waste</span>
                         </div>
-                        <p class="case-challenge"><strong>Tantangan:</strong> Pembelian berlebih memicu limbah bahan
-                            baku segar. Kekurangan stok menghilangkan pendapatan harian.</p>
+                        <p class="case-challenge"><strong>Tantangan:</strong> Pembelian berlebih memicu limbah bahan baku segar. Kekurangan stok menghilangkan pendapatan harian.</p>
                         <p class="case-solution">
-                            <svg width="16" height="16">
-                                <use href="#icon-check" />
-                            </svg>
-                            AI analisis POS harian, menyusun otomatis draf Purchase Order. Arus kas aman, <strong>limbah
-                                bahan baku turun 35%</strong>.
+                            <svg width="16" height="16"><use href="#icon-check" /></svg>
+                            AI analisis POS harian, menyusun otomatis draf Purchase Order. Arus kas aman, <strong>limbah bahan baku turun 35%</strong>.
                         </p>
                     </article>
 
@@ -412,14 +332,10 @@
                             <span class="case-highlight">86%</span>
                             <span class="case-highlight-label">Lebih Cepat Tutup Buku</span>
                         </div>
-                        <p class="case-challenge"><strong>Tantangan:</strong> Holding menghabiskan hingga <strong>14
-                                hari kerja</strong> per bulan untuk konsolidasi laporan keuangan antar-perusahaan.</p>
+                        <p class="case-challenge"><strong>Tantangan:</strong> Holding menghabiskan hingga <strong>14 hari kerja</strong> per bulan untuk konsolidasi laporan keuangan antar-perusahaan.</p>
                         <p class="case-solution">
-                            <svg width="16" height="16">
-                                <use href="#icon-check" />
-                            </svg>
-                            Agen AI Finance merekonsiliasi transaksi masuk setiap malam. <strong>Tutup buku 2 hari
-                                kerja</strong>. Tanpa lembur tim akuntansi.
+                            <svg width="16" height="16"><use href="#icon-check" /></svg>
+                            Agen AI Finance merekonsiliasi transaksi masuk setiap malam. <strong>Tutup buku 2 hari kerja</strong>. Tanpa lembur tim akuntansi.
                         </p>
                     </article>
 
@@ -430,14 +346,10 @@
                             <span class="case-highlight">3x</span>
                             <span class="case-highlight-label">Lebih Cepat Penawaran</span>
                         </div>
-                        <p class="case-challenge"><strong>Tantangan:</strong> Tim Sales kehilangan deal karena lambatnya
-                            persetujuan diskon berjenjang dan penyusunan draf dokumen penawaran.</p>
+                        <p class="case-challenge"><strong>Tantangan:</strong> Tim Sales kehilangan deal karena lambatnya persetujuan diskon berjenjang dan penyusunan draf dokumen penawaran.</p>
                         <p class="case-solution">
-                            <svg width="16" height="16">
-                                <use href="#icon-check" />
-                            </svg>
-                            Agen CRM otomatis rantai approval dan merakit Quotation dalam hitungan menit. <strong>Win
-                                rate meningkat signifikan</strong>.
+                            <svg width="16" height="16"><use href="#icon-check" /></svg>
+                            Agen CRM otomatis rantai approval dan merakit Quotation dalam hitungan menit. <strong>Win rate meningkat signifikan</strong>.
                         </p>
                     </article>
 
@@ -448,14 +360,10 @@
                             <span class="case-highlight">92%</span>
                             <span class="case-highlight-label">Lebih Cepat Payroll</span>
                         </div>
-                        <p class="case-challenge"><strong>Tantangan:</strong> Ribuan buruh shift mengalami bottleneck
-                            administratif: rekap jam lembur, PPh 21 TER, BPJS memakan <strong>5 hari kerja</strong>.</p>
+                        <p class="case-challenge"><strong>Tantangan:</strong> Ribuan buruh shift mengalami bottleneck administratif: rekap jam lembur, PPh 21 TER, BPJS memakan <strong>5 hari kerja</strong>.</p>
                         <p class="case-solution">
-                            <svg width="16" height="16">
-                                <use href="#icon-check" />
-                            </svg>
-                            Absensi geolokasi otomatis, proses payroll selesai dan disetujui dalam <strong>4 jam
-                                operasional</strong>.
+                            <svg width="16" height="16"><use href="#icon-check" /></svg>
+                            Absensi geolokasi otomatis, proses payroll selesai dan disetujui dalam <strong>4 jam operasional</strong>.
                         </p>
                     </article>
                 </div>
@@ -467,8 +375,7 @@
                 <div class="section-header">
                     <span class="section-eyebrow">KEAHLIAN AGEN AI</span>
                     <h2>Katalog Keahlian Agen AI Siap Pakai</h2>
-                    <p>Sistem kami dapat difokuskan pada departemen tertentu yang paling membutuhkan otomatisasi, di
-                        atas fondasi data yang seragam.</p>
+                    <p>Sistem kami dapat difokuskan pada departemen tertentu yang paling membutuhkan otomatisasi, di atas fondasi data yang seragam.</p>
                 </div>
 
                 <div class="services-grid">
@@ -480,18 +387,9 @@
                         <hr class="pwc-divider">
                         <div class="pwc-card-body">
                             <ul class="pwc-feature-list">
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Ekstraksi data tagihan (OCR) &amp; validasi</div>
-                                </li>
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Identifikasi otomatis mutasi bank</div>
-                                </li>
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Konsolidasi laporan multi-entitas</div>
-                                </li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Ekstraksi data tagihan (OCR) &amp; validasi</div></li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Identifikasi otomatis mutasi bank</div></li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Konsolidasi laporan multi-entitas</div></li>
                             </ul>
                         </div>
                     </div>
@@ -504,18 +402,9 @@
                         <hr class="pwc-divider">
                         <div class="pwc-card-body">
                             <ul class="pwc-feature-list">
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Prediksi tren pergerakan stok harian</div>
-                                </li>
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Menyusun draf dokumen Purchase Order</div>
-                                </li>
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Analisis perbandingan harga vendor</div>
-                                </li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Prediksi tren pergerakan stok harian</div></li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Menyusun draf dokumen Purchase Order</div></li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Analisis perbandingan harga vendor</div></li>
                             </ul>
                         </div>
                     </div>
@@ -528,18 +417,9 @@
                         <hr class="pwc-divider">
                         <div class="pwc-card-body">
                             <ul class="pwc-feature-list">
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Otomatisasi draf dokumen Quotation</div>
-                                </li>
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Pemantauan status pipeline prospek</div>
-                                </li>
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Eskalasi persetujuan diskon penjualan</div>
-                                </li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Otomatisasi draf dokumen Quotation</div></li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Pemantauan status pipeline prospek</div></li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Eskalasi persetujuan diskon penjualan</div></li>
                             </ul>
                         </div>
                     </div>
@@ -552,18 +432,9 @@
                         <hr class="pwc-divider">
                         <div class="pwc-card-body">
                             <ul class="pwc-feature-list">
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Rekapitulasi absensi &amp; jam lembur</div>
-                                </li>
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Asisten FAQ internal untuk karyawan</div>
-                                </li>
-                                <li class="pwc-feature-item">
-                                    <span class="pwc-icon-check">✓</span>
-                                    <div>Pemilahan awal (Screening) CV</div>
-                                </li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Rekapitulasi absensi &amp; jam lembur</div></li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Asisten FAQ internal untuk karyawan</div></li>
+                                <li class="pwc-feature-item"><span class="pwc-icon-check">✓</span><div>Pemilahan awal (Screening) CV</div></li>
                             </ul>
                         </div>
                     </div>
@@ -580,31 +451,35 @@
                 </div>
 
                 <div class="pricing-tabs" role="tablist" aria-label="Jenis paket investasi">
-                    <button class="tab-btn active" role="tab" aria-selected="true" data-target="tab-sme">Layanan Cloud
-                        Terkelola (SaaS)</button>
-                    <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-large">Lisensi Permanen
-                        (Enterprise)</button>
-                    <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-addons">Layanan Tambahan
-                        (Add-ons)</button>
+                    <button class="tab-btn active" role="tab" aria-selected="true" data-target="tab-sme">Layanan Cloud Terkelola (SaaS)</button>
+                    <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-large">Lisensi Permanen (Enterprise)</button>
+                    <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-addons">Layanan Tambahan (Add-ons)</button>
                 </div>
 
-<!-- Tab 1: Cloud Terkelola (SaaS) -->
-                    <div class="tab-content active" id="tab-sme">
-                <!-- Tab 1: Cloud Terkelola (SaaS) -->
                 <div class="tab-content active" id="tab-sme">
+                    <div class="pricing-cards">
+                        <article class="pricing-card">
+                            <div class="pricing-card-top">
+                                <h3 class="pricing-tier">Starter</h3>
+                                <p class="pricing-desc">Pilot otomatisasi untuk satu departemen inti.</p>
+                                <div class="pricing-amount">
+                                    <span class="pricing-currency">Rp</span>
+                                    <span class="pricing-value">3</span>
+                                    <span class="pricing-unit">Jt<span>/bulan</span></span>
+                                </div>
+                                <p class="pricing-annual">Promo tahunan: <del>Rp 36 Jt</del> <strong>Rp 30 Jt</strong>/tahun</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><span class="pwc-icon-check">✓</span><span><strong>Core Platform</strong> — 1 modul (ERP, CRM, SCM, atau HRMS)</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span><strong>3 Keahlian</strong> Agen AI</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span><strong>3 Juta</strong> Token AI / bulan</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span>Pelatihan online <strong>1 sesi</strong> (3 jam)</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span>Konsultasi online <strong>3 jam</strong></span></li>
+                                <li><span class="pwc-icon-check">✓</span><span>Dukungan standar jam kerja</span></li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-light btn-full">Pilih Starter</a>
+                        </article>
 
-                        <div class="pricing-cards">
-                            <!-- Card 1: Starter -->
-                            <article class="pricing-card">
-                                <div class="pricing-card-top">
-                                    <h3 class="pricing-tier">Starter</h3>
-                                    <p class="pricing-desc">Pilot otomatisasi untuk satu departemen inti.</p>
-                                    <div class="pricing-amount">
-                                        <span class="pricing-currency">Rp</span>
-                                        <span class="pricing-value">3</span>
-                                        <span class="pricing-unit">Jt<span>/bulan</span></span>
-=======
-                        <!-- Card 2: Business -->
                         <article class="pricing-card">
                             <div class="pricing-card-top">
                                 <h3 class="pricing-tier">Business</h3>
@@ -617,35 +492,16 @@
                                 <p class="pricing-annual">Promo tahunan: <del>Rp 72 Jt</del> <strong>Rp 60 Jt</strong>/tahun</p>
                             </div>
                             <ul class="pricing-features">
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span><strong>Core Platform</strong> — 2 modul pilihan</span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span><strong>6 Keahlian</strong> Agen AI</span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span><strong>6 Juta</strong> Token AI / bulan</span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span>Pelatihan online <strong>2 sesi</strong> (3 jam)</span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span>Konsultasi online <strong>6 jam</strong></span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span>Dukungan standar jam kerja</span>
-                                </li>
+                                <li><span class="pwc-icon-check">✓</span><span><strong>Core Platform</strong> — 2 modul pilihan</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span><strong>6 Keahlian</strong> Agen AI</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span><strong>6 Juta</strong> Token AI / bulan</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span>Pelatihan online <strong>2 sesi</strong> (3 jam)</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span>Konsultasi online <strong>6 jam</strong></span></li>
+                                <li><span class="pwc-icon-check">✓</span><span>Dukungan standar jam kerja</span></li>
                             </ul>
                             <a href="#contact" class="btn btn-outline-light btn-full">Pilih Business</a>
                         </article>
 
-                        <!-- Card 3: Corporate -->
                         <article class="pricing-card pricing-card-featured">
                             <span class="pricing-badge">Paling Ideal</span>
                             <div class="pricing-card-top">
@@ -659,30 +515,12 @@
                                 <p class="pricing-annual">Promo tahunan: <del>Rp 100 Jt</del> <strong>Rp 90 Jt</strong>/tahun</p>
                             </div>
                             <ul class="pricing-features">
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span><strong>Seluruh Core Platform</strong> (ERP, CRM, SCM, HRMS)</span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span><strong>9 Keahlian</strong> Agen AI</span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span><strong>9 Juta</strong> Token AI / bulan</span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span>Pelatihan online <strong>3 sesi</strong> (3 jam)</span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span>Konsultasi online <strong>9 jam</strong></span>
-                                </li>
-                                <li>
-                                    <span class="pwc-icon-check">✓</span>
-                                    <span><strong>SLA respons insiden kritis &lt; 3 jam</strong></span>
-                                </li>
+                                <li><span class="pwc-icon-check">✓</span><span><strong>Seluruh Core Platform</strong> (ERP, CRM, SCM, HRMS)</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span><strong>9 Keahlian</strong> Agen AI</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span><strong>9 Juta</strong> Token AI / bulan</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span>Pelatihan online <strong>3 sesi</strong> (3 jam)</span></li>
+                                <li><span class="pwc-icon-check">✓</span><span>Konsultasi online <strong>9 jam</strong></span></li>
+                                <li><span class="pwc-icon-check">✓</span><span><strong>SLA respons insiden kritis &lt; 3 jam</strong></span></li>
                             </ul>
                             <a href="#contact" class="btn btn-primary btn-full" style="background-color: var(--color-brand-orange) !important;">Pilih Corporate</a>
                         </article>
@@ -694,7 +532,6 @@
                     </p>
                 </div>
 
-                <!-- Tab 2: Add-ons -->
                 <div class="tab-content" id="tab-addons">
                     <div class="addons-grid">
                         <article class="addon-card">
@@ -726,7 +563,6 @@
                     </div>
                 </div>
 
-                <!-- Tab 3: Lisensi Permanen (Enterprise) -->
                 <div class="tab-content" id="tab-large">
                     <div class="enterprise-layout">
                         <div class="enterprise-main">
@@ -740,38 +576,8 @@
                                     <div>
                                         <strong>Tanpa Batas Pengguna</strong>
                                         <span>No per-user license fee</span>
->>>>>>> 97842af7c0f8f94bd3a86595451810d3f38fa899
                                     </div>
-                                    <p class="pricing-annual">Promo tahunan: <del>Rp 36 Jt</del> <strong>Rp 30
-                                            Jt</strong>/tahun</p>
                                 </div>
-<<<<<<< HEAD
-                                <ul class="pricing-features">
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>Core Platform</strong> — 1 modul (ERP, CRM, SCM, atau HRMS)</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>3 Keahlian</strong> Agen AI</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>3 Juta</strong> Token AI / bulan</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span>Pelatihan online <strong>1 sesi</strong> (3 jam)</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span>Konsultasi online <strong>3 jam</strong></span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span>Dukungan standar jam kerja</span>
-                                    </li>
-=======
                                 <div class="enterprise-benefit">
                                     <svg width="20" height="20"><use href="#icon-check" /></svg>
                                     <div>
@@ -808,405 +614,13 @@
                                     <li>Implementasi sekali bayar (OTC)</li>
                                     <li>Opsional 20% annual maintenance</li>
                                     <li>Arsitektur disesuaikan kebutuhan</li>
->>>>>>> 97842af7c0f8f94bd3a86595451810d3f38fa899
                                 </ul>
-                                <a href="#contact" class="btn btn-outline-light btn-full">Pilih Starter</a>
-                            </article>
-
-                            <!-- Card 2: Business -->
-                            <article class="pricing-card">
-                                <div class="pricing-card-top">
-                                    <h3 class="pricing-tier">Business</h3>
-                                    <p class="pricing-desc">Otomasi lintas dua fungsi bisnis sekaligus.</p>
-                                    <div class="pricing-amount">
-                                        <span class="pricing-currency">Rp</span>
-                                        <span class="pricing-value">6</span>
-                                        <span class="pricing-unit">Jt<span>/bulan</span></span>
-                                    </div>
-                                    <p class="pricing-annual">Promo tahunan: <del>Rp 72 Jt</del> <strong>Rp 60
-                                            Jt</strong>/tahun</p>
-                                </div>
-                                <ul class="pricing-features">
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>Core Platform</strong> — 2 modul pilihan</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>6 Keahlian</strong> Agen AI</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>6 Juta</strong> Token AI / bulan</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span>Pelatihan online <strong>2 sesi</strong> (3 jam)</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span>Konsultasi online <strong>6 jam</strong></span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span>Dukungan standar jam kerja</span>
-                                    </li>
-                                </ul>
-                                <a href="#contact" class="btn btn-outline-light btn-full">Pilih Business</a>
-                            </article>
-
-                            <!-- Card 3: Corporate -->
-                            <article class="pricing-card pricing-card-featured">
-                                <span class="pricing-badge">Paling Ideal</span>
-                                <div class="pricing-card-top">
-                                    <h3 class="pricing-tier">Corporate</h3>
-                                    <p class="pricing-desc">Implementasi penuh seluruh modul platform.</p>
-                                    <div class="pricing-amount">
-                                        <span class="pricing-currency">Rp</span>
-                                        <span class="pricing-value">9</span>
-                                        <span class="pricing-unit">Jt<span>/bulan</span></span>
-                                    </div>
-                                    <p class="pricing-annual">Promo tahunan: <del>Rp 100 Jt</del> <strong>Rp 90
-                                            Jt</strong>/tahun</p>
-                                </div>
-                                <ul class="pricing-features">
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>Seluruh Core Platform</strong> (ERP, CRM, SCM, HRMS)</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>9 Keahlian</strong> Agen AI</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>9 Juta</strong> Token AI / bulan</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span>Pelatihan online <strong>3 sesi</strong> (3 jam)</span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span>Konsultasi online <strong>9 jam</strong></span>
-                                    </li>
-                                    <li>
-                                        <span class="pwc-icon-check">✓</span>
-                                        <span><strong>SLA respons insiden kritis &lt; 3 jam</strong></span>
-                                    </li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary btn-full"
-                                    style="background-color: var(--color-brand-orange) !important;">Pilih Corporate</a>
-                            </article>
-                        </div>
-
-                        <p class="pricing-footnote">
-                            <span class="tooltip-trigger"
-                                aria-label="Satu token AI setara dengan satu panggilan ke model AI. 3 Juta token memproses sekitar 5.000 halaman invoice per bulan">?</span>
-                            Kuota token AI dapat ditambah kapan saja melalui add-ons.
-                        </p>
+                                <a href="#contact" class="btn btn-primary btn-full btn-lg" style="background-color: var(--color-brand-orange) !important;">Konsultasikan Arsitektur</a>
+                            </div>
+                        </aside>
                     </div>
-
-                    <!-- Tab 2: Add-ons -->
-                    <div class="tab-content" id="tab-addons">
-
-                        <div class="addons-grid">
-                            <article class="addon-card">
-                                <h3>Kuota Token AI Tambahan</h3>
-                                <p class="addon-price"><del>Rp 90.000</del> <strong>Rp 30.000</strong></p>
-                                <p class="addon-unit">per 1 Juta Token</p>
-                                <a href="#contact" class="btn btn-outline-light btn-full">Tambah Kuota</a>
-                            </article>
-
-                            <article class="addon-card">
-                                <h3>Pelatihan Online Ekstra</h3>
-                                <p class="addon-price"><del>Rp 1.800.000</del> <strong>Rp 600.000</strong></p>
-                                <p class="addon-unit">per sesi @3 jam</p>
-                                <a href="#contact" class="btn btn-outline-light btn-full">Jadwalkan</a>
-                            </article>
-
-                            <article class="addon-card">
-                                <h3>Konsultasi Online Tambahan</h3>
-                                <p class="addon-price"><del>Rp 2.700.000</del> <strong>Rp 900.000</strong></p>
-                                <p class="addon-unit">per jam</p>
-                                <a href="#contact" class="btn btn-outline-light btn-full">Jadwalkan</a>
-                            </article>
-
-                            <article class="addon-card addon-card-accent">
-                                <h3>Konsultasi / Pelatihan Offline</h3>
-                                <p class="addon-desc">Sesi tatap muka di lokasi perusahaan Anda, disesuaikan dengan
-                                    kebutuhan tim.</p>
-                                <a href="https://wa.me/6285285586496" target="_blank"
-                                    class="btn btn-primary btn-full">Hubungi Tim Kami</a>
-                            </article>
-                        </div>
-                    </div>
-
-                    <!-- Tab 3: Lisensi Permanen (Enterprise) -->
-                    <div class="tab-content" id="tab-large">
-                        <div class="enterprise-layout">
-                            <div class="enterprise-main">
-                                <span class="section-eyebrow" style="color: var(--color-brand-orange);">Lisensi Permanen
-                                    (CAPEX)</span>
-                                <h3>Enterprise Custom Architecture</h3>
-                                <p class="enterprise-lead">Hak kepemilikan penuh atas arsitektur sistem di pusat data
-                                    internal (<em>On-Premise</em>) dengan isolasi data tingkat enterprise.</p>
-
-                                <div class="enterprise-benefits">
-                                    <div class="enterprise-benefit">
-                                        <svg width="20" height="20">
-                                            <use href="#icon-check" />
-                                        </svg>
-                                        <div>
-                                            <strong>Tanpa Batas Pengguna</strong>
-                                            <span>No per-user license fee</span>
-                                        </div>
-                                    </div>
-                                    <div class="enterprise-benefit">
-                                        <svg width="20" height="20">
-                                            <use href="#icon-check" />
-                                        </svg>
-                                        <div>
-                                            <strong>Code Ownership</strong>
-                                            <span>Akses modifikasi sumber kode penuh</span>
-                                        </div>
-                                    </div>
-                                    <div class="enterprise-benefit">
-                                        <svg width="20" height="20">
-                                            <use href="#icon-check" />
-                                        </svg>
-                                        <div>
-                                            <strong>API Kustom</strong>
-                                            <span>Integrasi dengan sistem legacy</span>
-                                        </div>
-                                    </div>
-                                    <div class="enterprise-benefit">
-                                        <svg width="20" height="20">
-                                            <use href="#icon-check" />
-                                        </svg>
-                                        <div>
-                                            <strong>LLM Mandiri</strong>
-                                            <span>Pelatihan model dengan data internal</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="tab-saas" class="pricing-panel active">
-                                    <div class="table-responsive">
-                                        <table class="enterprise-table">
-                                            <thead>
-                                                <tr>
-                                                    <th class="text-left">Komponen Layanan</th>
-                                                    <th>
-                                                        <span class="plan-name">Starter</span><br>
-                                                        <span class="plan-price">Rp 3 Jt<span
-                                                                class="period">/bulan</span></span><br>
-                                                        <span class="plan-billed">Promo: <span
-                                                                style="text-decoration: line-through; color: #999;">Rp
-                                                                36 Jt</span> Rp
-                                                            30 Jt/tahun</span>
-                                                    </th>
-                                                    <th>
-                                                        <span class="plan-name">Business</span><br>
-                                                        <span class="plan-price">Rp 6 Jt<span
-                                                                class="period">/bulan</span></span><br>
-                                                        <span class="plan-billed">Promo: <span
-                                                                style="text-decoration: line-through; color: #999;">Rp
-                                                                72 Jt</span> Rp
-                                                            60 Jt/tahun</span>
-                                                    </th>
-                                                    <th class="highlight-col">
-                                                        <span class="plan-badge">⭐ Paling Ideal</span><br>
-                                                        <span class="plan-name">Corporate</span><br>
-                                                        <span class="plan-price">Rp 9 Jt<span
-                                                                class="period">/bulan</span></span><br>
-                                                        <span class="plan-billed"
-                                                            style="color:var(--color-brand-orange)">Promo: <span
-                                                                style="text-decoration: line-through; color: #999;">Rp
-                                                                100 Jt</span> Rp
-                                                            90 Jt/tahun</span>
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-left">Core Platform (ERP/CRM/SCM/HRMS)?</td>
-                                                    <td>1 Pilihan Core Platform</td>
-                                                    <td>2 Pilihan Core Platform</td>
-                                                    <td class="highlight-col">Seluruh Core Platform</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-left">Keahlian AI Agen</td>
-                                                    <td>3 Keahlian Agen AI</td>
-                                                    <td>6 Keahlian AI</td>
-                                                    <td class="highlight-col">9 Keahlian Agen AI</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-left">Kuota Token AI?</td>
-                                                    <td>3 Juta Token / bln</td>
-                                                    <td>6 Juta Token / bln</td>
-                                                    <td class="highlight-col">9 Juta Token / bln</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-left">Pelatihan Online</td>
-                                                    <td>1 Sesi @3 Jam</td>
-                                                    <td>2 Sesi @3 Jam</td>
-                                                    <td class="highlight-col">3 Sesi @3 Jam</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-left">Konsultasi Online</td>
-                                                    <td>3 Jam</td>
-                                                    <td>6 Jam</td>
-                                                    <td class="highlight-col">9 Jam</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-left">Dukungan Teknis (SLA)</td>
-                                                    <td>Standar Dukungan Jam Kerja</td>
-                                                    <td>Standar Dukungan Jam Kerja</td>
-                                                    <td class="highlight-col">Respons Insiden Kritis &lt; 3 Jam</td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><a href="#contact" class="btn btn-outline-light btn-full">Pilih
-                                                            Starter</a></td>
-                                                    <td><a href="#contact" class="btn btn-outline-light btn-full">Pilih
-                                                            Business</a></td>
-                                                    <td class="highlight-col"><a href="#contact"
-                                                            class="btn btn-primary btn-full">Pilih Corporate</a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                                <div id="tab-enterprise" class="pricing-panel">
-                                    <div class="enterprise-card-highlighted">
-                                        <div class="enterprise-info">
-                                            <span class="plan-badge" style="background:var(--color-brand-amber)">LISENSI
-                                                PERMANEN
-                                                (CAPEX)</span>
-                                            <h3 style="color:#FFFFFF;">Enterprise Custom Architecture</h3>
-                                            <p style="color:#AAAAAA; margin-bottom: 1.5rem;">Hak kepemilikan atas
-                                                arsitektur sistem pada
-                                                pusat data internal (On-Premise) perusahaan Anda sendiri dengan isolasi
-                                                data tingkat
-                                                tinggi.</p>
-                                            <ul class="enterprise-features">
-                                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="3">
-                                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                                    </svg> Tanpa Batas Pengguna (No Per-User License)</li>
-                                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="3">
-                                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                                    </svg> Akses Modifikasi Sumber Kode</li>
-                                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="3">
-                                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                                    </svg> API Kustom untuk Sistem Legacy</li>
-                                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="3">
-                                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                                    </svg> Pelatihan LLM Mandiri Data Internal</li>
-                                            </ul>
-                                        </div>
-                                        <div class="enterprise-action-highlighted">
-                                            <span class="enterprise-price-label">BIAYA PROYEK MULAI DARI</span>
-                                            <span class="price-amount">Rp 369 Juta</span>
-                                            <span class="enterprise-price-sublabel">Biaya Implementasi Sekali Bayar
-                                                (OTC)<br>+ Opsional 20% Annual Maintenance</span>
-                                            <a href="#contact" class="btn btn-primary btn-full"
-                                                style="background:var(--color-brand-amber) !important; border-color:var(--color-brand-amber) !important;">Konsultasikan
-                                                Arsitektur</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="tab-addons" class="pricing-panel">
-                                    <div class="add-ons-wrapper">
-                                        <h3 class="add-ons-wrapper-title">Layanan Tambahan (Add-ons)</h3>
-                                        <p class="add-ons-wrapper-note">Pilih layanan tambahan sesuai kebutuhan spesifik
-                                            implementasi korporasi Anda.</p>
-                                        <div class="table-responsive">
-                                            <table class="enterprise-table compact-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-left">Jenis Layanan Tambahan</th>
-                                                        <th>Harga Promo Spesial</th>
-                                                        <th>Aksi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="text-left"><strong>Kuota Token AI Tambahan</strong>
-                                                        </td>
-                                                        <td><span
-                                                                style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp
-                                                                90.000</span> <strong
-                                                                style="color:var(--color-brand-orange)">Rp
-                                                                30.000</strong> / 1 Juta Token</td>
-                                                        <td><a href="#contact" class="btn btn-outline-light"
-                                                                style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-left"><strong>Sesi Pelatihan Online
-                                                                Ekstra</strong></td>
-                                                        <td><span
-                                                                style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp
-                                                                1.800.000</span> <strong
-                                                                style="color:var(--color-brand-orange)">Rp
-                                                                600.000</strong> / Sesi @3 Jam</td>
-                                                        <td><a href="#contact" class="btn btn-outline-light"
-                                                                style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-left"><strong>Jam Konsultasi Online
-                                                                Tambahan</strong></td>
-                                                        <td><span
-                                                                style="text-decoration: line-through; color: #999; font-size: 0.85rem;">Rp
-                                                                2.700.000</span> <strong
-                                                                style="color:var(--color-brand-orange)">Rp
-                                                                900.000</strong> / Jam</td>
-                                                        <td><a href="#contact" class="btn btn-outline-light"
-                                                                style="padding:0.4rem 1rem; font-size:0.75rem;">Tambah</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-left"><strong>Konsultasi / Pelatihan Tatap Muka
-                                                                (Offline)</strong></td>
-                                                        <td><span style="color: var(--color-text-muted)">Kustomisasi
-                                                                Jadwal &amp; Akomodasi Tim</span></td>
-                                                        <td><a href="https://wa.me/6285285586496" target="_blank"
-                                                                class="btn btn-primary"
-                                                                style="padding:0.4rem 1rem; font-size:0.75rem;">Jadwalkan</a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            >>>>>>> ead5e4c22402341e417dbb41174cd28a4524d7e2
-                                        </div>
-
-                                        <aside class="enterprise-sidebar">
-                                            <div class="enterprise-price-box">
-                                                <span class="enterprise-price-label">Biaya Proyek Mulai Dari</span>
-                                                <div class="enterprise-price-display">
-                                                    <span class="pricing-currency">Rp</span>
-                                                    <span class="pricing-value">369</span>
-                                                    <span class="pricing-unit">Juta</span>
-                                                </div>
-                                                <ul class="enterprise-price-notes">
-                                                    <li>Implementasi sekali bayar (OTC)</li>
-                                                    <li>Opsional 20% annual maintenance</li>
-                                                    <li>Arsitektur disesuaikan kebutuhan</li>
-                                                </ul>
-                                                <a href="#contact" class="btn btn-primary btn-full btn-lg"
-                                                    style="background-color: var(--color-brand-orange) !important;">Konsultasikan
-                                                    Arsitektur</a>
-                                            </div>
-                                        </aside>
-                                    </div>
-                                </div>
+                </div>
+            </div>
         </section>
 
         <section class="section-padding scroll-reveal" id="contact">
@@ -1214,8 +628,7 @@
                 <div class="contact-info">
                     <span class="section-eyebrow">TAHAP SELANJUTNYA</span>
                     <h2>Lakukan Asesmen Kesiapan AI Bersama Kami</h2>
-                    <p>Apakah alur kerja di perusahaan Anda sudah siap untuk diotomatisasi? Diskusikan tantangan proses
-                        bisnis Anda dengan arsitek solusi kami dalam sesi konsultasi awal yang bebas komitmen.</p>
+                    <p>Apakah alur kerja di perusahaan Anda sudah siap untuk diotomatisasi? Diskusikan tantangan proses bisnis Anda dengan arsitek solusi kami dalam sesi konsultasi awal yang bebas komitmen.</p>
                 </div>
 
                 <div class="contact-form-card">
@@ -1239,11 +652,9 @@
                                 <label for="selectedPlan">Fase Implementasi</label>
                                 <select id="selectedPlan" required>
                                     <option value="" disabled selected>Pilih Salah Satu</option>
-                                    <option value="SaaS - Starter/Business">Pilot Skala Kecil (SaaS - Starter/Business)
-                                    </option>
+                                    <option value="SaaS - Starter/Business">Pilot Skala Kecil (SaaS - Starter/Business)</option>
                                     <option value="SaaS - Corporate">Implementasi Penuh (SaaS - Corporate)</option>
-                                    <option value="On-Premise - Enterprise">Kustom Terisolasi (On-Premise - Enterprise)
-                                    </option>
+                                    <option value="On-Premise - Enterprise">Kustom Terisolasi (On-Premise - Enterprise)</option>
                                     <option value="Konsultasi">Konsultasi (Online/Offline)</option>
                                     <option value="Pelatihan">Pelatihan (Online/Offline)</option>
                                     <option value="Asesmen">Asesmen GRATIS (Online)</option>
@@ -1272,9 +683,7 @@
                             <div>
                                 <span class="privacy-notice-title">Kepatuhan Privasi Data</span>
                                 <p class="privacy-notice-text">
-                                    Kami berkomitmen penuh menjaga kerahasiaan data perusahaan Anda. Informasi yang
-                                    dikirimkan dienkripsi dan murni digunakan oleh <em>Solution Architect</em> kami
-                                    untuk keperluan kalkulasi asesmen arsitektur tanpa dibagikan ke pihak ketiga.
+                                    Kami berkomitmen penuh menjaga kerahasiaan data perusahaan Anda. Informasi yang dikirimkan dienkripsi dan murni digunakan oleh <em>Solution Architect</em> kami untuk keperluan kalkulasi asesmen arsitektur tanpa dibagikan ke pihak ketiga.
                                 </p>
                             </div>
                         </div>
@@ -1292,8 +701,7 @@
                 <div>
                     <img src="assets/logo.webp" alt="EnergyX 369 Logo Footer" class="footer-logo">
                     <p style="color: #AAAAAA; font-size: 0.875rem; line-height: 1.6;">
-                        Membantu transformasi digital perusahaan kelas Kecil, Menengah dan Enterprise melalui fondasi
-                        sistem berbasis AI dan orkestrasi <em>workflow</em> cerdas.
+                        Membantu transformasi digital perusahaan kelas Kecil, Menengah dan Enterprise melalui fondasi sistem berbasis AI dan orkestrasi <em>workflow</em> cerdas.
                     </p>
                 </div>
 
@@ -1301,10 +709,8 @@
                     <h4>Informasi Edukasi</h4>
                     <ul class="footer-links">
                         <li><a href="https://energyx.co.id/event/8" target="_blank"
-                                style="color: var(--color-brand-orange); font-weight: 600;">Executive AI Bootcamp
-                                &nearr;</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=is93cRmo3DI" target="_blank">Webinar Demonstrasi
-                                AI</a></li>
+                                style="color: var(--color-brand-orange); font-weight: 600;">Executive AI Bootcamp &nearr;</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=is93cRmo3DI" target="_blank">Webinar Demonstrasi AI</a></li>
                     </ul>
                 </div>
 
@@ -1317,653 +723,15 @@
                     </ul>
                 </div>
             </div>
-            <div
-                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-top: 1rem;">
-                <p style="color: #666666; font-size: 0.75rem; margin: 0;">&copy; 2026 PT. EnergyX 369 Indonesia. All
-                    rights reserved.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-top: 1rem;">
+                <p style="color: #666666; font-size: 0.75rem; margin: 0;">&copy; 2026 PT. EnergyX 369 Indonesia. All rights reserved.</p>
                 <div style="color: #666666; font-size: 0.75rem;">Built on EnergyX Agentic AI Platform</div>
             </div>
         </div>
     </footer>
 
-    <style>
-        .scroll-progress-container {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 8px !important;
-            background-color: #F2F2F2 !important;
-            z-index: 2200 !important;
-        }
-
-        .scroll-progress-bar {
-            height: 100%;
-            background-color: #D04A02 !important;
-            width: 0%;
-            transition: width 0.05s ease-out;
-        }
-
-        .pwc-floating-indicator-nav {
-            position: fixed;
-            left: 3rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 2005;
-            display: block;
-        }
-
-        .pwc-indicator-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-            padding: 0;
-            margin: 0;
-        }
-
-        .pwc-indicator-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .pwc-ind-box {
-            display: block;
-            width: 12px;
-            height: 12px;
-            border: 2px solid #1C1C1C;
-            background-color: transparent;
-            flex-shrink: 0;
-            transition: all 0.2s ease;
-        }
-
-        .pwc-ind-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #1C1C1C;
-            white-space: nowrap;
-            opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.2s ease;
-            pointer-events: none;
-        }
-
-        .pwc-indicator-item:hover .pwc-ind-text {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .pwc-indicator-item:hover .pwc-ind-box {
-            border-color: #D04A02;
-        }
-
-        .pwc-indicator-item.active .pwc-ind-box {
-            border-color: #D04A02 !important;
-            background-color: transparent !important;
-        }
-
-        .pwc-indicator-item.active .pwc-ind-text {
-            color: #D04A02 !important;
-            font-weight: 700;
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .pwc-indicator-item.pillar-filled .pwc-ind-box {
-            background-color: #D04A02 !important;
-            border-color: #D04A02 !important;
-        }
-
-        @media (max-width: 992px) {
-            .pwc-floating-indicator-nav {
-                display: none !important;
-            }
-        }
-
-        .premium-header {
-            position: sticky;
-            top: 0;
-            z-index: 2200;
-            width: 100%;
-            padding: 1.15rem 0;
-            transition: padding 350ms ease-in-out;
-        }
-
-        .premium-header.scrolled {
-            padding: 0.8rem 0;
-        }
-
-        .premium-nav-shell {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1400px;
-            min-height: 88px;
-            padding: 0 1.8rem;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 215, 150, 0.08);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
-            box-shadow: none;
-            backdrop-filter: blur(0px) saturate(100%);
-            -webkit-backdrop-filter: blur(0px) saturate(100%);
-            transition: min-height 350ms ease-in-out, padding 350ms ease-in-out, background 350ms ease-in-out, border-color 350ms ease-in-out, box-shadow 350ms ease-in-out, backdrop-filter 350ms ease-in-out;
-        }
-
-        .premium-header.scrolled .premium-nav-shell {
-            min-height: 72px;
-            padding: 0 1.4rem;
-            background: rgba(10, 12, 20, 0.72);
-            border-color: rgba(255, 215, 150, 0.12);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(22px) saturate(180%);
-            -webkit-backdrop-filter: blur(22px) saturate(180%);
-        }
-
-        .premium-logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.85rem;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            position: relative;
-            z-index: 2;
-            transition: transform 280ms ease;
-        }
-
-        .premium-logo:hover,
-        .premium-logo:focus-visible {
-            transform: translateY(-1px);
-        }
-
-        .premium-logo-mark {
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #D4AF37 0%, #E7C873 100%);
-            box-shadow: 0 0 0 1px rgba(255, 215, 150, 0.16), 0 14px 30px rgba(212, 175, 55, 0.24);
-            position: relative;
-            overflow: hidden;
-            transition: transform 280ms ease, box-shadow 280ms ease;
-        }
-
-        .premium-logo-mark::before {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            border: 2px solid rgba(255, 255, 255, 0.86);
-            border-radius: inherit;
-        }
-
-        .premium-logo:hover .premium-logo-mark,
-        .premium-logo:focus-visible .premium-logo-mark {
-            transform: scale(1.04) rotate(-3deg);
-            box-shadow: 0 0 0 1px rgba(255, 215, 150, 0.2), 0 18px 34px rgba(212, 175, 55, 0.3);
-        }
-
-        .premium-logo-text {
-            font-size: 1.1rem;
-            color: #ffffff;
-        }
-
-        .premium-logo-text span {
-            color: #D4AF37;
-            transition: color 220ms ease;
-        }
-
-        .premium-logo:hover .premium-logo-text span,
-        .premium-logo:focus-visible .premium-logo-text span {
-            color: #F4D77B;
-        }
-
-        .premium-nav {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-            min-width: 0;
-            z-index: 1;
-        }
-
-        .premium-nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.7rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .premium-nav-link {
-            position: relative;
-            color: #D7D9E3;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.99rem;
-            letter-spacing: 0.04em;
-            padding: 0.4rem 0;
-            transition: color 220ms ease, transform 220ms ease;
-        }
-
-        .premium-nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -0.25rem;
-            width: 0;
-            height: 2px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #D4AF37 0%, #E7C873 100%);
-            transition: width 220ms ease;
-        }
-
-        .premium-nav-link:hover,
-        .premium-nav-link:focus-visible,
-        .premium-nav-link.active {
-            color: #ffffff;
-            transform: translateY(-1px);
-        }
-
-        .premium-nav-link:hover::after,
-        .premium-nav-link:focus-visible::after,
-        .premium-nav-link.active::after {
-            width: 100%;
-        }
-
-        .premium-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.92rem 1.35rem;
-            min-width: 12rem;
-            border-radius: 999px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.01em;
-            border: 1px solid rgba(255, 215, 150, 0.18);
-            background: linear-gradient(135deg, #0F172A 0%, #111827 100%);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
-            transition: transform 260ms ease-in-out, box-shadow 260ms ease-in-out, filter 260ms ease-in-out, border-color 260ms ease-in-out;
-            position: relative;
-            z-index: 2;
-        }
-
-        .premium-cta:hover,
-        .premium-cta:focus-visible {
-            transform: translateY(-2px) scale(1.01);
-            border-color: rgba(255, 215, 150, 0.35);
-            box-shadow: 0 18px 36px rgba(212, 175, 55, 0.18);
-            filter: brightness(1.04);
-        }
-
-        .premium-nav-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 0.25rem;
-            width: 2.95rem;
-            height: 2.95rem;
-            border: 1px solid rgba(255, 215, 150, 0.14);
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.06);
-            cursor: pointer;
-            padding: 0;
-            z-index: 3;
-            transition: background-color 220ms ease, transform 220ms ease, border-color 220ms ease;
-        }
-
-        .premium-nav-toggle:hover,
-        .premium-nav-toggle.active {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 215, 150, 0.24);
-            transform: scale(1.03);
-        }
-
-        .premium-nav-toggle span {
-            display: block;
-            width: 1.15rem;
-            height: 2px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #ffffff 0%, #E7C873 100%);
-            transition: transform 220ms ease, opacity 220ms ease;
-        }
-
-        .premium-nav-toggle.active span:nth-child(1) {
-            transform: translateY(6px) rotate(45deg);
-        }
-
-        .premium-nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .premium-nav-toggle.active span:nth-child(3) {
-            transform: translateY(-6px) rotate(-45deg);
-        }
-
-        .premium-nav-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(2, 6, 23, 0.7);
-            backdrop-filter: blur(8px);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 260ms ease;
-            z-index: 2150;
-        }
-
-        .premium-nav-overlay.is-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        body.nav-open {
-            overflow: hidden;
-        }
-
-        @media (max-width: 1024px) {
-            .premium-nav {
-                position: fixed;
-                top: 0;
-                right: 0;
-                left: auto;
-                transform: translateX(100%);
-                width: min(88vw, 320px);
-                height: 100vh;
-                padding: 6rem 1.25rem 2rem;
-                background: rgba(8, 10, 18, 0.95);
-                border-left: 1px solid rgba(255, 215, 150, 0.1);
-                box-shadow: -18px 0 50px rgba(0, 0, 0, 0.35);
-                backdrop-filter: blur(22px) saturate(180%);
-                transition: transform 320ms cubic-bezier(.22, 1, .36, 1);
-            }
-
-            .premium-nav.open,
-            .premium-nav.active {
-                transform: translateX(0);
-            }
-
-            .premium-nav-links {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-                font-size: 1rem;
-            }
-
-            .premium-nav-link {
-                font-size: 1rem;
-                padding: 0.25rem 0;
-            }
-
-            .premium-nav-toggle {
-                display: inline-flex;
-            }
-
-            .premium-cta {
-                display: none;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .premium-nav-shell {
-                padding: 0.8rem 1rem;
-                border-radius: 999px;
-            }
-
-            .premium-logo-text {
-                font-size: 0.95rem;
-            }
-        }
-    </style> -->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            console.log("Premium Section Indicator System Ready!");
-
-            const indicatorItems = document.querySelectorAll(".section-indicator-item");
-            const sections = document.querySelectorAll("main > section");
-            let currentExpandedItem = null;
-
-            // A. CLICK-TO-EXPAND BEHAVIOR
-            indicatorItems.forEach(item => {
-                item.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    if (this === currentExpandedItem) {
-                        this.classList.remove("expanded");
-                        currentExpandedItem = null;
-                    } else {
-                        if (currentExpandedItem) {
-                            currentExpandedItem.classList.remove("expanded");
-                        }
-                        this.classList.add("expanded");
-                        currentExpandedItem = this;
-                        const targetId = this.getAttribute("data-target");
-                        const targetedElement = document.getElementById(targetId);
-                        if (targetedElement) {
-                            const navbarOffset = 90;
-                            const offsetPosition = targetedElement.getBoundingClientRect().top + window.pageYOffset - navbarOffset;
-                            window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-                        }
-                    }
-                });
-            });
-
-            // B. SCROLL INDICATOR
-            window.addEventListener('scroll', function () {
-                const windowScroll = document.documentElement.scrollTop || document.body.scrollTop;
-                const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-                if (totalHeight > 0) {
-                    const scrollPercentage = (windowScroll / totalHeight) * 100;
-                    const indicator = document.getElementById('scrollIndicator');
-                    if (indicator) indicator.style.width = scrollPercentage + '%';
-                }
-
-                let triggerLine = window.scrollY + 160;
-                let currentActiveSectionId = "";
-
-                sections.forEach(sec => {
-                    if (sec.offsetTop <= triggerLine) {
-                        currentActiveSectionId = sec.getAttribute("id");
-                    }
-                });
-
-                if (currentActiveSectionId) {
-                    indicatorItems.forEach(item => {
-                        const itemTarget = item.getAttribute("data-target");
-                        if (itemTarget === currentActiveSectionId) {
-                            if (item !== currentExpandedItem) {
-                                if (currentExpandedItem) {
-                                    currentExpandedItem.classList.remove("expanded");
-                                }
-                                item.classList.add("expanded");
-                                currentExpandedItem = item;
-                            }
-                        }
-                    });
-                }
-            });
-
-            // C. SCROLL REVEAL ENGINE
-            const revealElements = document.querySelectorAll('.scroll-reveal');
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
-
-            revealElements.forEach(el => revealObserver.observe(el));
-
-            // D. OBSERVER GRAFIK BATANG
-            const chartObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const fills = entry.target.querySelectorAll('.pwc-bar-fill');
-                        fills.forEach(fill => {
-                            const targetWidth = fill.getAttribute('data-size');
-                            if (targetWidth) fill.style.setProperty('width', targetWidth + '%', 'important');
-                        });
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            const chartContainer = document.querySelector('.pwc-chart-bars');
-            if (chartContainer) chartObserver.observe(chartContainer);
-
-            // E. CONTROLLER HAMBURGER MENU MOBILE
-            const navToggle = document.getElementById('navToggle');
-            const navLinks = document.getElementById('navLinks');
-            const navOverlay = document.getElementById('navOverlay');
-            const navLinkItems = document.querySelectorAll('.nav-link');
-
-            const closeMobileNav = () => {
-                if (navToggle) navToggle.classList.remove('active');
-                if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
-                if (navLinks) navLinks.classList.remove('active');
-                if (navOverlay) navOverlay.classList.remove('is-visible');
-                document.body.classList.remove('nav-open');
-            };
-
-            const openMobileNav = () => {
-                if (navToggle) {
-                    navToggle.classList.add('active');
-                    navToggle.setAttribute('aria-expanded', 'true');
-                }
-                if (navLinks) navLinks.classList.add('active');
-                if (navOverlay) navOverlay.classList.add('is-visible');
-                document.body.classList.add('nav-open');
-            };
-
-            if (navToggle && navLinks) {
-                navToggle.addEventListener('click', () => {
-                    const isOpen = navToggle.classList.contains('active');
-                    if (isOpen) {
-                        closeMobileNav();
-                    } else {
-                        openMobileNav();
-                    }
-                });
-
-                if (navOverlay) {
-                    navOverlay.addEventListener('click', closeMobileNav);
-                }
-
-                navLinkItems.forEach(link => {
-                    link.addEventListener('click', closeMobileNav);
-                });
-            }
-
-            const header = document.getElementById('siteHeader');
-            let hideTimer;
-
-            const setHeaderState = () => {
-                if (!header) return;
-                const currentScrollY = window.scrollY;
-
-                header.classList.toggle('scrolled', currentScrollY > 12);
-                header.classList.add('is-hidden');
-                header.classList.remove('is-visible');
-
-                clearTimeout(hideTimer);
-                hideTimer = setTimeout(() => {
-                    if (currentScrollY <= 12) {
-                        header.classList.remove('is-hidden');
-                        header.classList.add('is-visible');
-                    }
-                }, 180);
-            };
-
-            setHeaderState();
-            window.addEventListener('scroll', setHeaderState, { passive: true });
-
-            const sectionIds = ['hero', 'demo', 'cases', 'ai-employee', 'investasi', 'contact'];
-            const activeLinks = Array.from(document.querySelectorAll('.nav-link'));
-            const updateActiveLink = () => {
-                let currentId = 'hero';
-                sectionIds.forEach(id => {
-                    const section = document.getElementById(id);
-                    if (section && window.scrollY + 160 >= section.offsetTop) {
-                        currentId = id;
-                    }
-                });
-
-                activeLinks.forEach(link => {
-                    const href = link.getAttribute('href');
-                    link.classList.toggle('active', href === `#${currentId}`);
-                });
-            };
-
-            updateActiveLink();
-            window.addEventListener('scroll', updateActiveLink, { passive: true });
-
-            // F. PEMINDAH TAB PANEL INVESTASI
-            const tabButtons = document.querySelectorAll(".tab-btn");
-            const pricingPanels = document.querySelectorAll(".tab-content");
-            tabButtons.forEach(button => {
-                button.addEventListener("click", function (e) {
-                    e.preventDefault();
-
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove("active");
-                        btn.setAttribute('aria-selected', 'false');
-                    });
-                    pricingPanels.forEach(panel => panel.classList.remove("active"));
-
-                    this.classList.add("active");
-                    this.setAttribute('aria-selected', 'true');
-
-                    const targetTab = this.getAttribute("data-target");
-                    const targetPanel = document.getElementById(targetTab);
-                    if (targetPanel) {
-                        targetPanel.classList.add("active");
-                    }
-                });
-            });
-
-            // G. FORM INTEGRASI WHATSAPP
-            const waForm = document.getElementById('waForm');
-            if (waForm) {
-                waForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    const fullName = document.getElementById('fullName').value.trim();
-                    const workEmail = document.getElementById('workEmail').value.trim();
-                    const jobRole = document.getElementById('jobRole').value.trim();
-                    const selectedPlan = document.getElementById('selectedPlan').value;
-                    const bottleneck = document.getElementById('bottleneck').value;
-
-                    const waTemplate = `Halo Tim EnergyX! 👋\nSaya ingin mengirimkan ringkasan kebutuhan sistem untuk dijadwalkan sesi asesmen:\n\n*Profil Pemohon:*\n👤 Nama: ${fullName}\n💼 Jabatan: ${jobRole}\n📧 Corporate Email: ${workEmail}\n🎯 Skema Diminati: ${selectedPlan}\n\n*Kendala Operasional Utama:*\n${bottleneck}\n\nKapan tim Solution Architect bisa melakukan sesi telekonferensi untuk penjajakan lebih lanjut? Terima kasih.`;
-                    window.open(`https://wa.me/6285285586496?text=${encodeURIComponent(waTemplate)}`, '_blank');
-                });
-            }
-
-            // H. UNREGISTER SERVICE WORKER LAMA
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(function (registrations) {
-                    for (let registration of registrations) {
-                        registration.unregister().then(function () {
-                            console.log("Service Worker lama berhasil dimusnahkan!");
-                        });
-                    }
-                });
-            }
-        });
-    </script>
-
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
