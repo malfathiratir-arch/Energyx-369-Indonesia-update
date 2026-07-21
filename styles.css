@@ -2039,8 +2039,10 @@ h1, h2, h3, h4 {
   .header {
     position: fixed !important;
     top: 12px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    transform: none !important;
     width: calc(100% - 1.5rem) !important;
     height: 56px !important;
   }
@@ -2105,85 +2107,154 @@ h1, h2, h3, h4 {
     background: var(--color-surface); 
   }
 
-  /* Hamburger Controller & Mobile Dropdown */
+  /* Hamburger Controller & Mobile Sidebar Drawer */
   .nav-toggle {
-    display: block !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 8px;
     position: relative;
-    z-index: 1010;
+    z-index: 99990 !important;
   }
 
   .nav-toggle .hamburger { 
     display: flex; 
     flex-direction: column; 
-    gap: 6px; 
+    gap: 5px; 
     width: 24px; 
+    position: relative;
+    z-index: 100010 !important;
   }
 
+  /* Garis Hamburger dibuat berwarna Putih di Header HP */
   .nav-toggle .hamburger span {
     display: block; 
     width: 24px; 
     height: 2px;
-    background-color: #000000 !important;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease !important;
+    background-color: #FFFFFF !important;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, background-color 0.3s ease !important;
   }
 
-  .nav-toggle.active .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .nav-toggle.active .hamburger span:nth-child(2) { opacity: 0; transform: scale(0); }
-  .nav-toggle.active .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  /* Tombol Close Toggle di dalam Sidebar saat Terbuka */
+  .nav-toggle.active {
+    position: fixed !important;
+    top: 1.25rem !important;
+    right: 1.5rem !important;
+    width: 36px !important;
+    height: 36px !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    z-index: 100010 !important;
+    transition: background 0.2s ease !important;
+  }
 
+  .nav-toggle.active:hover {
+    background: rgba(255, 107, 0, 0.15) !important;
+  }
+
+  .nav-toggle.active .hamburger span {
+    background-color: #1F2937 !important;
+    box-shadow: none;
+  }
+
+  .nav-toggle.active .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.active .hamburger span:nth-child(2) { opacity: 0; transform: scale(0); }
+  .nav-toggle.active .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile Sidebar Drawer (Hanya di HP / max-width: 992px) */
   .nav-links {
     display: flex !important;
-    position: absolute;
-    top: 100%; 
-    left: 0; 
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(30px) saturate(200%) !important;
-    -webkit-backdrop-filter: blur(30px) saturate(200%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.6) !important;
-    border-bottom: 3px solid var(--color-brand-orange) !important;
-    border-radius: 24px !important;
-    padding: 1.5rem !important;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem !important;
-    list-style: none;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15) !important;
-    z-index: 1009;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1), transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.35s !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 290px !important;
+    max-width: 80vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    background: #FFFFFF !important;
+    border: none !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0 !important;
+    padding: 5rem 1.5rem 2rem 1.5rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+    list-style: none !important;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25) !important;
+    z-index: 100000 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s ease !important;
+    overflow-y: auto !important;
+  }
+
+  .nav-links::before {
+    content: "EnergyX Menu";
+    display: block;
+    font-family: var(--font-body, sans-serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1F2937;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .nav-links.active { 
     opacity: 1 !important; 
     visibility: visible !important; 
-    transform: translateY(0) !important; 
+    transform: translateX(0) !important; 
   }
 
   .nav-links li { width: 100%; }
-  .nav-links a { 
-    display: block; 
-    width: 100%; 
-    padding: 0.5rem 0; 
-    font-size: 1rem !important; 
-    color: #2D2D2D !important; 
-    border-bottom: 1px solid #F0EDE9; 
-    text-decoration: none; 
+  
+  .nav-links a.nav-link { 
+    display: block !important; 
+    width: 100% !important; 
+    padding: 0.85rem 0.75rem !important; 
+    font-size: 0.95rem !important; 
+    font-weight: 600 !important;
+    color: #1F2937 !important; 
+    border-bottom: 1px solid #F0EDE9 !important; 
+    text-decoration: none !important; 
+    border-radius: 8px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: background 0.2s ease, color 0.2s ease !important;
+  }
+
+  .nav-links a.nav-link:hover {
+    background: rgba(255, 107, 0, 0.08) !important;
+    color: var(--color-brand-orange, #FF6B00) !important;
   }
 
   .nav-links a.nav-cta { 
-    background-color: var(--color-brand-orange) !important; 
+    background: linear-gradient(135deg, #FF7A00 0%, #FF3B30 100%) !important; 
     color: #FFFFFF !important; 
-    text-align: center; 
-    padding: 0.75rem !important; 
+    text-align: center !important; 
+    padding: 0.85rem !important; 
     border-bottom: none !important; 
-    margin-top: 0.25rem; 
+    border-radius: 12px !important;
+    margin-top: 0.5rem !important; 
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.25) !important;
+  }
+
+  /* Pertahankan navbar & sidebar jika toggle terbuka di mobile */
+  body.nav-open #siteHeader,
+  body.nav-open header {
+    top: 12px !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 
