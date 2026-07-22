@@ -295,6 +295,7 @@ h1, h2, h3, h4 {
 .logo-image {
   display: block;
   width: auto;
+  border-radius: 50px;
   height: 32px !important;
   max-width: 100%;
   object-fit: contain !important;
