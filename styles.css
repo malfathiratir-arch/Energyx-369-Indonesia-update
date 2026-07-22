@@ -130,7 +130,7 @@ footer::after,
   text-align: left; 
   max-width: 850px; 
   margin: 0 0 3.5rem 0; 
-  border-left: 4px solid #EFBF04 !important; 
+  border-left: 4px solid #285296 !important; 
   padding-left: 1.5rem; 
 }
 
@@ -152,11 +152,12 @@ footer::after,
 
 .section-eyebrow { 
   display: block; 
-  font-size: 0.8125rem; 
+  font-size: 1rem; 
   letter-spacing: 0.1em !important; 
   text-transform: uppercase; 
-  color: var(--color-brand-orange); 
+  color: #285296;; 
   margin-bottom: 0.75rem; 
+  font-weight: bold;
 }
 
 h1, h2, h3, h4 { 
@@ -1022,9 +1023,9 @@ h1, h2, h3, h4 {
 }
 
 .case-tag.tag-fin { background: rgba(40, 82, 150, 0.1); color: #285296; }
-.case-tag.tag-scm { background: rgba(239, 191, 4, 0.15); color: #8B6500; }
-.case-tag.tag-crm { background: rgba(193, 39, 45, 0.1); color: #C1272D; }
-.case-tag.tag-hr  { background: rgba(17, 34, 64, 0.08); color: #112240; }
+.case-tag.tag-scm { background: rgba(40, 82, 150, 0.1); color: #285296; }
+.case-tag.tag-crm { background: rgba(40, 82, 150, 0.1); color: #285296; }
+.case-tag.tag-hr  { background: rgba(40, 82, 150, 0.1); color: #285296; }
 
 .case-card h3 {
   font-family: 'Georgia', 'Times New Roman', serif;
@@ -1038,9 +1039,9 @@ h1, h2, h3, h4 {
 
 .case-card .case-highlight {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 3rem;
+  font-size: 2.7rem;
   font-weight: 700;
-  color: #EFBF04;
+  color: #285296;
   display: block;
   line-height: 1;
   margin-bottom: 0;

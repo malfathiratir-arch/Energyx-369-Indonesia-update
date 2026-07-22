@@ -109,16 +109,30 @@
     <meta name="theme-color" content="#1C1C1C">
     <link rel="manifest" href="manifest.json">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/EnergyXpict.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/EnrgyX-logo.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/EnrgyX-logo.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/EnrgyX-logo.png">
 </head>
 
 <body>
+    <svg style="display: none;">
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </symbol>
+        <symbol id="icon-play" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+        </symbol>
+    </svg>
+
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollIndicator"></div>
+    </div>
+
     <aside class="premium-section-indicator" id="sectionIndicator">
         <nav class="section-indicator-list" aria-label="Section navigation">
-            <button class="section-indicator-item active" data-target="hero" aria-label="Introduction">
+            <button class="section-indicator-item" data-target="hero" aria-label="Introduction">
                 <span class="indicator-box"></span>
                 <span class="indicator-label">Introduction</span>
             </button>
@@ -144,25 +158,11 @@
             </button>
         </nav>
     </aside>
-    <svg style="display: none;">
-        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-        </symbol>
-        <symbol id="icon-play" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z" />
-        </symbol>
-    </svg>
-
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="scrollIndicator"></div>
-    </div>
-
 
     <header class="header" id="siteHeader">
         <nav class="nav container">
             <a href="#hero" class="nav-logo" aria-label="Beranda EnergyX">
-                <img src="assets/logo.webp  " alt="EnergyX 369 Logo" class="logo-image">
+                <img src="assets/EnrgyyX-logo.png" alt="EnergyX 369 Logo" class="logo-image">
             </a>
 
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
