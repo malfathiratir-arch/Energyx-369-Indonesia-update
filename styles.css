@@ -2044,3 +2044,10 @@ h1, h2, h3, h4 {
   .hero-actions .btn { width: 100%; }
   .hero-actions { gap: 0.75rem; }
 }
+/* Mengubah semua angka metrik / persentase use-case menjadi warna Biru Tech */
+.case-card .case-highlight,
+.case-highlight,
+.callout-num,
+.bar-percentage {
+  color: #007AFF !important; /* Biru Tech Cyan khas iOS */
+}
