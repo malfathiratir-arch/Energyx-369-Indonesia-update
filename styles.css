@@ -9,7 +9,7 @@
 :root {
   /* --- Palet Utama Logo --- */
   --color-brand-red: #FF3B30;      /* Merah cerah node logo */
-  --color-brand-orange: #FF7A00;   /* Oranye vibrant */
+  --color-brand-orange: #EFBF04;   /* Oranye vibrant */
   --color-brand-blue: #007AFF;     /* Biru elektrik / Tech Cyan */
   --color-brand-darkblue: #0A2540; /* Biru gelap korporat */
   
@@ -129,7 +129,7 @@ footer::after,
   text-align: left; 
   max-width: 850px; 
   margin: 0 0 3.5rem 0; 
-  border-left: 4px solid #FF7A00 !important; 
+  border-left: 4px solid #EFBF04 !important; 
   padding-left: 1.5rem; 
 }
 
@@ -166,7 +166,7 @@ h1, h2, h3, h4 {
 }
 
 .accent-highlight {
-  background: linear-gradient(135deg, #FF3B30 0%, #FF7A00 45%, #007AFF 100%) !important;
+  background: linear-gradient(135deg, #FF3B30 0%, #EFBF04 45%, #007AFF 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -180,7 +180,7 @@ h1, h2, h3, h4 {
 }
 
 .logo-sub {
-  background: linear-gradient(135deg, #FF3B30 0%, #FF7A00 50%, #007AFF 100%) !important;
+  background: linear-gradient(135deg, #FF3B30 0%, #EFBF04 50%, #007AFF 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -212,14 +212,14 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary { 
-  background: linear-gradient(135deg, #FF7A00 0%, #FF3B30 100%) !important;
+  background: linear-gradient(135deg, #EFBF04 0%, #FF3B30 100%) !important;
   border: none !important;
   color: #FFFFFF !important;
   box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3) !important;
 }
 
 .btn-primary:hover { 
-  background: linear-gradient(135deg, #E06B00 0%, #D72E24 100%) !important;
+  background: linear-gradient(135deg, #EFBF04 0%, #D72E24 100%) !important;
   box-shadow: 0 6px 20px rgba(255, 59, 48, 0.4) !important;
 }
 
