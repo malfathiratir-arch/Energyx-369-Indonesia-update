@@ -11,7 +11,7 @@
   --color-brand-red: #FF3B30;      /* Merah cerah node logo */
   --color-brand-orange: #EFBF04;   /* Oranye vibrant */
   --color-brand-blue: #007AFF;     /* Biru elektrik / Tech Cyan */
-  --color-brand-darkblue: #0A2540; /* Biru gelap korporat */
+  --color-brand-darkblue: #0a2540; /* Biru gelap korporat */
   
   /* --- Gradient Brand --- */
   --gradient-brand: linear-gradient(135deg, #FF3B30 0%, #FF7A00 50%, #007AFF 100%);
@@ -166,7 +166,7 @@ h1, h2, h3, h4 {
 }
 
 .accent-highlight {
-  background: linear-gradient(135deg, #FF3B30 0%, #EFBF04 45%, #007AFF 100%) !important;
+  background: linear-gradient(135deg,  #D4AF37 0%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -212,14 +212,14 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary { 
-  background: linear-gradient(135deg, #EFBF04 0%, #FF3B30 100%) !important;
+  background: linear-gradient(135deg, #D4AF37 0%, #0F3D7A 100%) !important;
   border: none !important;
   color: #FFFFFF !important;
   box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3) !important;
 }
 
 .btn-primary:hover { 
-  background: linear-gradient(135deg, #EFBF04 0%, #D72E24 100%) !important;
+  background: linear-gradient(135deg, #D4AF37 0%, #0F3D7A 100%) !important;
   box-shadow: 0 6px 20px rgba(255, 59, 48, 0.4) !important;
 }
 
@@ -270,7 +270,7 @@ h1, h2, h3, h4 {
 
 .header.is-scrolled,
 .hero ~ .header {
-  background: var(--color-brand-darkblue) !important;
+  background: var(--color-brand-darkblue)  !important;
 }
 
 .nav { 
@@ -295,7 +295,6 @@ h1, h2, h3, h4 {
 .logo-image {
   display: block;
   width: auto;
-  border-radius: 50px;
   height: 32px !important;
   max-width: 100%;
   object-fit: contain !important;
@@ -305,7 +304,6 @@ h1, h2, h3, h4 {
 
 .nav-links { 
   display: flex; 
-  gap: 2rem; 
   align-items: center; 
   list-style: none; 
 }
@@ -328,7 +326,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-links a.nav-cta { 
-  background: linear-gradient(135deg, #FF7A00 0%, #FF3B30 100%) !important; 
+  background: var(--color-brand-orange) !important; 
   color: #FFFFFF !important; 
   font-family: 'Inter', system-ui, sans-serif !important; 
   font-weight: 700 !important; 
@@ -336,7 +334,6 @@ h1, h2, h3, h4 {
   padding: 9px 22px !important; 
   border-radius: 999px !important; 
   border: 1px solid rgba(255, 255, 255, 0.25) !important; 
-  box-shadow: 0 4px 18px rgba(255, 122, 0, 0.45) !important; 
   transition: all 0.25s ease !important; 
   white-space: nowrap !important; 
   text-decoration: none !important; 
@@ -1311,14 +1308,14 @@ h1, h2, h3, h4 {
 }
 
 .pricing-tier {
-  font-size: 1.25rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--color-primary);
   margin-bottom: 0.35rem;
 }
 
 .pricing-desc {
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
   line-height: 1.5;
   margin-bottom: 1.25rem;
@@ -1341,7 +1338,7 @@ h1, h2, h3, h4 {
 
 .pricing-value {
   font-family: var(--font-body);
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 900;
   color: var(--color-primary);
   line-height: 1;
@@ -1356,13 +1353,13 @@ h1, h2, h3, h4 {
 }
 
 .pricing-unit span {
-  font-size: 0.8125rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-text-muted);
 }
 
 .pricing-annual {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
   line-height: 1.5;
 }
@@ -1384,7 +1381,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   color: var(--color-text);
   line-height: 1.5;
 }
