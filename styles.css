@@ -1,33 +1,33 @@
 /* ==========================================================================
    EnergyX 369 — Enterprise AI OS
-   Editorial & Research Layout System
+   Editorial & Research Layout System (FULL iOS DYNAMIC EDITION)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. ROOT VARIABLES & THEME CONFIGURATION
    -------------------------------------------------------------------------- */
 :root {
-  /* --- Palet Utama Logo --- */
+  /* --- Palet Utama Logo & Akses Emas iOS --- */
   --color-brand-red: #FF3B30;       /* Merah cerah node logo */
-  --color-brand-orange: #EFBF04;    /* Akses Utama: Kuning Gold Vibrant */
-  --color-brand-yellow: #F2A900;    /* Kuning Akses Tambahan */
-  --color-brand-blue: #007AFF;      /* Biru elektrik / Tech Cyan */
-  --color-brand-darkblue: #0a2540; /* Biru gelap korporat */
+  --color-brand-orange: #FFB800;    /* Emas Elektrik High-Contrast */
+  --color-brand-yellow: #FFD700;    /* Kuning Cerah Akses Tambahan */
+  --color-brand-blue: #007AFF;      /* Biru Tech Cyan / iOS Sapphire */
+  --color-brand-darkblue: #0A192F;  /* Midnight Sapphire gelap */
   
   /* --- Gradient Brand --- */
-  --gradient-brand: linear-gradient(135deg, #FF3B30 0%, #EFBF04 50%, #007AFF 100%);
+  --gradient-brand: linear-gradient(135deg, #FF3B30 0%, #FFB800 50%, #007AFF 100%);
   
   /* --- Variabel Layout & Surface --- */
   --color-bg: #FFFFFF;
   --color-surface: #F8F7F4;
-  --color-dark: #1C1C1C;
+  --color-dark: #121212;
   --color-primary: #000000;
   --color-text: #2D2D2D;
   --color-text-muted: #5D5D5D;
   --color-border: #E5E2DC;
   
   /* --- PwC Theme Variables --- */
-  --pwc-orange: #EFBF04;            /* Diubah ke Kuning Gold */
+  --pwc-orange: #FFB800;            
   --pwc-black: #000000;
   --pwc-text: #2D2D2D;
   --pwc-border: #EDEDED;
@@ -88,7 +88,7 @@ img {
 }
 
 /* --------------------------------------------------------------------------
-   3. SECTION STRUCTURES & TYPOGRAPHY
+   3. SECTION STRUCTURES & TYPOGRAPHY (EYEBROW & GARIS JADI BIRU TECH)
    -------------------------------------------------------------------------- */
 .section-padding { 
   padding: 5rem 0; 
@@ -130,7 +130,7 @@ footer::after,
   text-align: left; 
   max-width: 850px; 
   margin: 0 0 3.5rem 0; 
-  border-left: 4px solid #285296 !important; 
+  border-left: 4px solid var(--color-brand-blue) !important; /* Garis judul jadi Biru Tech */
   padding-left: 1.5rem; 
 }
 
@@ -150,14 +150,15 @@ footer::after,
   font-family: 'Inter', system-ui, -apple-system, sans-serif; 
 }
 
+/* TEKS LABEL CATEGORY JADI BIRU TECH CERAH */
 .section-eyebrow { 
   display: block; 
-  font-size: 1rem; 
-  letter-spacing: 0.1em !important; 
+  font-size: 0.8125rem; 
+  letter-spacing: 0.12em !important; 
   text-transform: uppercase; 
-  color: #285296; 
+  color: var(--color-brand-blue) !important; 
+  font-weight: 800;
   margin-bottom: 0.75rem; 
-  font-weight: bold;
 }
 
 h1, h2, h3, h4 { 
@@ -168,7 +169,7 @@ h1, h2, h3, h4 {
 }
 
 .accent-highlight {
-  background: linear-gradient(135deg, #FF3B30 0%, #EFBF04 50%, #007AFF 100%) !important;
+  background: linear-gradient(135deg, var(--color-brand-blue) 0%, #FFB800 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -182,7 +183,7 @@ h1, h2, h3, h4 {
 }
 
 .logo-sub {
-  background: linear-gradient(135deg, #FF3B30 0%, #EFBF04 50%, #007AFF 100%) !important;
+  background: linear-gradient(135deg, #FF3B30 0%, #FFB800 50%, #007AFF 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -200,9 +201,9 @@ h1, h2, h3, h4 {
   font-family: var(--font-body); 
   font-size: 0.875rem; 
   font-weight: 600; 
-  border-radius: 4px; 
+  border-radius: 999px; 
   cursor: pointer; 
-  transition: all 0.2s ease; 
+  transition: all 0.25s ease; 
   text-decoration: none; 
   border: 1px solid transparent; 
   letter-spacing: 0.02em;
@@ -214,16 +215,17 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary { 
-  background: linear-gradient(135deg, #EFBF04 0%, #D4AF37 100%) !important;
+  background: linear-gradient(135deg, #FFB800 0%, #E6A100 100%) !important;
   border: none !important;
-  color: #1C1C1C !important;
-  font-weight: 700 !important;
-  box-shadow: 0 4px 15px rgba(239, 191, 4, 0.35) !important;
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 18px rgba(255, 184, 0, 0.4) !important;
 }
 
 .btn-primary:hover { 
-  background: linear-gradient(135deg, #D4AF37 0%, #B89218 100%) !important;
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45) !important;
+  background: linear-gradient(135deg, #FFC800 0%, #D99000 100%) !important;
+  box-shadow: 0 6px 24px rgba(255, 184, 0, 0.55) !important;
+  transform: translateY(-2px);
 }
 
 .btn-outline-light { 
@@ -252,29 +254,29 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   5. HEADER & GLASSMORPHIC NAVBAR
+   5. HEADER & GLASSMORPHIC NAVBAR (iOS DYNAMIC CAPSULE STYLE)
    -------------------------------------------------------------------------- */
 .header,
 #siteHeader { 
   position: fixed !important; 
-  top: 20px !important; 
+  top: 18px !important; 
   left: 50% !important; 
   transform: translateX(-50%) !important; 
-  width: min(1080px, calc(100% - 2rem)) !important; 
-  height: 60px !important; 
-  background: rgba(15, 15, 20, 0.55) !important; 
-  backdrop-filter: blur(20px) saturate(180%) !important; 
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important; 
-  border: 1px solid rgba(255, 255, 255, 0.18) !important; 
-  border-radius: 999px !important; 
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 16px 36px rgba(0, 0, 0, 0.5) !important; 
+  width: min(1360px, calc(100% - 2rem)) !important; 
+  height: 72px !important; 
+  background: rgba(12, 16, 28, 0.85) !important; /* Obsidian Dark Glass agar kontras penuh di BG putih */
+  backdrop-filter: blur(28px) saturate(200%) !important; 
+  -webkit-backdrop-filter: blur(28px) saturate(200%) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.22) !important; 
+  border-radius: 999px !important; /* iOS Pill Shape Bulat Sempurna */
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 20px 45px rgba(0, 0, 0, 0.5) !important; 
   z-index: 2000 !important; 
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important; 
 }
 
 .header.is-scrolled,
 .hero ~ .header {
-  background: var(--color-brand-darkblue) !important;
+  background: rgba(10, 18, 35, 0.92) !important;
 }
 
 .header.nav-hidden,
@@ -289,7 +291,7 @@ h1, h2, h3, h4 {
   justify-content: space-between !important; 
   align-items: center !important; 
   height: 100% !important; 
-  padding: 0 1rem 0 1.25rem !important; 
+  padding: 0 2rem !important; 
 }
 
 .nav-logo { 
@@ -303,155 +305,255 @@ h1, h2, h3, h4 {
   height: 100%; 
 }
 
+/* LOGO DIBERIKAN UKURAN LEBIH BESAR DAN JERNIH */
 .logo-image {
   display: block;
   width: auto;
-  height: 32px !important;
+  height: 44px !important; /* Ditingkatkan ke 44px agar lebih gagah */
   max-width: 100%;
   object-fit: contain !important;
   mix-blend-mode: screen !important;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4)) !important;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.6)) !important;
+  border-radius: 10px !important;
 }
 
 .nav-links { 
   display: flex; 
   align-items: center; 
   list-style: none; 
+  gap: 0.35rem;
 }
 
 .nav-links a.nav-link { 
-  color: rgba(255, 255, 255, 0.9) !important; 
+  color: rgba(255, 255, 255, 0.95) !important; 
   font-family: 'Inter', system-ui, sans-serif !important; 
-  font-weight: 500 !important; 
+  font-weight: 600 !important; 
   font-size: 0.875rem !important; 
-  padding: 8px 16px !important; 
+  padding: 10px 20px !important; 
   border-radius: 999px !important; 
-  transition: all 0.2s ease !important; 
+  transition: all 0.25s ease !important; 
   text-decoration: none !important; 
 }
 
 .nav-links a.nav-link:hover { 
   color: #FFFFFF !important; 
-  background: rgba(255, 255, 255, 0.15) !important; 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important; 
+  background: rgba(255, 255, 255, 0.18) !important; 
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35) !important; 
 }
 
 .nav-links a.nav-cta { 
-  background: var(--color-brand-orange) !important; 
-  color: #1C1C1C !important; 
+  background: linear-gradient(135deg, #FFB800 0%, #E6A100 100%) !important; 
+  color: #0F172A !important; 
   font-family: 'Inter', system-ui, sans-serif !important; 
   font-weight: 800 !important; 
   font-size: 0.8125rem !important; 
-  padding: 9px 22px !important; 
+  padding: 10px 26px !important; 
   border-radius: 999px !important; 
-  border: 1px solid rgba(255, 255, 255, 0.3) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.4) !important; 
   transition: all 0.25s ease !important; 
   white-space: nowrap !important; 
   text-decoration: none !important; 
+  box-shadow: 0 4px 16px rgba(255, 184, 0, 0.4) !important;
 }
 
 .nav-links a.nav-cta:hover { 
-  transform: scale(1.04) !important; 
-  box-shadow: 0 6px 24px rgba(239, 191, 4, 0.65) !important; 
+  transform: scale(1.05) !important; 
+  box-shadow: 0 6px 26px rgba(255, 184, 0, 0.7) !important; 
 }
+/* ==========================================================================
+   6. FLOATING SIDEBAR KIRI (iOS CLEAN & CRISP - NO DARK SHADOW)
+   ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   6. SCROLL PROGRESS BAR & FLOATING SECTION INDICATOR
-   -------------------------------------------------------------------------- */
-.scroll-progress-container {
-  position: fixed !important;
-  top: 0 !important; 
-  left: 0 !important;
-  width: 100% !important;
-  height: 6px !important; 
-  background-color: transparent !important;
-  z-index: 2200 !important; 
-}
-
-.scroll-progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #FF3B30, #EFBF04, #007AFF) !important;
-  width: 0%; 
-  transition: width 0.05s ease-out; 
-}
-
-/* --- Floating Section Indicator (Sisi Kiri) --- */
+/* Container Utama Nav Kiri */
 .premium-section-indicator,
 #sectionIndicator {
   position: fixed !important;
   top: 50% !important;
-  left: 25px !important;
-  transform: translateY(-50%) !important;
+  left: 24px !important;
   z-index: 99999 !important;
-  display: block !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  
+  /* Mencegah Teks Burem (Ultra-Crisp Font Anti-Aliasing) */
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  transform-style: preserve-3d !important;
+  backface-visibility: hidden !important;
+  
+  /* Sembunyi di Paling Atas (Dashboard/Hero Area) */
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-50%) !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+/* Muncul Tajam 100% Saat Scroll Ke Bawah */
+.premium-section-indicator.is-scrolled-in,
+#sectionIndicator.is-scrolled-in {
+  opacity: 1 !important;
   pointer-events: auto !important;
+  transform: translateY(-50%) !important;
 }
 
 .section-indicator-list {
   display: flex !important;
   flex-direction: column !important;
-  gap: 16px !important;
+  gap: 14px !important;
   margin: 0 !important;
   padding: 0 !important;
   list-style: none !important;
 }
 
+/* Item Navigasi Transparan (Tanpa Background/Shadow Hitam) */
+.section-indicator-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  padding: 4px 8px !important;
+  border: none !important;
+  box-shadow: none !important; /* Hapus semua efek shadow gelap */
+  cursor: pointer !important;
+  text-align: left !important;
+  outline: none !important;
+  transition: transform 0.2s ease !important;
+}
+
+/* Kotak Indikator Biasa (Hitam Pekat Solid 100%) */
+.section-indicator-item .indicator-box {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid #000000 !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  box-sizing: border-box !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Teks Biasa (Hitam Pekat Solid 100%, Super Tajam) */
+.section-indicator-item .indicator-label {
+  display: inline-block !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important; /* Hitam pekat solid */
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: none !important;
+  white-space: nowrap !important;
+  -webkit-font-smoothing: antialiased !important;
+  transition: color 0.2s ease !important;
+}
+
+/* ==========================================================================
+   HOVER & ACTIVE STATE (EFEK RED GLOW iOS - TANPA SHADOW GELAP)
+   ========================================================================== */
+
+/* Efek Saat Mouse Datang (Hover) */
+.section-indicator-item:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: translateX(4px) !important;
+}
+
+/* Kotak Berubah Merah iOS + Soft Red Glow */
+.section-indicator-item:hover .indicator-box,
+.section-indicator-item.active .indicator-box {
+  background-color: #FF3B30 !important;
+  border-color: #FF3B30 !important;
+  box-shadow: 0 0 10px rgba(255, 59, 48, 0.5) !important; /* iOS Red Soft Glow */
+}
+
+/* Teks Berubah Merah iOS Cerah */
+.section-indicator-item:hover .indicator-label,
+.section-indicator-item.active .indicator-label {
+  color: #FF3B30 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 10px rgba(255, 59, 48, 0.25) !important; /* Light Red Glow */
+}
+
+.section-indicator-item.active .indicator-label {
+  font-weight: 800 !important;
+  color: #FF3B30 !important; /* Teks Merah Cerah */
+  text-shadow: none !important;
+}
+
+/* ITEM KAPSUL MIDNIGHT OBSIDIAN DENGAN GLOW DOCK */
 .section-indicator-item {
   display: flex !important;
   align-items: center !important;
   gap: 12px !important;
-  background: transparent !important;
-  border: none !important;
+  background: rgba(12, 18, 32, 0.94) !important; 
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  padding: 9px 20px 9px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45) !important;
   cursor: pointer !important;
-  padding: 4px 6px !important;
   text-align: left !important;
   outline: none !important;
+  transition: all 0.25s ease !important;
 }
 
-/* Shape Kotak (Square Indicator) */
+.section-indicator-item:hover {
+  background: rgba(26, 38, 62, 0.98) !important;
+  border-color: rgba(255, 184, 0, 0.8) !important;
+  transform: scale(1.04) !important;
+}
+
+/* Kotak Indikator Presisi */
 .indicator-box {
-  width: 14px !important;
-  height: 14px !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  width: 10px !important;
+  height: 10px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
   background-color: transparent !important;
   transition: all 0.25s ease !important;
   flex-shrink: 0 !important;
   display: inline-block !important;
   box-sizing: border-box !important;
-  border-radius: 0px !important;
+  border-radius: 2px !important;
 }
 
-/* Label Teks Samping Kotak */
+/* Label Teks Putih Bersih & Tajam Terbaca */
 .indicator-label {
   display: inline-block !important;
   font-family: 'Inter', sans-serif !important;
-  font-size: 0.85rem !important;
-  font-weight: 500 !important;
-  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  color: #FFFFFF !important;
   transition: color 0.25s ease !important;
   white-space: nowrap !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* STATE AKTIF (Indikator Kuning Gold) */
+/* STATE AKTIF: TEKS & KOTAK MENYALA KUNING EMAS ELEKTRIK */
+.section-indicator-item.active {
+  background: rgba(15, 23, 42, 0.98) !important;
+  border-color: #FFB800 !important;
+  box-shadow: 0 6px 26px rgba(255, 184, 0, 0.45) !important;
+}
+
 .section-indicator-item.active .indicator-box {
-  background-color: #EFBF04 !important;
-  border-color: #EFBF04 !important;
-  box-shadow: 0 0 10px rgba(239, 191, 4, 0.7) !important;
+  background-color: #FFB800 !important;
+  border-color: #FFB800 !important;
+  box-shadow: 0 0 12px rgba(255, 184, 0, 0.9) !important;
 }
 
 .section-indicator-item.active .indicator-label {
-  font-weight: 700 !important;
-  color: #FFFFFF !important;
-}
-
-/* HOVER EFFECT */
-.section-indicator-item:hover .indicator-box {
-  border-color: #EFBF04 !important;
-}
-
-.section-indicator-item:hover .indicator-label {
-  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  color: #FFD700 !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -501,8 +603,9 @@ h1, h2, h3, h4 {
   display: block !important;
   width: 60px !important;
   height: 4px !important;
-  background-color: var(--color-brand-orange) !important;
+  background-color: #FFB800 !important;
   margin-bottom: 2rem !important;
+  border-radius: 2px !important;
 }
 
 .hero-title {
@@ -526,7 +629,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-quote {
-  border-left: 3px solid var(--color-brand-orange) !important;
+  border-left: 3px solid #FFB800 !important;
   padding-left: 1.5rem !important;
   color: #CBD5E1 !important;
   font-family: var(--font-heading) !important;
@@ -542,14 +645,14 @@ h1, h2, h3, h4 {
 }
 
 .hero-actions .btn-primary { 
-  background-color: var(--color-brand-orange) !important; 
-  border-color: var(--color-brand-orange) !important; 
-  color: #1C1C1C !important; 
+  background-color: #FFB800 !important; 
+  border-color: #FFB800 !important; 
+  color: #0F172A !important; 
 }
 
 .hero-actions .btn-primary:hover { 
-  background-color: #D4AF37 !important; 
-  border-color: #D4AF37 !important; 
+  background-color: #E6A100 !important; 
+  border-color: #E6A100 !important; 
 }
 
 .hero-visual-bright {
@@ -557,9 +660,9 @@ h1, h2, h3, h4 {
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-top: 6px solid var(--color-brand-orange) !important; 
+  border-top: 6px solid #FFB800 !important; 
   padding: 3rem 2.5rem !important;
-  border-radius: 0px !important;
+  border-radius: 16px !important;
   color: #FFFFFF !important;
   margin-top: 0px !important;
   opacity: 0;
@@ -568,17 +671,17 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   8. HERO DEMO WIDGET — RANI FINANCE AI AGENT (KUNING ASSESSMENT STYLE)
+   8. HERO DEMO WIDGET — RANI FINANCE AI AGENT
    -------------------------------------------------------------------------- */
 .hero-demo {
-  --demo-accent: #EFBF04;
-  --demo-bg-card: rgba(255, 255, 255, 0.07);
+  --demo-accent: #FFB800;
+  --demo-bg-card: rgba(15, 23, 42, 0.75);
   --demo-text: #FFFFFF;
-  --demo-text-muted: rgba(255, 255, 255, 0.62);
-  --demo-border: rgba(255, 255, 255, 0.15);
+  --demo-text-muted: rgba(255, 255, 255, 0.72);
+  --demo-border: rgba(255, 255, 255, 0.18);
   --demo-font: 'Manrope', 'Inter', system-ui, sans-serif;
-  --demo-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.4);
-  --demo-radius: 12px;
+  --demo-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
+  --demo-radius: 16px;
   
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   align-self: start;
@@ -590,8 +693,8 @@ h1, h2, h3, h4 {
 
 .demo-window {
   background: var(--demo-bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--demo-border);
   border-top: 6px solid var(--demo-accent);
   border-radius: var(--demo-radius);
@@ -604,15 +707,15 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.75rem;
   padding: 0.85rem 1.25rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid var(--demo-border);
 }
 
 .demo-dots { display: flex; gap: 6px; }
 .demo-dots i { width: 10px; height: 10px; border-radius: 50%; display: block; }
-.demo-dots i:nth-child(1) { background: #C1272D; }
-.demo-dots i:nth-child(2) { background: #EFBF04; }
-.demo-dots i:nth-child(3) { background: #4A607A; }
+.demo-dots i:nth-child(1) { background: #FF3B30; }
+.demo-dots i:nth-child(2) { background: #FFB800; }
+.demo-dots i:nth-child(3) { background: #007AFF; }
 
 .demo-agent { 
   flex: 1; 
@@ -621,6 +724,7 @@ h1, h2, h3, h4 {
   display: flex; 
   align-items: center; 
   gap: 0.5rem; 
+  font-weight: 600;
 }
 
 .pulse-dot { 
@@ -638,13 +742,14 @@ h1, h2, h3, h4 {
 
 .demo-status {
   font-size: 0.6875rem; 
-  font-weight: 700; 
+  font-weight: 800; 
   text-transform: uppercase; 
   letter-spacing: 0.06em;
-  color: #1C1C1C; 
-  background: #EFBF04; 
-  padding: 0.25rem 0.6rem; 
-  border-radius: 4px;
+  color: #0F172A; 
+  background: #FFB800; 
+  padding: 0.25rem 0.65rem; 
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(255, 184, 0, 0.4);
 }
 
 .demo-body { padding: 1.25rem; }
@@ -652,7 +757,7 @@ h1, h2, h3, h4 {
 .demo-label {
   display: block; 
   font-size: 0.625rem; 
-  font-weight: 700; 
+  font-weight: 800; 
   text-transform: uppercase;
   letter-spacing: 0.08em; 
   color: var(--demo-text-muted); 
@@ -660,9 +765,9 @@ h1, h2, h3, h4 {
 }
 
 .demo-input {
-  background: rgba(239, 191, 4, 0.08); 
-  border: 1px solid rgba(239, 191, 4, 0.3);
-  border-radius: 8px; 
+  background: rgba(255, 184, 0, 0.1); 
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  border-radius: 10px; 
   padding: 1rem; 
   min-height: 72px; 
   position: relative;
@@ -675,6 +780,7 @@ h1, h2, h3, h4 {
   margin: 0; 
   display: inline; 
   font-family: var(--demo-font); 
+  font-weight: 500;
 }
 
 .typing-cursor { 
@@ -700,15 +806,15 @@ h1, h2, h3, h4 {
 .demo-progress-bar { 
   height: 100%; 
   width: 0; 
-  background: linear-gradient(90deg, var(--demo-accent), #FFD700); 
+  background: linear-gradient(90deg, #FFB800, #FFD700); 
   border-radius: 99px; 
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .demo-output {
-  background: rgba(255, 255, 255, 0.05); 
+  background: rgba(255, 255, 255, 0.06); 
   border: 1px solid var(--demo-border); 
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 1rem; 
   opacity: 0; 
   transform: translateY(8px); 
@@ -737,7 +843,7 @@ h1, h2, h3, h4 {
   width: 22px; 
   height: 22px; 
   border-radius: 50%; 
-  background: rgba(255, 255, 255, 0.08); 
+  background: rgba(255, 255, 255, 0.1); 
   border: 1px solid var(--demo-border);
   display: flex; 
   justify-content: center; 
@@ -778,7 +884,7 @@ h1, h2, h3, h4 {
 
 .roi-metrics-bar .roi-flex {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 16px; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   padding: 1.75rem 0.5rem;
   border: 1px solid var(--color-border);
@@ -827,9 +933,9 @@ h1, h2, h3, h4 {
 }
 
 .roi-number {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  color: var(--color-brand-orange);
+  color: #D97706; 
   line-height: 1;
   letter-spacing: -1px;
   margin-bottom: 0.6rem;
@@ -863,7 +969,7 @@ h1, h2, h3, h4 {
   flex: 1 1 55%;          
   max-width: 900px;
   margin: 0 auto; 
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--color-border);
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
@@ -876,6 +982,7 @@ h1, h2, h3, h4 {
   height: 0;
   background: #000000;
   width: 100%;
+  border-radius: 16px;
 }
 
 .video-container iframe {
@@ -884,6 +991,7 @@ h1, h2, h3, h4 {
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 16px;
 }
 
 /* --------------------------------------------------------------------------
@@ -900,7 +1008,8 @@ h1, h2, h3, h4 {
 .pwc-chart-callout { 
   background: var(--color-surface); 
   padding: 2.5rem; 
-  border-top: 4px solid var(--color-brand-orange); 
+  border-top: 4px solid #FFB800; 
+  border-radius: 12px;
 }
 
 .callout-badge { 
@@ -912,6 +1021,7 @@ h1, h2, h3, h4 {
   font-weight: 700; 
   text-transform: uppercase; 
   margin-bottom: 1rem; 
+  border-radius: 4px;
 }
 
 .callout-title { font-size: 1.75rem; font-weight: 400; margin-bottom: 1rem; }
@@ -920,8 +1030,8 @@ h1, h2, h3, h4 {
 
 .callout-num { 
   font-size: 3.5rem; 
-  font-weight: 700; 
-  color: var(--color-brand-orange); 
+  font-weight: 800; 
+  color: #D97706; 
   display: block; 
   line-height: 1; 
   margin-bottom: 0.5rem; 
@@ -940,24 +1050,26 @@ h1, h2, h3, h4 {
 .pwc-bar-row { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
 .pwc-bar-info { display: flex; justify-content: space-between; font-size: 0.9375rem; font-weight: 500; width: 100%; }
 .bar-label { color: var(--color-text); padding-right: 10px; }
-.bar-percentage { font-weight: 700; color: var(--color-brand-orange); flex-shrink: 0; }
+.bar-percentage { font-weight: 800; color: #D97706; flex-shrink: 0; }
 
 .pwc-bar-track { 
   height: 12px; 
   background: rgba(0, 0, 0, 0.06); 
   width: 100%; 
   position: relative; 
+  border-radius: 6px;
 }
 
 .pwc-bar-fill { 
   height: 100%; 
   width: 0%; 
+  border-radius: 6px;
   transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1); 
 }
 
-.fill-orange { background: var(--color-brand-orange); }
-.fill-amber { background: #EFBF04; }
-.fill-gold { background: #D4AF37; }
+.fill-orange { background: #FFB800; }
+.fill-amber { background: #D97706; }
+.fill-gold { background: #FFD700; }
 .fill-dark { background: var(--color-dark); }
 
 .chart-source-text { 
@@ -980,7 +1092,7 @@ h1, h2, h3, h4 {
 .case-card {
   background: #FFFFFF;
   border: 1px solid #D8DEE8;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -995,7 +1107,7 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #285296, #EFBF04, #C1272D);
+  background: linear-gradient(90deg, #285296, #FFB800, #C1272D);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -1014,7 +1126,7 @@ h1, h2, h3, h4 {
   padding: 0.3rem 0.75rem;
   font-size: 0.75rem;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 6px;
   margin-bottom: 1rem;
   width: max-content;
   letter-spacing: 0.05em;
@@ -1023,9 +1135,9 @@ h1, h2, h3, h4 {
 }
 
 .case-tag.tag-fin { background: rgba(40, 82, 150, 0.1); color: #285296; }
-.case-tag.tag-scm { background: rgba(40, 82, 150, 0.1); color: #285296; }
-.case-tag.tag-crm { background: rgba(40, 82, 150, 0.1); color: #285296; }
-.case-tag.tag-hr  { background: rgba(40, 82, 150, 0.1); color: #285296; }
+.case-tag.tag-scm { background: rgba(255, 184, 0, 0.18); color: #B45309; }
+.case-tag.tag-crm { background: rgba(193, 39, 45, 0.1); color: #C1272D; }
+.case-tag.tag-hr  { background: rgba(17, 34, 64, 0.08); color: #112240; }
 
 .case-card h3 {
   font-family: 'Georgia', 'Times New Roman', serif;
@@ -1039,9 +1151,9 @@ h1, h2, h3, h4 {
 
 .case-card .case-highlight {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 2.7rem;
-  font-weight: 700;
-  color: #285296;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #D97706; 
   display: block;
   line-height: 1;
   margin-bottom: 0;
@@ -1101,7 +1213,7 @@ h1, h2, h3, h4 {
   border: 1px solid var(--pwc-border);
   padding: 2rem 1.5rem;
   box-sizing: border-box;
-  border-radius: 12px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   height: 100%; 
@@ -1116,7 +1228,7 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #FF3B30, #EFBF04, #007AFF);
+  background: linear-gradient(90deg, #FF3B30, #FFB800, #007AFF);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -1189,7 +1301,7 @@ h1, h2, h3, h4 {
 }
 
 .pwc-icon-check {
-  color: var(--pwc-orange);
+  color: #D97706;
   font-size: 0.95rem;
   font-weight: bold;
   flex-shrink: 0;
@@ -1227,7 +1339,7 @@ h1, h2, h3, h4 {
   padding: 0.75rem 1rem; 
   font-family: var(--font-body); 
   font-size: 0.95rem; 
-  font-weight: 500; 
+  font-weight: 600; 
   color: var(--color-text-muted); 
   background: transparent; 
   border: none; 
@@ -1243,8 +1355,8 @@ h1, h2, h3, h4 {
 .tab-btn:hover { color: var(--color-primary); }
 
 .tab-btn.active { 
-  color: var(--color-brand-orange); 
-  border-bottom: 3px solid var(--color-brand-orange); 
+  color: #D97706; 
+  border-bottom: 3px solid #FFB800; 
 }
 
 .pricing-panel { 
@@ -1305,20 +1417,20 @@ h1, h2, h3, h4 {
 .pricing-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  border-color: var(--color-brand-orange);
+  border-color: #FFB800;
 }
 
 .pricing-card-featured {
-  border: 2px solid var(--color-brand-orange);
-  background: linear-gradient(180deg, rgba(239, 191, 4, 0.08) 0%, var(--color-bg) 35%);
-  box-shadow: 0 16px 40px rgba(239, 191, 4, 0.15);
+  border: 2px solid #FFB800;
+  background: linear-gradient(180deg, rgba(255, 184, 0, 0.08) 0%, var(--color-bg) 35%);
+  box-shadow: 0 16px 40px rgba(255, 184, 0, 0.18);
   margin-top: 0.75rem;
   z-index: 1;
 }
 
 .pricing-card-featured:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 48px rgba(239, 191, 4, 0.22);
+  box-shadow: 0 24px 48px rgba(255, 184, 0, 0.25);
 }
 
 .pricing-badge {
@@ -1326,8 +1438,8 @@ h1, h2, h3, h4 {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--color-brand-orange);
-  color: #1C1C1C;
+  background: #FFB800;
+  color: #0F172A;
   font-size: 0.65rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -1335,7 +1447,7 @@ h1, h2, h3, h4 {
   padding: 0.35rem 1rem;
   border-radius: 99px;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(239, 191, 4, 0.35);
+  box-shadow: 0 4px 12px rgba(255, 184, 0, 0.35);
 }
 
 .pricing-card-top {
@@ -1390,6 +1502,7 @@ h1, h2, h3, h4 {
   -webkit-overflow-scrolling: touch; 
   margin-bottom: 2rem; 
   border: 1px solid var(--color-border); 
+  border-radius: 12px;
 }
 
 .enterprise-table { 
@@ -1418,12 +1531,12 @@ h1, h2, h3, h4 {
 .enterprise-table td { text-align: center; color: var(--color-text); }
 .enterprise-table th:last-child, .enterprise-table td:last-child { border-right: none; }
 .enterprise-table td.text-left, .enterprise-table th.text-left { text-align: left; font-weight: 500; }
-.enterprise-table th.highlight-col, .enterprise-table td.highlight-col { background: rgba(239, 191, 4, 0.04); }
-.enterprise-table thead th.highlight-col { border-top: 4px solid var(--color-brand-orange); }
+.enterprise-table th.highlight-col, .enterprise-table td.highlight-col { background: rgba(255, 184, 0, 0.05); }
+.enterprise-table thead th.highlight-col { border-top: 4px solid #FFB800; }
 
-.plan-badge { display: inline-block; background: var(--color-brand-orange); color: #1C1C1C; padding: 0.25rem 0.75rem; font-size: 0.6875rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.plan-badge { display: inline-block; background: #FFB800; color: #0F172A; padding: 0.25rem 0.75rem; font-size: 0.6875rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; border-radius: 4px; }
 .plan-name { font-size: 1.375rem; color: var(--color-primary); }
-.plan-price { font-family: var(--font-body); font-size: 1.75rem; font-weight: 700; color: var(--color-brand-orange); margin: 0.25rem 0; }
+.plan-price { font-family: var(--font-body); font-size: 1.75rem; font-weight: 800; color: #D97706; margin: 0.25rem 0; }
 .plan-price .period { font-size: 0.875rem; color: var(--color-text-muted); font-weight: 400; }
 .plan-billed { font-size: 0.75rem; color: var(--color-text-muted); }
 .compact-table th, .compact-table td { padding: 1rem 1.5rem; }
@@ -1448,7 +1561,7 @@ h1, h2, h3, h4 {
   transition: background 0.25s ease, color 0.25s ease; 
 }
 
-.tooltip-trigger:hover, .tooltip-trigger:focus { background: var(--color-brand-orange); color: #1C1C1C; }
+.tooltip-trigger:hover, .tooltip-trigger:focus { background: #FFB800; color: #0F172A; }
 
 .tooltip-trigger::after { 
   content: attr(aria-label); 
@@ -1502,6 +1615,24 @@ h1, h2, h3, h4 {
   transition: all 0.25s ease;
 }
 
+.addon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-color: rgba(40, 82, 150, 0.2);
+}
+
+.pricing-card::before, .addon-card::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 6px;
+  background: linear-gradient(90deg, #FFB800, #FFD700, var(--color-brand-blue), var(--color-brand-darkblue), #FFB800);
+  background-size: 300% 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .pricing-card::before { border-top-left-radius: 16px; border-top-right-radius: 16px; }
 .addon-card::before { border-top-left-radius: 12px; border-top-right-radius: 12px; }
 
@@ -1532,15 +1663,16 @@ h1, h2, h3, h4 {
 
 /* Enterprise Card Highlighted & Layout */
 .enterprise-card-highlighted { 
-  background: #1C1C1C; 
+  background: #121212; 
   border: 1px solid #333333; 
-  border-top: 6px solid #EFBF04; 
+  border-top: 6px solid #FFB800; 
   padding: 3rem; 
   display: flex; 
   align-items: center; 
   justify-content: space-between; 
   gap: 3rem; 
   width: 100%; 
+  border-radius: 16px;
 }
 
 .enterprise-info h3 { font-size: 2rem; color: #FFFFFF; margin-bottom: 0.75rem; }
@@ -1548,9 +1680,9 @@ h1, h2, h3, h4 {
 
 .enterprise-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; list-style: none; }
 .enterprise-features li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #DDDDDD; }
-.enterprise-features svg { color: #EFBF04; flex-shrink: 0; }
+.enterprise-features svg { color: #FFB800; flex-shrink: 0; }
 
-.enterprise-action-highlighted { background: #2D2D2D; border: 1px solid #444444; padding: 2.5rem; text-align: center; min-width: 320px; }
+.enterprise-action-highlighted { background: #222222; border: 1px solid #444444; padding: 2.5rem; text-align: center; min-width: 320px; border-radius: 12px; }
 .enterprise-price-label { font-size: 0.75rem; color: #BBBBBB; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
 .enterprise-action-highlighted .price-amount { font-size: 2.5rem; font-family: var(--font-body); font-weight: 700; color: #FFFFFF; display: block; margin: 0.5rem 0; }
 .enterprise-price-sublabel { font-size: 0.8125rem; color: #999999; display: block; margin-bottom: 1.5rem; line-height: 1.4; }
@@ -1572,7 +1704,7 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-brand-orange), var(--color-brand-blue), var(--color-brand-red));
+  background: linear-gradient(90deg, #FFB800, var(--color-brand-blue), var(--color-brand-red));
   z-index: 1;
 }
 
@@ -1583,12 +1715,12 @@ h1, h2, h3, h4 {
 .enterprise-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .enterprise-benefit { display: flex; gap: 0.85rem; align-items: flex-start; padding: 1.15rem; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; transition: background 0.25s ease; }
 .enterprise-benefit:hover { background: rgba(255, 255, 255, 0.07); }
-.enterprise-benefit svg { color: var(--color-brand-orange); flex-shrink: 0; margin-top: 2px; }
+.enterprise-benefit svg { color: #FFB800; flex-shrink: 0; margin-top: 2px; }
 .enterprise-benefit strong { display: block; font-size: 0.875rem; color: #FFF; margin-bottom: 0.2rem; }
 .enterprise-benefit span { font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); line-height: 1.4; }
 
 .enterprise-sidebar { padding: 2.5rem 2.5rem 2.5rem 0; }
-.enterprise-price-box { background: rgba(0, 0, 0, 0.2); border: 2px solid var(--color-brand-orange); border-radius: 12px; padding: 2rem; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+.enterprise-price-box { background: rgba(0, 0, 0, 0.25); border: 2px solid #FFB800; border-radius: 12px; padding: 2rem; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; }
 .enterprise-price-display { display: flex; align-items: baseline; justify-content: center; gap: 0.2rem; margin-bottom: 1.25rem; }
 .enterprise-price-display .pricing-currency { color: rgba(255, 255, 255, 0.5); font-size: 1.125rem; }
 .enterprise-price-display .pricing-value { color: #FFF; font-size: 3.5rem; }
@@ -1596,7 +1728,7 @@ h1, h2, h3, h4 {
 
 .enterprise-price-notes { list-style: none; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0.5rem; padding: 0; }
 .enterprise-price-notes li { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.55); padding-left: 1rem; position: relative; text-align: left; }
-.enterprise-price-notes li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; border-radius: 50%; background: var(--color-brand-orange); }
+.enterprise-price-notes li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; border-radius: 50%; background: #FFB800; }
 
 /* --------------------------------------------------------------------------
    15. FORMULIR REGISTRASI & FOOTER SYSTEM
@@ -1617,15 +1749,16 @@ h1, h2, h3, h4 {
   border: 1px solid var(--color-border); 
   padding: 3rem; 
   width: 100%; 
+  border-radius: 16px;
 }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%; }
 .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; width: 100%; }
 .form-group label { font-size: 0.875rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.02em; }
-.form-group input, .form-group select, .form-group textarea { padding: 0.875rem 1rem; border: 1px solid var(--color-border); font-family: var(--font-body); font-size: 1rem; background: #FFFFFF; color: var(--color-primary); width: 100%; border-radius: 0; -webkit-appearance: none; }
-.form-group input:focus, .form-group select:focus { border-color: var(--color-brand-orange); outline: none; }
+.form-group input, .form-group select, .form-group textarea { padding: 0.875rem 1rem; border: 1px solid var(--color-border); font-family: var(--font-body); font-size: 1rem; background: #FFFFFF; color: var(--color-primary); width: 100%; border-radius: 8px; -webkit-appearance: none; }
+.form-group input:focus, .form-group select:focus { border-color: #FFB800; outline: none; }
 
-.privacy-notice { margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1rem; background-color: #FFFFFF; padding: 1.25rem; border: 1px solid var(--color-border); border-left: 4px solid #4A607A; width: 100%; }
+.privacy-notice { margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1rem; background-color: #FFFFFF; padding: 1.25rem; border: 1px solid var(--color-border); border-left: 4px solid #4A607A; width: 100%; border-radius: 8px; }
 .privacy-notice svg { color: #4A607A; flex-shrink: 0; }
 .privacy-notice-title { display: block; font-size: 0.8125rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
 .privacy-notice-text { font-size: 0.8125rem; color: var(--color-text-muted); line-height: 1.5; }
@@ -1635,7 +1768,7 @@ h1, h2, h3, h4 {
 .footer h4 { font-family: var(--font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #FFFFFF; font-size: 0.875rem; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
 .footer-links a { color: #AAAAAA; text-decoration: none; font-size: 0.875rem; transition: color 0.2s; font-family: var(--font-body); }
-.footer-links a:hover { color: var(--color-brand-orange); }
+.footer-links a:hover { color: #FFB800; }
 .footer-logo { width: auto; height: clamp(50px, 4vw, 42px); max-width: 100%; object-fit: contain; margin-bottom: 30px; }
 
 /* --------------------------------------------------------------------------
@@ -1713,7 +1846,7 @@ h1, h2, h3, h4 {
 
   .case-card { padding: 1.5rem; }
 
-  /* Sembunyikan indikator floating di layar HP/Tablet */
+  /* Sembunyikan indikator floating di layar HP/Tablet agar leluasa */
   .pwc-floating-indicator-nav,
   .premium-section-indicator,
   #sectionIndicator { display: none !important; }
@@ -1727,7 +1860,8 @@ h1, h2, h3, h4 {
     margin: 0 auto !important;
     transform: none !important;
     width: calc(100% - 1.5rem) !important;
-    height: 56px !important;
+    height: 58px !important;
+    border-radius: 999px !important;
   }
 
   .hero.dark-section { padding-top: 8rem !important; padding-bottom: 4rem !important; }
@@ -1754,7 +1888,7 @@ h1, h2, h3, h4 {
   
   .pricing-tabs { flex-direction: column; }
   .tab-btn { width: 100%; text-align: left; padding: 0.85rem 1rem; border-left: 3px solid transparent; border-bottom: none; }
-  .tab-btn.active { border-left-color: var(--color-brand-orange); background: var(--color-surface); }
+  .tab-btn.active { border-left-color: #FFB800; background: var(--color-surface); }
 
   /* Hamburger Toggle & Mobile Drawer */
   .nav-toggle {
@@ -1800,7 +1934,7 @@ h1, h2, h3, h4 {
     z-index: 100010 !important;
   }
 
-  .nav-toggle.active:hover { background: rgba(239, 191, 4, 0.15) !important; }
+  .nav-toggle.active:hover { background: rgba(255, 184, 0, 0.2) !important; }
   .nav-toggle.active .hamburger span { background-color: #1F2937 !important; box-shadow: none; }
   .nav-toggle.active .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle.active .hamburger span:nth-child(2) { opacity: 0; transform: scale(0); }
@@ -1870,20 +2004,20 @@ h1, h2, h3, h4 {
   }
 
   .nav-links a.nav-link:hover {
-    background: rgba(239, 191, 4, 0.12) !important;
-    color: var(--color-brand-orange) !important;
+    background: rgba(255, 184, 0, 0.15) !important;
+    color: #D97706 !important;
   }
 
   .nav-links a.nav-cta { 
-    background: linear-gradient(135deg, #EFBF04 0%, #D4AF37 100%) !important; 
-    color: #1C1C1C !important; 
+    background: linear-gradient(135deg, #FFB800 0%, #E6A100 100%) !important; 
+    color: #0F172A !important; 
     text-align: center !important; 
     padding: 0.85rem !important; 
     border-bottom: none !important; 
     border-radius: 12px !important;
     margin-top: 0.5rem !important; 
     font-weight: 800 !important;
-    box-shadow: 0 4px 12px rgba(239, 191, 4, 0.3) !important;
+    box-shadow: 0 4px 14px rgba(255, 184, 0, 0.35) !important;
   }
 
   body.nav-open #siteHeader,

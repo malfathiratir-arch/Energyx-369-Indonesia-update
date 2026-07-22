@@ -101,6 +101,61 @@
       ]
     }
     </script>
+    <style>
+  /* NAV KIRI TRANSPARAN & ULTRA-CRISP (iOS RED GLOW STYLE) */
+  #sectionIndicator, 
+  .premium-section-indicator, 
+  .section-indicator-item {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  /* Kotak Kecil & Teks Biasa (Hitam Pekat Solid 100%, Anti-Burem) */
+  .indicator-box {
+    width: 10px !important;
+    height: 10px !important;
+    border: 2px solid #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 2px !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  .indicator-label {
+    color: #000000 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    filter: none !important;
+    text-shadow: none !important;
+    -webkit-font-smoothing: antialiased !important;
+    transition: color 0.2s ease !important;
+  }
+  
+  /* Hover (Mouse Datang) & Aktif (Dipencet) -> Merah iOS & Soft Red Glow (Tanpa Shadow Hitam) */
+  .section-indicator-item:hover,
+  .section-indicator-item.active {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .section-indicator-item:hover .indicator-box,
+  .section-indicator-item.active .indicator-box {
+    background-color: #FF3B30 !important;
+    border-color: #FF3B30 !important;
+    box-shadow: 0 0 10px rgba(255, 59, 48, 0.5) !important;
+  }
+
+  .section-indicator-item:hover .indicator-label,
+  .section-indicator-item.active .indicator-label {
+    color: #FF3B30 !important;
+    font-weight: 800 !important;
+    text-shadow: 0 0 10px rgba(255, 59, 48, 0.25) !important;
+  }
+</style>
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">

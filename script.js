@@ -535,3 +535,41 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScrollUpdate);
     onScrollUpdate(); // Jalankan saat pertama dimuat
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sideNav = document.getElementById('sectionIndicator') || document.querySelector('.premium-section-indicator');
+  
+  if (!sideNav) return;
+
+  // 1. Tentukan batas scroll (misal setelah scroll 300px / melewati Hero)
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      sideNav.classList.add('is-scrolled-in');
+    } else {
+      sideNav.classList.remove('is-scrolled-in');
+      sideNav.classList.remove('is-hovered');
+    }
+  });
+
+  // 2. Deteksi pergerakan mouse di sekitar area nav kiri (Proximity Sensing)
+  document.addEventListener('mousemove', (e) => {
+    // Jika posisi kursor mouse berada di kisaran 180px dari tepi kiri layar
+    if (e.clientX <= 180 && window.scrollY > 300) {
+      sideNav.classList.add('is-hovered');
+    } else {
+      sideNav.classList.remove('is-hovered');
+    }
+  });
+});
+window.addEventListener('scroll', () => {
+  const sideNav = document.getElementById('sectionIndicator') || document.querySelector('.premium-section-indicator');
+  
+  if (sideNav) {
+    // Baru muncul jika posisi scroll lebih dari 200px (melewati area hero/dashboard)
+    if (window.scrollY > 200) {
+      sideNav.classList.add('is-scrolled-in');
+    } else {
+      sideNav.classList.remove('is-scrolled-in');
+    }
+  }
+});
