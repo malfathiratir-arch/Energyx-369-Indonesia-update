@@ -573,3 +573,22 @@ window.addEventListener('scroll', () => {
     }
   }
 });
+window.addEventListener('scroll', () => {
+  const topHeader = document.getElementById('siteHeader') || document.querySelector('.header');
+  const sideNav = document.getElementById('sectionIndicator') || document.querySelector('.premium-section-indicator');
+  const scrollPosition = window.scrollY;
+
+  // Jika di-scroll ke bawah lebih dari 150px
+  if (scrollPosition > 900) {
+    // 1. Navbar atas naik & sembunyi
+    if (topHeader) topHeader.classList.add('nav-hidden');
+    // 2. Navbar kiri muncul menggantikan
+    if (sideNav) sideNav.classList.add('is-scrolled-in');
+  } else {
+    // Jika kembali ke paling atas (halaman pertama):
+    // 1. Navbar atas muncul kembali
+    if (topHeader) topHeader.classList.remove('nav-hidden');
+    // 2. Navbar kiri sembunyi
+    if (sideNav) sideNav.classList.remove('is-scrolled-in');
+  }
+});
