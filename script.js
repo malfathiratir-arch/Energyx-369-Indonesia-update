@@ -445,3 +445,93 @@ window.addEventListener('scroll', () => {
     }
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const indicatorItems = document.querySelectorAll('.section-indicator-item');
+    const sections = document.querySelectorAll('section[id]');
+
+    // 1. Smooth Scroll saat tombol indikator diklik
+    indicatorItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 2. Deteksi Scroll Otomatis (ScrollSpy)
+    function highlightNavigation() {
+        let scrollPosition = window.scrollY + 250; // Offset posisi pandang layar
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                indicatorItems.forEach(item => {
+                    if (item.getAttribute('data-target') === sectionId) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }
+
+    // Jalankan fungsi saat di-scroll dan saat pertama kali halaman dimuat
+    window.addEventListener('scroll', highlightNavigation);
+    highlightNavigation();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const indicatorItems = document.querySelectorAll('.section-indicator-item');
+    const sections = document.querySelectorAll('main section[id]');
+
+    // 1. Klik indikator untuk Smooth Scroll
+    indicatorItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 2. Deteksi Scroll Otomatis (ScrollSpy)
+    function onScrollUpdate() {
+        const scrollPosition = window.scrollY + (window.innerHeight / 3);
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                indicatorItems.forEach(item => {
+                    if (item.getAttribute('data-target') === sectionId) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', onScrollUpdate);
+    onScrollUpdate(); // Jalankan saat pertama dimuat
+});

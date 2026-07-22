@@ -116,23 +116,9 @@
 </head>
 
 <body>
-    <svg style="display: none;">
-        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-        </symbol>
-        <symbol id="icon-play" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z" />
-        </symbol>
-    </svg>
-
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="scrollIndicator"></div>
-    </div>
-
     <aside class="premium-section-indicator" id="sectionIndicator">
         <nav class="section-indicator-list" aria-label="Section navigation">
-            <button class="section-indicator-item" data-target="hero" aria-label="Introduction">
+            <button class="section-indicator-item active" data-target="hero" aria-label="Introduction">
                 <span class="indicator-box"></span>
                 <span class="indicator-label">Introduction</span>
             </button>
@@ -158,6 +144,20 @@
             </button>
         </nav>
     </aside>
+    <svg style="display: none;">
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </symbol>
+        <symbol id="icon-play" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+        </symbol>
+    </svg>
+
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollIndicator"></div>
+    </div>
+
 
     <header class="header" id="siteHeader">
         <nav class="nav container">
