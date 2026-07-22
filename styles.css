@@ -9,12 +9,13 @@
 :root {
   /* --- Palet Utama Logo --- */
   --color-brand-red: #FF3B30;       /* Merah cerah node logo */
-  --color-brand-orange: #FF7A00;    /* Oranye vibrant */
+  --color-brand-orange: #EFBF04;    /* Akses Utama: Kuning Gold Vibrant */
+  --color-brand-yellow: #F2A900;    /* Kuning Akses Tambahan */
   --color-brand-blue: #007AFF;      /* Biru elektrik / Tech Cyan */
   --color-brand-darkblue: #0a2540; /* Biru gelap korporat */
   
   /* --- Gradient Brand --- */
-  --gradient-brand: linear-gradient(135deg, #FF3B30 0%, #FF7A00 50%, #007AFF 100%);
+  --gradient-brand: linear-gradient(135deg, #FF3B30 0%, #EFBF04 50%, #007AFF 100%);
   
   /* --- Variabel Layout & Surface --- */
   --color-bg: #FFFFFF;
@@ -26,7 +27,7 @@
   --color-border: #E5E2DC;
   
   /* --- PwC Theme Variables --- */
-  --pwc-orange: #D04A02;
+  --pwc-orange: #EFBF04;            /* Diubah ke Kuning Gold */
   --pwc-black: #000000;
   --pwc-text: #2D2D2D;
   --pwc-border: #EDEDED;
@@ -166,7 +167,7 @@ h1, h2, h3, h4 {
 }
 
 .accent-highlight {
-  background: linear-gradient(135deg, #D4AF37 0%) !important;
+  background: linear-gradient(135deg, #FF3B30 0%, #EFBF04 50%, #007AFF 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -212,15 +213,16 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary { 
-  background: linear-gradient(135deg, #D4AF37 0%, #0F3D7A 100%) !important;
+  background: linear-gradient(135deg, #EFBF04 0%, #D4AF37 100%) !important;
   border: none !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3) !important;
+  color: #1C1C1C !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 15px rgba(239, 191, 4, 0.35) !important;
 }
 
 .btn-primary:hover { 
-  background: linear-gradient(135deg, #D4AF37 0%, #0F3D7A 100%) !important;
-  box-shadow: 0 6px 20px rgba(255, 59, 48, 0.4) !important;
+  background: linear-gradient(135deg, #D4AF37 0%, #B89218 100%) !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45) !important;
 }
 
 .btn-outline-light { 
@@ -259,7 +261,7 @@ h1, h2, h3, h4 {
   transform: translateX(-50%) !important; 
   width: min(1080px, calc(100% - 2rem)) !important; 
   height: 60px !important; 
-  background: var(--color-brand-darkblue) !important; 
+  background: rgba(15, 15, 20, 0.55) !important; 
   backdrop-filter: blur(20px) saturate(180%) !important; 
   -webkit-backdrop-filter: blur(20px) saturate(180%) !important; 
   border: 1px solid rgba(255, 255, 255, 0.18) !important; 
@@ -269,6 +271,17 @@ h1, h2, h3, h4 {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important; 
 }
 
+.header.is-scrolled,
+.hero ~ .header {
+  background: var(--color-brand-darkblue) !important;
+}
+
+.header.nav-hidden,
+#siteHeader.nav-hidden {
+  transform: translate(-50%, -150%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
 .nav { 
   display: flex !important; 
@@ -324,13 +337,13 @@ h1, h2, h3, h4 {
 
 .nav-links a.nav-cta { 
   background: var(--color-brand-orange) !important; 
-  color: #FFFFFF !important; 
+  color: #1C1C1C !important; 
   font-family: 'Inter', system-ui, sans-serif !important; 
-  font-weight: 700 !important; 
+  font-weight: 800 !important; 
   font-size: 0.8125rem !important; 
   padding: 9px 22px !important; 
   border-radius: 999px !important; 
-  border: 1px solid rgba(255, 255, 255, 0.25) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.3) !important; 
   transition: all 0.25s ease !important; 
   white-space: nowrap !important; 
   text-decoration: none !important; 
@@ -338,7 +351,7 @@ h1, h2, h3, h4 {
 
 .nav-links a.nav-cta:hover { 
   transform: scale(1.04) !important; 
-  box-shadow: 0 6px 24px rgba(255, 210, 7, 0.295) !important; 
+  box-shadow: 0 6px 24px rgba(239, 191, 4, 0.65) !important; 
 }
 
 /* --------------------------------------------------------------------------
@@ -356,12 +369,12 @@ h1, h2, h3, h4 {
 
 .scroll-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #FF3B30, #FF7A00, #007AFF) !important;
+  background: linear-gradient(90deg, #FF3B30, #EFBF04, #007AFF) !important;
   width: 0%; 
   transition: width 0.05s ease-out; 
 }
 
-/* --- Floating Section Indicator (Dimunculkan & Diposisikan di Kiri) --- */
+/* --- Floating Section Indicator (Sisi Kiri) --- */
 .premium-section-indicator,
 #sectionIndicator {
   position: fixed !important;
@@ -419,11 +432,11 @@ h1, h2, h3, h4 {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* STATE AKTIF (Saat Section Dibaca / Diklik) */
+/* STATE AKTIF (Indikator Kuning Gold) */
 .section-indicator-item.active .indicator-box {
-  background-color: #E04000 !important;
-  border-color: #E04000 !important;
-  box-shadow: 0 0 10px rgba(224, 64, 0, 0.7) !important;
+  background-color: #EFBF04 !important;
+  border-color: #EFBF04 !important;
+  box-shadow: 0 0 10px rgba(239, 191, 4, 0.7) !important;
 }
 
 .section-indicator-item.active .indicator-label {
@@ -433,7 +446,7 @@ h1, h2, h3, h4 {
 
 /* HOVER EFFECT */
 .section-indicator-item:hover .indicator-box {
-  border-color: #E04000 !important;
+  border-color: #EFBF04 !important;
 }
 
 .section-indicator-item:hover .indicator-label {
@@ -530,12 +543,12 @@ h1, h2, h3, h4 {
 .hero-actions .btn-primary { 
   background-color: var(--color-brand-orange) !important; 
   border-color: var(--color-brand-orange) !important; 
-  color: #FFFFFF !important; 
+  color: #1C1C1C !important; 
 }
 
 .hero-actions .btn-primary:hover { 
-  background-color: #B03F02 !important; 
-  border-color: #B03F02 !important; 
+  background-color: #D4AF37 !important; 
+  border-color: #D4AF37 !important; 
 }
 
 .hero-visual-bright {
@@ -554,10 +567,10 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   8. HERO DEMO WIDGET — RANI FINANCE AI AGENT
+   8. HERO DEMO WIDGET — RANI FINANCE AI AGENT (KUNING ASSESSMENT STYLE)
    -------------------------------------------------------------------------- */
 .hero-demo {
-  --demo-accent: var(--color-brand-orange);
+  --demo-accent: #EFBF04;
   --demo-bg-card: rgba(255, 255, 255, 0.07);
   --demo-text: #FFFFFF;
   --demo-text-muted: rgba(255, 255, 255, 0.62);
@@ -597,7 +610,7 @@ h1, h2, h3, h4 {
 .demo-dots { display: flex; gap: 6px; }
 .demo-dots i { width: 10px; height: 10px; border-radius: 50%; display: block; }
 .demo-dots i:nth-child(1) { background: #C1272D; }
-.demo-dots i:nth-child(2) { background: #F2A900; }
+.demo-dots i:nth-child(2) { background: #EFBF04; }
 .demo-dots i:nth-child(3) { background: #4A607A; }
 
 .demo-agent { 
@@ -627,8 +640,8 @@ h1, h2, h3, h4 {
   font-weight: 700; 
   text-transform: uppercase; 
   letter-spacing: 0.06em;
-  color: var(--demo-accent); 
-  background: rgba(208, 74, 2, 0.16); 
+  color: #1C1C1C; 
+  background: #EFBF04; 
   padding: 0.25rem 0.6rem; 
   border-radius: 4px;
 }
@@ -646,8 +659,8 @@ h1, h2, h3, h4 {
 }
 
 .demo-input {
-  background: rgba(208, 74, 2, 0.08); 
-  border: 1px solid rgba(208, 74, 2, 0.3);
+  background: rgba(239, 191, 4, 0.08); 
+  border: 1px solid rgba(239, 191, 4, 0.3);
   border-radius: 8px; 
   padding: 1rem; 
   min-height: 72px; 
@@ -686,7 +699,7 @@ h1, h2, h3, h4 {
 .demo-progress-bar { 
   height: 100%; 
   width: 0; 
-  background: linear-gradient(90deg, var(--demo-accent), #FF7A00); 
+  background: linear-gradient(90deg, var(--demo-accent), #FFD700); 
   border-radius: 99px; 
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); 
 }
@@ -942,8 +955,8 @@ h1, h2, h3, h4 {
 }
 
 .fill-orange { background: var(--color-brand-orange); }
-.fill-amber { background: #F2A900; }
-.fill-gold { background: #D04A02; }
+.fill-amber { background: #EFBF04; }
+.fill-gold { background: #D4AF37; }
 .fill-dark { background: var(--color-dark); }
 
 .chart-source-text { 
@@ -981,7 +994,7 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #285296, #F2A900, #C1272D);
+  background: linear-gradient(90deg, #285296, #EFBF04, #C1272D);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -1009,7 +1022,7 @@ h1, h2, h3, h4 {
 }
 
 .case-tag.tag-fin { background: rgba(40, 82, 150, 0.1); color: #285296; }
-.case-tag.tag-scm { background: rgba(242, 169, 0, 0.12); color: #8B6500; }
+.case-tag.tag-scm { background: rgba(239, 191, 4, 0.15); color: #8B6500; }
 .case-tag.tag-crm { background: rgba(193, 39, 45, 0.1); color: #C1272D; }
 .case-tag.tag-hr  { background: rgba(17, 34, 64, 0.08); color: #112240; }
 
@@ -1027,7 +1040,7 @@ h1, h2, h3, h4 {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  color: #F2A900;
+  color: #EFBF04;
   display: block;
   line-height: 1;
   margin-bottom: 0;
@@ -1102,7 +1115,7 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #FF3B30, #FF7A00, #007AFF);
+  background: linear-gradient(90deg, #FF3B30, #EFBF04, #007AFF);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -1296,15 +1309,15 @@ h1, h2, h3, h4 {
 
 .pricing-card-featured {
   border: 2px solid var(--color-brand-orange);
-  background: linear-gradient(180deg, rgba(239, 129, 20, 0.06) 0%, var(--color-bg) 35%);
-  box-shadow: 0 16px 40px rgba(239, 129, 20, 0.12);
+  background: linear-gradient(180deg, rgba(239, 191, 4, 0.08) 0%, var(--color-bg) 35%);
+  box-shadow: 0 16px 40px rgba(239, 191, 4, 0.15);
   margin-top: 0.75rem;
   z-index: 1;
 }
 
 .pricing-card-featured:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 48px rgba(239, 129, 20, 0.18);
+  box-shadow: 0 24px 48px rgba(239, 191, 4, 0.22);
 }
 
 .pricing-badge {
@@ -1313,7 +1326,7 @@ h1, h2, h3, h4 {
   left: 50%;
   transform: translateX(-50%);
   background: var(--color-brand-orange);
-  color: #FFF;
+  color: #1C1C1C;
   font-size: 0.65rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -1321,7 +1334,7 @@ h1, h2, h3, h4 {
   padding: 0.35rem 1rem;
   border-radius: 99px;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(239, 129, 20, 0.35);
+  box-shadow: 0 4px 12px rgba(239, 191, 4, 0.35);
 }
 
 .pricing-card-top {
@@ -1404,10 +1417,10 @@ h1, h2, h3, h4 {
 .enterprise-table td { text-align: center; color: var(--color-text); }
 .enterprise-table th:last-child, .enterprise-table td:last-child { border-right: none; }
 .enterprise-table td.text-left, .enterprise-table th.text-left { text-align: left; font-weight: 500; }
-.enterprise-table th.highlight-col, .enterprise-table td.highlight-col { background: rgba(208, 74, 2, 0.02); }
+.enterprise-table th.highlight-col, .enterprise-table td.highlight-col { background: rgba(239, 191, 4, 0.04); }
 .enterprise-table thead th.highlight-col { border-top: 4px solid var(--color-brand-orange); }
 
-.plan-badge { display: inline-block; background: var(--color-brand-orange); color: #FFFFFF; padding: 0.25rem 0.75rem; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.plan-badge { display: inline-block; background: var(--color-brand-orange); color: #1C1C1C; padding: 0.25rem 0.75rem; font-size: 0.6875rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
 .plan-name { font-size: 1.375rem; color: var(--color-primary); }
 .plan-price { font-family: var(--font-body); font-size: 1.75rem; font-weight: 700; color: var(--color-brand-orange); margin: 0.25rem 0; }
 .plan-price .period { font-size: 0.875rem; color: var(--color-text-muted); font-weight: 400; }
@@ -1434,7 +1447,7 @@ h1, h2, h3, h4 {
   transition: background 0.25s ease, color 0.25s ease; 
 }
 
-.tooltip-trigger:hover, .tooltip-trigger:focus { background: var(--color-brand-orange); color: #FFFFFF; }
+.tooltip-trigger:hover, .tooltip-trigger:focus { background: var(--color-brand-orange); color: #1C1C1C; }
 
 .tooltip-trigger::after { 
   content: attr(aria-label); 
@@ -1499,7 +1512,7 @@ h1, h2, h3, h4 {
   position: absolute;
   top: -1px; left: -1px; right: -1px;
   height: 6px;
-  background: linear-gradient(90deg, var(--color-brand-orange), #FF7A00, var(--color-brand-blue), var(--color-brand-darkblue), var(--color-brand-orange));
+  background: linear-gradient(90deg, var(--color-brand-orange), #FFD700, var(--color-brand-blue), var(--color-brand-darkblue), var(--color-brand-orange));
   background-size: 300% 100%;
   z-index: 1;
   opacity: 0;
@@ -1538,7 +1551,7 @@ h1, h2, h3, h4 {
 .enterprise-card-highlighted { 
   background: #1C1C1C; 
   border: 1px solid #333333; 
-  border-top: 6px solid #F2A900; 
+  border-top: 6px solid #EFBF04; 
   padding: 3rem; 
   display: flex; 
   align-items: center; 
@@ -1552,7 +1565,7 @@ h1, h2, h3, h4 {
 
 .enterprise-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; list-style: none; }
 .enterprise-features li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #DDDDDD; }
-.enterprise-features svg { color: #F2A900; flex-shrink: 0; }
+.enterprise-features svg { color: #EFBF04; flex-shrink: 0; }
 
 .enterprise-action-highlighted { background: #2D2D2D; border: 1px solid #444444; padding: 2.5rem; text-align: center; min-width: 320px; }
 .enterprise-price-label { font-size: 0.75rem; color: #BBBBBB; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
@@ -1717,7 +1730,7 @@ h1, h2, h3, h4 {
 
   .case-card { padding: 1.5rem; }
 
-  /* Sembunyikan indikator floating di layar HP/Tablet agar layar leluasa */
+  /* Sembunyikan indikator floating di layar HP/Tablet */
   .pwc-floating-indicator-nav,
   .premium-section-indicator,
   #sectionIndicator { display: none !important; }
@@ -1804,7 +1817,7 @@ h1, h2, h3, h4 {
     z-index: 100010 !important;
   }
 
-  .nav-toggle.active:hover { background: rgba(255, 107, 0, 0.15) !important; }
+  .nav-toggle.active:hover { background: rgba(239, 191, 4, 0.15) !important; }
   .nav-toggle.active .hamburger span { background-color: #1F2937 !important; box-shadow: none; }
   .nav-toggle.active .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle.active .hamburger span:nth-child(2) { opacity: 0; transform: scale(0); }
@@ -1874,21 +1887,20 @@ h1, h2, h3, h4 {
   }
 
   .nav-links a.nav-link:hover {
-    background: rgba(255, 107, 0, 0.08) !important;
-    color: var(--color-brand-orange, #FF6B00) !important;
+    background: rgba(239, 191, 4, 0.12) !important;
+    color: var(--color-brand-orange) !important;
   }
 
   .nav-links a.nav-cta { 
-    background: linear-gradient(135deg,  #D4AF37 0%) !important;
-    color: #FFFFFF !important; 
+    background: linear-gradient(135deg, #EFBF04 0%, #D4AF37 100%) !important; 
+    color: #1C1C1C !important; 
     text-align: center !important; 
     padding: 0.85rem !important; 
     border-bottom: none !important; 
-    display: block;
-    border-radius: 5px !important;
-    margin-top: 1.5rem !important; 
-    font-weight: 600 !important;
-    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.25) !important;
+    border-radius: 12px !important;
+    margin-top: 0.5rem !important; 
+    font-weight: 800 !important;
+    box-shadow: 0 4px 12px rgba(239, 191, 4, 0.3) !important;
   }
 
   body.nav-open #siteHeader,
