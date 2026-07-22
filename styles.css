@@ -1311,14 +1311,14 @@ h1, h2, h3, h4 {
 }
 
 .pricing-tier {
-  font-size: 1.25rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--color-primary);
   margin-bottom: 0.35rem;
 }
 
 .pricing-desc {
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
   line-height: 1.5;
   margin-bottom: 1.25rem;
@@ -1341,7 +1341,7 @@ h1, h2, h3, h4 {
 
 .pricing-value {
   font-family: var(--font-body);
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 900;
   color: var(--color-primary);
   line-height: 1;
@@ -1356,13 +1356,13 @@ h1, h2, h3, h4 {
 }
 
 .pricing-unit span {
-  font-size: 0.8125rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-text-muted);
 }
 
 .pricing-annual {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
   line-height: 1.5;
 }
@@ -1384,7 +1384,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   color: var(--color-text);
   line-height: 1.5;
 }
